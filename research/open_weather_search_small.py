@@ -9,7 +9,8 @@ import pandas as pd
 import requests
 
 # IQAIR_API_KEY = "6de120c9-2864-4603-ac6b-28a56ecd5837"
-OPEN_WEATH_API_KEY = "a6fa40646975e01954d98e207db40b18"
+# OPEN_WEATH_API_KEY = "a6fa40646975e01954d98e207db40b18"
+OPEN_WEATH_API_KEY = "738dc9ed79abd3ed7e92ebab8bf82c84"
 
 # url = "http://api.airvisual.com/v2/nearest_city?lat=" + str(lat) + "&lon=" + str(lon) + "&key={IQAIR_API_KEY}"
 # url =f"http://api.airvisual.com/v2/countries?key={IQAIR_API_KEY}"
@@ -62,7 +63,7 @@ for index in range(len(data)):
             except KeyError:
                 curr_pm10 = None
         else:
-            print("Request failed with status code:", response.status_code)
+            print("Request failed with status code:", response.status_code, flush=True)
 
 airports_df = pd.DataFrame({
                             "icao": airport_codes,
