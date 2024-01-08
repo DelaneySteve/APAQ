@@ -6,20 +6,8 @@ import traceback
 
 import requests
 
-import logging
-from data_structures import Airport, Flight, Runway
-
-
-def setup_logger() -> logging.Logger:
-    formatter = logging.Formatter(fmt='%(asctime)s %(levelname)s: %(message)s', datefmt='%d/%m/%Y-%H:%M:%S')
-    handler = logging.StreamHandler()
-    handler.setFormatter(formatter)
-    logger = logging.getLogger()
-    logger.addHandler(handler)
-    logger.setLevel(logging.INFO)
-
-    return logger
-
+from src.flightradar_data.utils import setup_logger
+from src.flightradar_data.types import Airport, Flight, Runway
 
 logger = setup_logger()
 
@@ -76,7 +64,7 @@ def get_flights(airport: Airport) -> None:
 def save_airports(airports: list[Airport]) -> None:
     airports_json = {'airports': [airport.json() for airport in airports]}
     logger.info('Saving updated flights data to "airports.json"')
-    with open('../../airports.json', 'w') as f:
+    with open('airports.json', 'w') as f:
         json.dump(airports_json, f, indent=4, ensure_ascii=False, sort_keys=True)
 
 
@@ -96,7 +84,7 @@ def main(args: list[str]) -> None:
         save_airports(airports)
 
     if args.update_runways:
-        for idx, airport in enumerate(airports[500:1250]):
+        for idx, airport in enumerate(airports):
             try:
                 airport.update_runways(FLIGHTS_ENDPOINT, REQUEST_HEADERS)
                 time.sleep(0.6)
@@ -104,10 +92,11 @@ def main(args: list[str]) -> None:
                 logger.critical(traceback.format_exc())
                 logger.error(f'An error occurred when retrieving runway information for {airport.name} ({airport.iata}).\n'
                              f'Airport index {idx}')
+                break
 
     if args.get_flights:
         airports = airports if airports else get_all_airports()
-        for idx, airport in enumerate(airports[3000:3500]):
+        for idx, airport in enumerate(airports):
             try:
                 get_flights(airport)
                 time.sleep(3)
