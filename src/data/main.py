@@ -6,7 +6,7 @@ import traceback
 
 import requests
 
-from src.data.utils import setup_logger
+from src.utils import setup_logger
 from src.data.types import Airport, Flight, Runway
 
 logger = setup_logger()
