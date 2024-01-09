@@ -23,8 +23,8 @@ class Airport:
 
     @classmethod
     def new_airport(cls, **kwargs) -> 'Airport':
-        return Airport(altitude=kwargs['alt'], country=kwargs['country'], iata=kwargs['iata'], icao=kwargs['icao'],
-                       name=kwargs['name'])
+        return Airport(altitude=kwargs['alt'], country=kwargs['country'],
+                       iata=kwargs['iata'], icao=kwargs['icao'], name=kwargs['name'])
 
     def update_runways(self, airport_endpoint: str, headers: dict[str, Any], retry: int = 1) -> None:
         endpoint = f'{airport_endpoint}?code={self.iata}&limit=1'
@@ -54,19 +54,20 @@ class Airport:
 
         available_flights = resp_json['item']['total']
         _logger.info(f'Fetching {type} for {self.name} ({self.iata}) from {endpoint!r}... '
-                     f'Currently on page 1/{int(available_flights / page_size) + 1}')
+                     f'Page 1/{int(available_flights / page_size) + 1}')
         if available_flights > page_size:
             current_flights = page_size
             page = 2
             while available_flights >= current_flights:
                 _logger.info(f'Fetching {type} for {self.name} ({self.iata}) from {endpoint!r}... '
-                             f'Currently on page {page}/{int(available_flights / page_size) + 1}')
+                             f'Page {page}/{int(available_flights / page_size) + 1}')
                 resp_json = self._fetch_next_page(endpoint, type, headers, page=page)
                 self.flights |= self._parse_flights(resp_json['data'], type)
                 current_flights += page_size
                 page += 1
 
-    def _fetch_next_page(self, endpoint: str, type: Literal['arrivals', 'departures'], headers: dict[str, Any],  page: int, retry: int = 1) -> dict[Any, Any]:
+    def _fetch_next_page(self, endpoint: str, type: Literal['arrivals', 'departures'],
+                         headers: dict[str, Any],  page: int, retry: int = 1) -> dict[Any, Any]:
         endpoint = f'{endpoint}&page={page}'
         if page % 7 == 0:
             time.sleep(1.5)
@@ -90,8 +91,7 @@ class Airport:
 
     def _parse_flights(self, flights_data: list[dict[str, Any]], type: Literal['arrivals', 'departures']) -> set[Flight]:
         is_arrival = type == 'arrivals'
-        return {Flight.new_flight(self.iata, self.icao, flight_data=flight, is_arrival=is_arrival) for flight in
-                flights_data}
+        return {Flight.new_flight(self.iata, self.icao, flight_data=flight, is_arrival=is_arrival) for flight in flights_data}
 
     def json(self) -> dict[str, str | int | dict[str, str | int]]:
         return {
