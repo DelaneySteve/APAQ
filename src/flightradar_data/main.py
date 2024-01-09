@@ -30,8 +30,6 @@ def setup_parser() -> argparse.ArgumentParser:
                              'or to fetch runway details when fetching airports.')
     parser.add_argument('--get-flights', action='store_true',
                         help='When set flights for all airports specified will be retrieved and saved.')
-    parser.add_argument('--flights-dataset', type=str,
-                        help='If provided, new flights will be appended to the existing dataset`')
 
     return parser
 
@@ -57,8 +55,30 @@ def load_airports(file_name: str) -> list[Airport]:
     return airports
 
 
-def get_flights(airport: Airport) -> None:
-    airport.get_flights(FLIGHTS_ENDPOINT, REQUEST_HEADERS, 100)
+def get_flights(airports: list[Airport]) -> None:
+    for idx, airport in enumerate(airports):
+        try:
+            airport.get_flights(FLIGHTS_ENDPOINT, REQUEST_HEADERS, 100)
+            time.sleep(1.8)
+        except Exception:
+            logger.critical(traceback.format_exc())
+            logger.error(f'An error occurred when retrieving flight information for {airport.name} ({airport.iata}).\n'
+                         f'Airport index {idx}')
+            return
+
+
+def get_runways(airports: list[Airport]) -> None:
+    for idx, airport in enumerate(airports):
+        if len(airport.runways) > 1:
+            continue
+        try:
+            airport.update_runways(FLIGHTS_ENDPOINT, REQUEST_HEADERS)
+            time.sleep(0.6)
+        except Exception:
+            logger.critical(traceback.format_exc())
+            logger.error(f'An error occurred when retrieving runway information for {airport.name} ({airport.iata}).\n'
+                         f'Airport index {idx}')
+            return
 
 
 def save_airports(airports: list[Airport]) -> None:
@@ -72,41 +92,22 @@ def main(args: list[str]) -> None:
     parser = setup_parser()
     args = parser.parse_args(args)
     airports = []
-    if args.get_airports and args.airports_dataset:
-        raise ValueError('Only one of `--get-airports` and `--airports-dataset` should be specified.')
+    if (args.get_airports and args.airports_dataset) or (not args.get_airports and not args.airports_dataset):
+        raise ValueError('Exactly one of `--get-airports` and `--airports-dataset` must of specified.')
+
     if args.airports_dataset:
         logger.info(f'Loading airports and flight information from {args.airports_dataset!r}...')
         airports = load_airports(args.airports_dataset)
-        logger.info(f'Successfully loaded airports and flight information from {args.airports_dataset!r}.')
+        logger.info(f'Loaded airports and flight information from {args.airports_dataset!r}.')
     elif args.get_airports:
-        logger.info(f'Fetching a list of all global airports from {AIRPORTS_ENDPOINT!r}')
+        logger.info(f'Fetching a list of all global airports from {AIRPORTS_ENDPOINT!r}...')
         airports = get_all_airports()
-        save_airports(airports)
 
     if args.update_runways:
-        for idx, airport in enumerate(airports):
-            if len(airport.runways) > 1:
-                continue
-            try:
-                airport.update_runways(FLIGHTS_ENDPOINT, REQUEST_HEADERS)
-                time.sleep(0.6)
-            except Exception:
-                logger.critical(traceback.format_exc())
-                logger.error(f'An error occurred when retrieving runway information for {airport.name} ({airport.iata}).\n'
-                             f'Airport index {idx}')
-                break
-
+        get_runways(airports)
     if args.get_flights:
-        airports = airports if airports else get_all_airports()
-        for idx, airport in enumerate(airports):
-            try:
-                get_flights(airport)
-                time.sleep(3)
-            except Exception:
-                logger.critical(traceback.format_exc())
-                logger.error(f'An error occurred when retrieving flight information for {airport.name} ({airport.iata}).\n'
-                             f'Airport index {idx}')
-                break
+        get_flights(airports)
+
     save_airports(airports)
 
 
