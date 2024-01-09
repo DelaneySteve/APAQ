@@ -73,8 +73,8 @@ class Airport:
             time.sleep(1.5)
         resp = requests.get(endpoint, headers=headers)
         if resp.status_code == 429:
-            print(f'Unexpected response {resp.status_code} ({resp.reason}). Request will be retried in 10 seconds...')
-            time.sleep(10)
+            print(f'Unexpected response {resp.status_code} ({resp.reason}). Request will be retried in 5 seconds...')
+            time.sleep(5)
             self._fetch_next_page(endpoint, type, headers, page)
         elif resp.status_code in (500, 501, 503, 504, 520, 529):
             _logger.error(f'Unexpected error response from server: {resp.status_code} ({resp.reason}).')
