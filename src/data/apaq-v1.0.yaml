@@ -1,0 +1,57 @@
+openapi: 3.0.0
+
+info:
+  title: Airport Air Quality Prediction API
+  version: 1.0.0
+  description: API for predicting air quality based on airport information
+
+basePath: /v1
+
+paths:
+  /predict-air-quality:
+    post:
+      summary: Predict Air Quality from Airport Information
+      description: |
+        Uploads airport information and predicts air quality based on the provided data.
+        Initiates background processing for prediction.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                altitude:
+                  type: number
+                  description: Altitude of the airport
+                runways:
+                  type: array
+                  description: Information about runways
+                  items:
+                    type: object
+                    properties:
+                      length:
+                        type: number
+                        description: Length of the runway
+                      surface:
+                        type: string
+                        description: Surface material of the runway
+                total_arrivals:
+                  type: number
+                  description: Total number of arriving flights
+                total_departures:
+                  type: number
+                  description: Total number of departing flights
+      responses:
+        '201':
+          description: Prediction result and status
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  air_quality:
+                    type: number
+                    description: Predicted air quality value (available if status is "completed")
+        '400':
+          description: "Bad Request: Invalid input data"
