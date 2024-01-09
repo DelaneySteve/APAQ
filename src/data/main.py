@@ -43,7 +43,7 @@ def get_all_airports() -> list[Airport]:
 
 
 def load_airports(file_name: str) -> list[Airport]:
-    with open(file_name, 'r') as f:
+    with open(file_name, 'r', encoding='utf-8') as f:
         contents = json.load(f)
     if not isinstance(contents, dict) or 'airports' not in contents or not isinstance(contents['airports'], list):
         raise ValueError(f'The file {file_name!r} is improperly formatted.')
@@ -87,7 +87,7 @@ def get_runways(airports: list[Airport]) -> None:
 def save_airports(airports: list[Airport]) -> None:
     airports_json = {'airports': [airport.json() for airport in airports]}
     logger.info('Saving updated flights data to "airports.json"')
-    with open('airports.json', 'w') as f:
+    with open('airports_test.json', 'w', encoding='utf-8') as f:
         json.dump(airports_json, f, indent=4, ensure_ascii=False, sort_keys=True)
 
 
