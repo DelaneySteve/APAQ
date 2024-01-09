@@ -6,8 +6,8 @@ import traceback
 
 import requests
 
-from src.flightradar_data.utils import setup_logger
-from src.flightradar_data.types import Airport, Flight, Runway
+from src.data.utils import setup_logger
+from src.data.types import Airport, Flight, Runway
 
 logger = setup_logger()
 
@@ -57,6 +57,9 @@ def load_airports(file_name: str) -> list[Airport]:
 
 def get_flights(airports: list[Airport]) -> None:
     for idx, airport in enumerate(airports):
+        if len(airport.flights) > 1:
+            logger.info(f'Flights already exist for {airport.name} ({airport.iata}), skipping...')
+            continue
         try:
             airport.get_flights(FLIGHTS_ENDPOINT, REQUEST_HEADERS, 100)
             time.sleep(1.8)
