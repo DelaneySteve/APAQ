@@ -85,6 +85,8 @@ def main(args: list[str]) -> None:
 
     if args.update_runways:
         for idx, airport in enumerate(airports):
+            if len(airport.runways) > 1:
+                continue
             try:
                 airport.update_runways(FLIGHTS_ENDPOINT, REQUEST_HEADERS)
                 time.sleep(0.6)
