@@ -21,13 +21,16 @@ airports_augmented = {"airports": []}
 
 # find matching airports and combine data
 for airport_a in airports_orig["airports"]:
+    # extract airport A
     iata_a = airport_a["iata"]
     for airport_b in air_qualities:
+        # extract airport B
         iata_b = airport_b[1]
+        # check for match
         if iata_a == iata_b:
+            # if so, transfer air quality data
             airport_a["air_quality"] = float(airport_b[5])
-            airports_augmented["airports"].append(airport_a)
 
 # write Python dictionary to json file
 with open("../data/airports_augmented.json", "w", encoding="utf-8") as f:
-    json.dump(airports_augmented, f, ensure_ascii=False, indent=4)
+    json.dump(airports_orig, f, ensure_ascii=False, indent=4)
