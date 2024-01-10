@@ -2,13 +2,13 @@ openapi: 3.0.0
 
 info:
   title: Airport Air Quality Prediction API
-  version: 1.0.0
+  version: 1.0
   description: API for predicting air quality based on airport information
 
 basePath: /v1
 
 paths:
-  /predict-air-quality:
+  /air-quality:
     post:
       summary: Predict Air Quality from Airport Information
       description: |
@@ -32,7 +32,7 @@ paths:
                     properties:
                       length:
                         type: number
-                        description: Length of the runway
+                        description: Length of the runway [ft]
                       surface:
                         type: string
                         description: Surface material of the runway
@@ -52,6 +52,6 @@ paths:
                 properties:
                   air_quality:
                     type: number
-                    description: Predicted air quality value (available if status is "completed")
+                    description: Predicted air quality value [PM10] (available if status is "completed")
         '400':
           description: "Bad Request: Invalid input data"

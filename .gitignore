@@ -22,3 +22,6 @@ dmypy.json
 
 # docs
 _build/
+
+# config
+research/config
