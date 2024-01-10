@@ -46,7 +46,6 @@ with open(FILE_PATH, 'r', encoding='utf-8') as file:
                 airports_iata.append(curr_iata)
                 airports_lat.append(curr_lat)
                 airports_lon.append(curr_lon)
-                print(curr_icao, curr_iata, curr_lat, curr_lon, flush=True)
 
             except KeyError:
                 curr_pm10 = None
