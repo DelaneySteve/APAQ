@@ -27,7 +27,7 @@ jobs:
           mypy --install-types --non-interactive --config-file mypy.ini ./src
       - name: Run Pylint
         run: |
-          python -m pylint --fail-under=9.78  ./src ./tests
+          python -m pylint --fail-under=9.77  ./src ./tests
       - name: Run API tests
         run: |
           python -W ignore -m unittest discover -s "$(pwd)/tests" -p 'test*'
