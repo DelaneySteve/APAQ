@@ -8,7 +8,7 @@ from data.stats import get_flight_stats
 
 class Model:
 
-    def preprocessing(self, raw_data: pd.DataFrame, 
+    def preprocessing(self, raw_data: pd.DataFrame,
                       target: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
         # convert feature data
         airport_data = json_converter.DataConverter(raw_data)
@@ -26,12 +26,12 @@ class Model:
         airport_df = airport_df.drop(['country','icao','name'],axis = 1)
         full_airports_df = pd.concat([airport_df,runway_df,flights_df], axis= 1)
 
-        ### edit air quality dataframe and match it to the feature dataset
+        ### edit air quality json and match it to the feature dataset
         raw_aq_df = pd.DataFrame(target["airports"])
         raw_aq_df = raw_aq_df[['iata','air quality']]
         raw_aq_df['air quality'] = raw_aq_df['air quality'].astype(float)
 
-        aq_df = pd.DataFrame(list(map(link_aq_to_data, full_airports_df['iata'], 
+        aq_df = pd.DataFrame(list(map(link_aq_to_data, full_airports_df['iata'],
                                       repeat(raw_aq_df))), columns = ["air_quality"])
 
         # combine the dataframes, set iata as the index 
@@ -41,13 +41,13 @@ class Model:
         # drop all rows with null data
         full_airports_df = full_airports_df.dropna()
 
-        # separate features and target data 
+        # separate features and target data
         features = full_airports_df.drop(["air_quality"],axis=1)
         target = full_airports_df[['air_quality']].copy()
 
         return target, features
 
-def link_aq_to_data(data_airport, raw_aq_df): 
+def link_aq_to_data(data_airport, raw_aq_df):
     x = np.where(raw_aq_df['iata'] == data_airport, raw_aq_df["air quality"],None)
     aq_data = list(filter(lambda item: item is not None,x ))
     if not aq_data:
