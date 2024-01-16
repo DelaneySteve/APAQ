@@ -2,10 +2,11 @@ openapi: 3.0.0
 
 info:
   title: Airport Air Quality Prediction API
-  version: 1.0
+  version: "1.0"
   description: API for predicting air quality based on airport information
 
-basePath: /v1
+servers:
+  - url: /v1
 
 paths:
   /air-quality:
@@ -19,95 +20,92 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/definitions/AirportData'
+              $ref: '#/components/schemas/Airport'
       responses:
         '201':
           description: |
             An air quality prediction has successfully been created and returned.
-          schemas:
-            $ref: '#/defintions/PredictionResponse'
-          examples:
-            applications/json:
-              air_quality:
-                - 2.12
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PredictionResponse'
+              example:
+                air_quality: 2.12
         '400':
-          $ref: '#/responses/BadRequest'
+          $ref: '#/components/responses/BadRequest'
 
-definitions:
-  AirportData:
-    type: object
-    properties:
-      altitude:
-        type: number
-        description: Altitude of the airport [ft]
-      runways:
-        type: array
-        description: A list of available runways at the specified airport
-        items:
-          type: object
-          properties:
-            length:
-              type: number
-              description: Length of the runway [ft]
-            surface:
-              type: string
-              description: Surface material of the runway
-      total_arrivals:
-        type: number
-        description: Total number of arriving flights in the next 24 hours.
-      total_departures:
-        type: number
-        description: Total number of departing flights in the next 24 hours.
+components:
+  schemas:
+    Airport:
+      type: object
+      properties:
+        altitude:
+          type: number
+          description: Altitude of the airport in feet
+        runways:
+          type: array
+          description: A list of available runways at the specified airport
+          items:
+            type: object
+            properties:
+              length:
+                type: number
+                description: Length of the runway in feet
+              surface:
+                type: string
+                description: Surface material of the runway
+        total_arrivals:
+          type: number
+          description: Total number of arriving flights in the next 24 hours.
+        total_departures:
+          type: number
+          description: Total number of departing flights in the next 24 hours.
+    
+    PredictionResponse:
+      type: object
+      properties:
+        air_quality:
+          type: number
+          description: Predicted air quality value in PM10
 
-  PredictionResponse:
-    type: object
-    properties:
-      air_quality:
-        type: number
-        description: Predicted air quality value [PM10]
+    Error:
+      type: object
+      description: |
+        General error response body
+      properties:
+        errors:
+          description: |
+            This field MUST contain an array with at least one error model.
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorItem'
+          minItems: 1
+        status_code:
+          description: |
+            This field MAY contain the HTTP status code used for the response. Otherwise, it MUST be omitted.
+          type: integer
+      required:
+        - errors
+      additionalProperties: false
 
-  Error:
-    type: object
-    description: |
-      General error response body
-    properties:
-      errors:
-        description: |
-          This field MUST contain an array with at least one error model.
-        type: array
-        items:
-          $ref: '#/definitions/ErrorItem'
-        minItems: 1
-      status_code:
-        description: |
-          This field MAY contain the HTTP status code used for the response. Otherwise, it MUST be omitted.
-        type: integer
-    required:
-      - errors
-    additionalProperties: false
+    ErrorItem:
+      description: |
+        An error message.
+      type: object
+      properties:
+        code:
 
-  ErrorItem:
-    description: |
-      An error message.
-    type: object
-    properties:
-      code:
-        description: |
-          This field MUST contain a snake case string succinctly identifying the problem.
-          This field SHOULD NOT indicate which field, parameter, or header caused the error.
-        type: string
-      message:
-        description: |
-          This field MUST contain a plainly-written, developer-oriented explanation of the solution to the problem in complete, well-formed sentences.
-        type: string
-    required:
-      - code
-      - message
-    additionalProperties: false
+  responses:
+    PredictionResponse:
+      description: Response from the air quality model
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PredictionResponse'
 
-responses:
-  BadRequest:
-    description: |
-      The request body or parameters were incorrect
-  schema:
-    $ref: '#/definitions/Error'
+    BadRequest:
+      description: |
+        The request body or parameters were incorrect
+      schema:
+        $ref: '#/components/schemas/Error'
+

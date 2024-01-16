@@ -24,4 +24,4 @@ dmypy.json
 _build/
 
 # config
-research/config.py
+research/config.yaml
