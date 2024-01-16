@@ -39,7 +39,6 @@ airports_lat = []
 airports_lon = []
 airports_pm10 = []
 
-
 # Open the file with specified encoding
 with open(AIRPORTS_FILE_PATH, "r", encoding="utf-8") as file:
     next(file) # skips header
