@@ -42,12 +42,12 @@ AIR_QUALITY_LOAD_PATH = config["file_paths"]["air_quality"]
 AIRPORTS_DUMP_PATH = config["file_paths"]["airports_augmented"]
 
 # assign airports json to local object
-with open(AIRPORTS_LOAD_PATH, "r") as f:
+with open(AIRPORTS_LOAD_PATH, "r", encoding="utf-8") as f:
     airports_obj = json.load(f)
 
 # assign air quality data to object
 air_qualities = []
-with open(AIR_QUALITY_LOAD_PATH, "r") as f:
+with open(AIR_QUALITY_LOAD_PATH, "r", encoding="utf-8") as f:
     reader = csv.reader(f)
     for row in reader:
         air_qualities.append(row[0].split("\t"))
