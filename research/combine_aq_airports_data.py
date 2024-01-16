@@ -1,5 +1,4 @@
-"""
-Program to inject air quality data into the airports list from FlightRadar24
+""" Program to inject air quality data into the airports list from FlightRadar24
 
 IMPORTANT:
 - This file must be run AFTER the "open_weather_search.py" file

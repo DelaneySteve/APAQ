@@ -3,7 +3,6 @@ to search and find air quality measurements within a particular
 distance from those locations.
 
 IMPORTANT:
-- This file must be run BEFORE the "combine_aq_airports_data.py" file
 - This file requires a configuration file to run successfully
 - The configuration file must be in the "research" directory and be named "config.yaml"
 - The configuration file must at least contain the following:
@@ -11,9 +10,14 @@ IMPORTANT:
 api_keys:
     open_weather: str (API key to access OpenWeather)
 
+file_paths:
+    airports: JSON ()
+    airports_augmented: 
+
 """
 
 import csv
+import json
 import logging
 import pandas as pd
 import requests
@@ -25,8 +29,9 @@ with open("config.yaml", "r", encoding="utf-8") as f:
     config = yaml.load(f, Loader=SafeLoader)
 
 OPEN_WEATHER_API_KEY = config["api_keys"]["open_weather"]
-AIR_QUALITY_DUMP_PATH = config["file_paths"]["air_quality"]
 AIRPORTS_FILE_PATH = "../data/iata-icao.csv"
+AIRPORTS_LOAD_PATH = config["file_paths"]["airports"]
+AIRPORTS_DUMP_PATH = config["file_paths"]["airports_augmented"]
 ICAO_INDEX = 3
 IATA_INDEX = 2
 LAT_INDEX = 5
@@ -77,4 +82,22 @@ airports_df = pd.DataFrame({
                             "pm10": airports_pm10
                             })
 
-airports_df.to_csv(AIR_QUALITY_DUMP_PATH)
+# assign airports json to local object
+with open(AIRPORTS_LOAD_PATH, "r", encoding="utf-8") as f:
+    airports_obj = json.load(f)
+
+# find matching airports and combine data
+for airport_a in airports_obj["airports"]:
+    # view airport from the airport code data
+    iata_a = airport_a["iata"]
+    for index in airports_df.index:
+        # view airport from the air quality data
+        iata_b = airports_df["iata"][index]
+        # check for match
+        if iata_a == iata_b:
+            # if so, transfer air quality data
+            airport_a["air_quality"] = float(airports_df["pm10"][index])
+
+# write Python dictionary to json file
+with open(AIRPORTS_DUMP_PATH, "w", encoding="utf-8") as f:
+    json.dump(airports_obj, f, ensure_ascii=False, indent=4)
