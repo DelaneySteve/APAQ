@@ -22,7 +22,8 @@ class Model:
         runway_df = runways_stats.runway_df()
         flights_df = flights_stats.flight_count_df()
 
-        # drop useless features, concat engineered features 
+
+        # drop useless features, concat engineered features
         airport_df = airport_df.drop(['country','icao','name'],axis = 1)
         full_airports_df = pd.concat([airport_df,runway_df,flights_df], axis= 1)
 

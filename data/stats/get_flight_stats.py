@@ -1,31 +1,29 @@
 from dataclasses import dataclass, field
 import pandas as pd
+from src.data.types import Flight
 
 @dataclass
 class FlightStats:
-    flights: list[list[dict|None]] # type: ignore [index]
-    flights_count_list: list[dict[str, int | None]] = field(init = False)
-
+    flights: pd.DataFrame
+    flights_count_list: pd.DataFrame = field(init = False)
     def __post_init__(self) -> None:
-        self.flights_count_list = list(map(self.count_flights, self.flights))
-
+        self.flights_count_list = self.flights.map(self.count_flights)
+        
     #total arrivals or departures
-    def count_flights(self, airport_runways: list[dict|None]) -> dict:
-        total: int = len(airport_runways)
+    def count_flights(self, airport_flights: list[Flight|None]) -> tuple[int, int, int]:
+        total: int = len(airport_flights)
         departures: int = 0
         arrivals: int = 0
-        flight_data: dict[str, int | None] = {"arrivals": None, "departures": None, "total": None}
-        if total != 0:
-            airport = airport_runways[0]["origin_iata"] #type: ignore [index]
-            for i in airport_runways:
-                if i["origin_iata"] == airport: #type: ignore [index]
+        if total != 0: #if the list is not empty (not None)
+            airport = airport_flights[0]["origin_iata"]
+            for i in airport_flights:
+                if i["origin_iata"] == airport:
                     departures = departures + 1
                 else:
                     arrivals = arrivals + 1
-            flight_data = {"arrivals": arrivals, "departures": departures, "total": total}
-        return flight_data
+        return [arrivals, departures, total]
 
     def flight_count_df(self) -> pd.DataFrame:
-        flight_count_df = pd.DataFrame(self.flights_count_list)
+        flight_count_df = pd.DataFrame(self.flights_count_list['flights'].to_list(), columns=["arrivals", "departures", "total"])
         return flight_count_df
     

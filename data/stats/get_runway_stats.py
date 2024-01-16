@@ -1,18 +1,18 @@
 from dataclasses import dataclass, field
-from typing import Optional
 import pandas as pd
+from src.data.types import Runway
 
 @dataclass
 class RunwayStats:
-    runways: list[list[dict|None]] # type: ignore [index]
+    runways: pd.DataFrame
     count: list[int|None] = field(init=False)
     len: list[int|None] = field(init = False)
 
     def __post_init__(self) -> None:
-        self.count = list(map(self.count_runways, self.runways))
-        self.len = list(map(self.sum_runways_len, self.runways))
+        self.count = pd.DataFrame(self.runways.map(self.count_runways))
+        self.len = pd.DataFrame(self.runways.map(self.sum_runways_len))
 
-    def sum_runways_len(self, airport_runways: list) -> Optional[int]:
+    def sum_runways_len(self, airport_runways: list[Runway|None]) -> int | None:
         if self.count is not None:
             total_runway_length = 0
             for i in airport_runways:
@@ -21,7 +21,7 @@ class RunwayStats:
                 return total_runway_length
         return None
 
-    def count_runways(self, airport_runways: list) -> Optional[int]:
+    def count_runways(self, airport_runways: list[Runway|None]) -> int | None:
         runway_counter: int|None
         runway_counter = len(airport_runways)
         if runway_counter == 0:
@@ -29,6 +29,7 @@ class RunwayStats:
         return runway_counter
 
     def runway_df(self) -> pd.DataFrame:
-        runways_df = pd.DataFrame(self.count, columns=["runways_count"])
+        runways_df = self.count
+        runways_df.columns = ["runways_count"]
         runways_df["total_runway_length"] = self.len
         return runways_df
