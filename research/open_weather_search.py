@@ -55,8 +55,7 @@ with open(AIRPORTS_FILE_PATH, "r", encoding="utf-8") as file:
 
         url = "http://api.openweathermap.org/data/2.5/air_pollution?lat=" + curr_lat + "&lon=" + curr_lon + "&appid=" + OPEN_WEATHER_API_KEY
 
-        response = requests.get(url)
-        print(response)
+        response = requests.get(url, timeout=10)
         if response.status_code == 200:
             result = response.json()
             # Process "result" as needed
