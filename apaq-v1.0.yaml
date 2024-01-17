@@ -1,12 +1,9 @@
-openapi: 3.0.0
+openapi: 3.0.3
 
 info:
   title: Airport Air Quality Prediction API
-  version: "1.0"
+  version: '1.0'
   description: API for predicting air quality based on airport information
-
-servers:
-  - url: /v1
 
 paths:
   /air-quality:
@@ -28,7 +25,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PredictionResponse'
+                $ref: '#/components/schemas/PostAirQualityResponse'
               example:
                 air_quality: 2.12
         '400':
@@ -37,6 +34,11 @@ paths:
 components:
   schemas:
     Airport:
+      required:
+      - altitude
+      - runways
+      - total_arrivals
+      - total_departures
       type: object
       properties:
         altitude:
@@ -46,6 +48,8 @@ components:
           type: array
           description: A list of available runways at the specified airport
           items:
+            required:
+            - length
             type: object
             properties:
               length:
@@ -53,6 +57,7 @@ components:
                 description: Length of the runway in feet
               surface:
                 type: string
+                enum: ['Asphalt', 'Unknown', 'Concrete', 'Turf', 'Bituminous', 'Macadam', 'Gravel', 'Dirt', 'Paved', 'Grass', 'Laterite', 'Tarmac', 'Coral', 'Sealed', 'Sand', 'Unpaved', 'Water', 'Clay', 'Soil', 'Silt', 'Treated', 'Ice']
                 description: Surface material of the runway
         total_arrivals:
           type: number
@@ -61,7 +66,7 @@ components:
           type: number
           description: Total number of departing flights in the next 24 hours.
     
-    PredictionResponse:
+    PostAirQualityResponse:
       type: object
       properties:
         air_quality:
@@ -93,19 +98,32 @@ components:
         An error message.
       type: object
       properties:
-        code:
+        code: 
+          description: |
+            This field MUST contain a snake case string succinctly identifying the problem.
+            This field SHOULD NOT indicate which field, parameter, or header caused the error.
+          type: string
+        message:
+          description: |
+            This field MUST contain a plainly-written, developer-oriented explanation of the solution to the problem in complete, well-formed sentences.
+          type: string
+      required:
+        - code
+        - message
+      additionalProperties: false
 
   responses:
-    PredictionResponse:
+    PostAirQualityResponse:
       description: Response from the air quality model
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/PredictionResponse'
+            $ref: '#/components/schemas/PostAirQualityResponse'
 
     BadRequest:
       description: |
         The request body or parameters were incorrect
-      schema:
-        $ref: '#/components/schemas/Error'
-
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
