@@ -1,19 +1,6 @@
 """ Testing the IQAir API to use a list of airport locations
 to search and find air quality measurements within a particular
 distance from those locations.
-
-IMPORTANT:
-- This file requires a configuration file to run successfully
-- The configuration file must be in the "research" directory and be named "config.yaml"
-- The configuration file must at least contain the following:
-
-api_keys:
-    open_weather: str (API key to access OpenWeather)
-
-file_paths:
-    airports: JSON ()
-    airports_augmented: 
-
 """
 
 import argparse
@@ -26,24 +13,14 @@ import requests
 import yaml
 from yaml.loader import SafeLoader
 
-
-
-
-
+# allow logger to display INFO level logs
+logging.basicConfig(level = logging.INFO)
 
 parser = ArgumentParser(description="Read file form Command line.")
 parser.add_argument("--ow-api-key", dest="open_weather_api_key", required=True, type=str, help="open weather API key")
 parser.add_argument("--airports-load-file", dest="airports_load_file", required=True, type=str, help="general information of each airport file path")
 parser.add_argument("--airports-dump-dir", dest="airports_dump_dir", required=True, type=str, help="path to directory where the output should be stored")
 args = parser.parse_args()
-print(args.open_weather_api_key, args.airports_load_file, args.airports_dump_dir)
-
-
-
-
-
-
-
 
 # obtain API key from config file
 with open("config.yaml", "r", encoding="utf-8") as f:
@@ -82,6 +59,7 @@ with open(AIRPORTS_FILE_PATH, "r", encoding="utf-8") as file:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
             result = response.json()
+            logging.info("Open Weather air quality result obtained for " + curr_iata + ": " + str(result["list"][0]["components"]["pm10"]))
             # Process "result" as needed
             try:
                 airports_pm10.append(float(result["list"][0]["components"]["pm10"]))
@@ -102,6 +80,8 @@ airports_df = pd.DataFrame({
                             "longitude": airports_lon,
                             "pm10": airports_pm10
                             })
+
+logging.info("Open Weather air quality data has been obtained")
 
 # assign airports json to local object
 with open(AIRPORTS_LOAD_PATH_FILE, "r", encoding="utf-8") as f:
