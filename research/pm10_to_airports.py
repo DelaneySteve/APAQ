@@ -59,7 +59,7 @@ with open(AIRPORTS_FILE_PATH, "r", encoding="utf-8") as file:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
             result = response.json()
-            logging.info("Open Weather air quality result obtained for " + curr_iata + ": " + str(result["list"][0]["components"]["pm10"]))
+            logging.info("Open Weather air quality result obtained for %s: %s", curr_iata, str(result["list"][0]["components"]["pm10"]))
             # Process "result" as needed
             try:
                 airports_pm10.append(float(result["list"][0]["components"]["pm10"]))
@@ -81,7 +81,7 @@ airports_df = pd.DataFrame({
                             "pm10": airports_pm10
                             })
 
-logging.info("Open Weather air quality data has been obtained")
+logging.info("Open Weather air quality data for all airports has been obtained")
 
 # assign airports json to local object
 with open(AIRPORTS_LOAD_PATH_FILE, "r", encoding="utf-8") as f:
@@ -98,6 +98,7 @@ for airport_a in airports_obj["airports"]:
         if iata_a == iata_b:
             # if so, transfer air quality data
             airport_a["air_quality"] = float(airports_df["pm10"][index])
+            logging.info("Air quality for " + iata_a + " has been merged with its general information")
 
 # write Python dictionary to json file
 with open(AIRPORTS_DUMP_PATH_DIR + "/airports_augmented.json", "w", encoding="utf-8") as f:
