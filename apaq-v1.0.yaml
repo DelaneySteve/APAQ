@@ -39,6 +39,7 @@ components:
       - runways
       - total_arrivals
       - total_departures
+      additionalProperties: false
       type: object
       properties:
         altitude:
@@ -57,7 +58,29 @@ components:
                 description: Length of the runway in feet
               surface:
                 type: string
-                enum: ['Asphalt', 'Unknown', 'Concrete', 'Turf', 'Bituminous', 'Macadam', 'Gravel', 'Dirt', 'Paved', 'Grass', 'Laterite', 'Tarmac', 'Coral', 'Sealed', 'Sand', 'Unpaved', 'Water', 'Clay', 'Soil', 'Silt', 'Treated', 'Ice']
+                enum:
+                  - Asphalt
+                  - Unknown
+                  - Concrete
+                  - Turf
+                  - Bituminous
+                  - Macadam
+                  - Gravel
+                  - Dirt
+                  - Paved
+                  - Grass
+                  - Laterite
+                  - Tarmac
+                  - Coral
+                  - Sealed
+                  - Sand
+                  - Unpaved
+                  - Water
+                  - Clay
+                  - Soil
+                  - Silt
+                  - Treated
+                  - Ice
                 description: Surface material of the runway
         total_arrivals:
           type: number
@@ -68,6 +91,9 @@ components:
     
     PostAirQualityResponse:
       type: object
+      required:
+        - air_quality
+      additionalProperties: false
       properties:
         air_quality:
           type: number

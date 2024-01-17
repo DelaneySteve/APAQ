@@ -3,32 +3,27 @@ to search and find air quality measurements within a particular
 distance from those locations.
 """
 
-import argparse
 from argparse import ArgumentParser
 import csv
 import json
-import logging
 import pandas as pd
 import requests
-import yaml
-from yaml.loader import SafeLoader
+from src.utils.logging import setup_logger
 
+logger = setup_logger()
 # allow logger to display INFO level logs
-logging.basicConfig(level = logging.INFO)
 
 parser = ArgumentParser(description="Read file form Command line.")
-parser.add_argument("--ow-api-key", dest="open_weather_api_key", required=True, type=str, help="open weather API key")
-parser.add_argument("--airports-load-file", dest="airports_load_file", required=True, type=str, help="general information of each airport file path")
-parser.add_argument("--airports-dump-dir", dest="airports_dump_dir", required=True, type=str, help="path to directory where the output should be stored")
+parser.add_argument("--open-weather-api-key", required=True, type=str, help="open weather API key")
+parser.add_argument("--airports-general-load-file", required=True, type=str, help="file path for general information about each airport")
+parser.add_argument("--airports-aq-load-file", required=True, type=str, help="file path for list of airports which will have air quality data found")
+parser.add_argument("--airports-dump-dir", required=True, type=str, help="path to directory where the output should be stored")
+
 args = parser.parse_args()
 
-# obtain API key from config file
-with open("config.yaml", "r", encoding="utf-8") as f:
-    config = yaml.load(f, Loader=SafeLoader)
-
 OPEN_WEATHER_API_KEY = args.open_weather_api_key
-AIRPORTS_FILE_PATH = "../data/iata-icao.csv"
-AIRPORTS_LOAD_PATH_FILE = args.airports_load_file
+AIRPORTS_LOAD_PATH_FILE = args.airports_general_load_file # list of airports from FlightRadar24
+AIRPORTS_FILE_PATH = args.airports_aq_load_file # list of airports which will have air qualities found using Open Weather
 AIRPORTS_DUMP_PATH_DIR = args.airports_dump_dir
 ICAO_INDEX = 3
 IATA_INDEX = 2
@@ -59,7 +54,7 @@ with open(AIRPORTS_FILE_PATH, "r", encoding="utf-8") as file:
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
             result = response.json()
-            logging.info("Open Weather air quality result obtained for %s: %s", curr_iata, str(result["list"][0]["components"]["pm10"]))
+            logger.info("Open Weather air quality result obtained for %s: %s", curr_iata, str(result["list"][0]["components"]["pm10"]))
             # Process "result" as needed
             try:
                 airports_pm10.append(float(result["list"][0]["components"]["pm10"]))
@@ -71,7 +66,7 @@ with open(AIRPORTS_FILE_PATH, "r", encoding="utf-8") as file:
             except KeyError:
                 curr_pm10 = None
         else:
-            logging.info("Request failed with status code %s", str(response.status_code))
+            logger.info("Request failed with status code %s", str(response.status_code))
 
 airports_df = pd.DataFrame({
                             "iata": airports_iata,
@@ -81,7 +76,7 @@ airports_df = pd.DataFrame({
                             "pm10": airports_pm10
                             })
 
-logging.info("Open Weather air quality data for all airports has been obtained")
+logger.info("Open Weather air quality data for all airports has been obtained")
 
 # assign airports json to local object
 with open(AIRPORTS_LOAD_PATH_FILE, "r", encoding="utf-8") as f:
@@ -98,7 +93,7 @@ for airport_a in airports_obj["airports"]:
         if iata_a == iata_b:
             # if so, transfer air quality data
             airport_a["air_quality"] = float(airports_df["pm10"][index])
-            logging.info("Air quality for " + iata_a + " has been merged with its general information")
+            logger.info("Air quality for %s has been merged with its general information", iata_a)
 
 # write Python dictionary to json file
 with open(AIRPORTS_DUMP_PATH_DIR + "/airports_augmented.json", "w", encoding="utf-8") as f:
