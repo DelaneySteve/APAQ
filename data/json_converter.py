@@ -1,9 +1,7 @@
 from dataclasses import dataclass, field
-from typing import List
 import json
 import pandas as pd
 from src.data.types import Airport
-from typing import Any
 
 
 @dataclass
