@@ -34,12 +34,6 @@ paths:
 components:
   schemas:
     Airport:
-      required:
-      - altitude
-      - runways
-      - total_arrivals
-      - total_departures
-      additionalProperties: false
       type: object
       properties:
         altitude:
@@ -49,8 +43,6 @@ components:
           type: array
           description: A list of available runways at the specified airport
           items:
-            required:
-            - length
             type: object
             properties:
               length:
@@ -82,23 +74,32 @@ components:
                   - Treated
                   - Ice
                 description: Surface material of the runway
+                required:
+                  - length
+                additionalProperties: false
         total_arrivals:
           type: number
           description: Total number of arriving flights in the next 24 hours.
         total_departures:
           type: number
           description: Total number of departing flights in the next 24 hours.
-    
+      required:
+        - altitude
+        - runways
+        - total_arrivals
+        - total_departures
+      additionalProperties: false
+
     PostAirQualityResponse:
       type: object
-      required:
-        - air_quality
-      additionalProperties: false
       properties:
         air_quality:
           type: number
           description: Predicted air quality value in PM10
-
+      required:
+        - air_quality
+      additionalProperties: false
+    
     Error:
       type: object
       description: |
