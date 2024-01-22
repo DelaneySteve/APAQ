@@ -21,7 +21,7 @@ class Model:
         runways_input = user_input[["runways"]]
         runways_stats_df = RunwayStats(runways_input).runway_df()
         input_df = pd.concat([user_input.drop(["runways"],axis = 1),runways_stats_df], axis= 1)
-        return input_df[["altitude","runways","total_runway_length","arrivals","departures"]]
+        return input_df[["altitude","runways","total_runway_length","total_arrivals","total_departures"]]
 
     def predict(self, user_input: pd.DataFrame) -> int:
         prepped_input = self._input_prep(user_input)

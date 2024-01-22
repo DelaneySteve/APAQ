@@ -25,7 +25,7 @@ class RunwayStats:
         return runway_counter
 
     def sum_runways_len(self, airport_runways: list[Runway|None]) -> int | None:
-        if len(airport_runways) != 0:  #if the list is not empty
+        if airport_runways:  #if the list is not empty
             total_runway_length = 0
             for i in airport_runways:
                 temp_len = i["length_in_ft"] #type: ignore [index]
