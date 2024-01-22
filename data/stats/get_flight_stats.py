@@ -1,3 +1,8 @@
+"""
+    Gather flight statistics for each 
+    airport from given aiport flight data. 
+"""
+
 from dataclasses import dataclass, field
 import pandas as pd
 from src.data.types import Flight

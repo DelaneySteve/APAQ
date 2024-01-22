@@ -1,3 +1,8 @@
+"""
+    Converts the raw JSON data to dataframes 
+    and allows for the conversion to csv files. 
+"""
+
 from dataclasses import dataclass, field
 import pandas as pd
 from src.data.types import Airport

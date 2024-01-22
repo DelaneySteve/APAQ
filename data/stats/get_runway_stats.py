@@ -1,3 +1,8 @@
+"""
+    Gather runway statistics for each 
+    airport from given airport runway data. 
+"""
+
 from dataclasses import dataclass, field
 import pandas as pd
 from src.data.types import Runway

@@ -1,10 +1,16 @@
+"""
+    Class used to prepare the user data, 
+    load a trained model, and make a prediction. 
+"""
+
 import pickle
 import pandas as pd
+from sklearn.ensemble import BaseEnsemble #type: ignore [import-untyped]
 from data.stats.get_runway_stats import RunwayStats
 
 class Model:
     def __init__(self) -> None:
-        self._model = None
+        self._model = None #type: BaseEnsemble
 
     def load_trained_model(self, filename: str) -> None:
         with open(filename, 'rb') as f:
