@@ -1,5 +1,6 @@
 from pydantic import BaseModel
+from api.resources.enumerations import RunwaySurface
 
 class Runway(BaseModel):
-    length: float
-    surface: str
+    length: int
+    surface: RunwaySurface
