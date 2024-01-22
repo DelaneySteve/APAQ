@@ -4,19 +4,19 @@ from typing import Any
 
 @dataclass(unsafe_hash=True)
 class Flight:
-    aircraft_model: str
-    airline: str
-    destination_iata: str
-    destination_icao: str
+    aircraft_model: str | None
+    airline: str | None
+    destination_iata: str | None
+    destination_icao: str | None
     flight_number: str
-    long_aircraft_name: str
-    origin_iata: str
-    origin_icao: str
+    long_aircraft_name: str | None
+    origin_iata: str | None
+    origin_icao: str | None
     scheduled_arrival: int
     scheduled_departure: int
 
     @classmethod
-    def new_flight(cls, airport_iata: str, airport_icao: str, /, *, flight_data: dict[str, Any],
+    def new_flight(cls, airport_iata: str | None, airport_icao: str | None, /, *, flight_data: dict[str, Any],
                    is_arrival: bool) -> 'Flight':
         flight_info = flight_data['flight']
         if is_arrival:
