@@ -25,6 +25,6 @@ class FlightStats:
 
     def flight_count_df(self) -> pd.DataFrame:
         flight_count_df = pd.DataFrame(self.flights_count_list['flights'].to_list(),
-                                       columns=["arrivals", "departures", "total"])
+                                       columns=["total_arrivals", "total_departures", "total"])
         return flight_count_df
     

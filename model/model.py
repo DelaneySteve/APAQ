@@ -1,59 +1,22 @@
-from itertools import repeat
+import pickle
 import pandas as pd
-import numpy as np
-from data import json_converter
-from  data.stats import get_runway_stats
-from data.stats import get_flight_stats
-
+from data.stats.get_runway_stats import RunwayStats
 
 class Model:
+    def __init__(self) -> None:
+        self._model = None
 
-    def preprocessing(self, raw_data: pd.DataFrame,
-                      target: pd.DataFrame) -> tuple[pd.DataFrame, pd.DataFrame]:
-        # convert feature data
-        airport_data = json_converter.DataConverter(raw_data)
-        airport_df = airport_data.airports_df
-        flights_json = airport_data.flights
-        runways_json = airport_data.runways
+    def load_trained_model(self, filename: str) -> None:
+        with open(filename, 'rb') as f:
+            model = pickle.load(f)
+        self._model = model
 
-        # get runway and flight stats for feature data
-        runways_stats = get_runway_stats.RunwayStats(runways_json)
-        flights_stats = get_flight_stats.FlightStats(flights_json)
-        runway_df = runways_stats.runway_df()
-        flights_df = flights_stats.flight_count_df()
+    def _input_prep(self, user_input: pd.DataFrame) -> pd.DataFrame:
+        runways_input = user_input[["runways"]]
+        runways_stats_df = RunwayStats(runways_input).runway_df()
+        input_df = pd.concat([user_input.drop(["runways"],axis = 1),runways_stats_df], axis= 1)
+        return input_df[["altitude","runways","total_runway_length","arrivals","departures"]]
 
-
-        # drop useless features, concat engineered features
-        airport_df = airport_df.drop(['country','icao','name'],axis = 1)
-        full_airports_df = pd.concat([airport_df,runway_df,flights_df], axis= 1)
-
-        ### edit air quality json and match it to the feature dataset
-        raw_aq_df = pd.DataFrame(target["airports"])
-        raw_aq_df = raw_aq_df[['iata','air quality']]
-        raw_aq_df['air quality'] = raw_aq_df['air quality'].astype(float)
-
-        aq_df = pd.DataFrame(list(map(link_aq_to_data, full_airports_df['iata'],
-                                      repeat(raw_aq_df))), columns = ["air_quality"])
-
-        # combine the dataframes, set iata as the index 
-        full_airports_df = pd.concat([full_airports_df,aq_df], axis = 1)
-        full_airports_df.set_index('iata',inplace = True)
-
-        # drop all rows with null data
-        full_airports_df = full_airports_df.dropna()
-
-        # separate features and target data
-        features = full_airports_df.drop(["air_quality"],axis=1)
-        target = full_airports_df[['air_quality']].copy()
-
-        return target, features
-
-def link_aq_to_data(data_airport, raw_aq_df):
-    x = np.where(raw_aq_df['iata'] == data_airport, raw_aq_df["air quality"],None)
-    aq_data = list(filter(lambda item: item is not None,x ))
-    if not aq_data:
-        aq_data = None
-    else:
-        aq_data = aq_data[0]
-    return aq_data
-
+    def predict(self, user_input: pd.DataFrame) -> int:
+        prepped_input = self._input_prep(user_input)
+        return self._model.predict(prepped_input)
