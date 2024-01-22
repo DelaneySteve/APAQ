@@ -26,7 +26,7 @@ class MakeModel:
         return self
 
     def __save_trained_model(self, filename: str) -> None:
-        with open(filename, 'wb') as f:
+        with open(filename, "wb") as f:
             pickle.dump(self._model,f)
 
     def preprocessing(self,
@@ -45,16 +45,16 @@ class MakeModel:
 
 
         # drop useless features, concat engineered features
-        airport_df = airport_df.drop(['country','icao','name'],axis = 1)
+        airport_df = airport_df.drop(["country","icao","name"],axis = 1)
         full_airports_df = pd.concat([airport_df,runway_df,flights_df], axis= 1)
 
         # combine the dataframes, set iata as the index
-        full_airports_df.set_index('iata',inplace = True)
+        full_airports_df.set_index("iata",inplace = True)
 
         # drop all rows with null data
         full_airports_df = full_airports_df.dropna()
 
         # separate features and target data
-        target = full_airports_df[['air_quality']]
+        target = full_airports_df[["air_quality"]]
         features = full_airports_df.drop(["air_quality"],axis=1)
         return target, features

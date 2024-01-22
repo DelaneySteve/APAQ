@@ -13,7 +13,7 @@ class Model:
         self._model = None #type: BaseEnsemble
 
     def load_trained_model(self, filename: str) -> None:
-        with open(filename, 'rb') as f:
+        with open(filename, "rb") as f:
             model = pickle.load(f)
         self._model = model
 
