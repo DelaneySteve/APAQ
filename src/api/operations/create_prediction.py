@@ -2,16 +2,35 @@
 Provides the API endpoint that makes a prediction on a target variable within a given set of data.
 """
 
-from fastapi import APIRouter, HTTPException
+import os
+
+from dotenv import load_dotenv
+from fastapi import APIRouter, HTTPException, Security
+from fastapi.security import APIKeyHeader
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
+
 from api.resources.airport import Airport
 from api.resources.post_air_quality_response import PostAirQualityResponse
+
+# import API key from environment variables
+load_dotenv()
+API_KEY = os.getenv("API_KEY")
+api_key_header = APIKeyHeader(name="create-prediction-API-key")
+
+# API key authentication method
+def get_api_key(api_key_header: str = Security(api_key_header)) -> str:
+    if api_key_header == API_KEY:
+        return api_key_header
+    raise HTTPException(
+        status_code=401,
+        detail="Unauthorised: Invalid or missing API key",
+    )
 
 prediction_router = APIRouter(prefix="/air-quality")
 
 @prediction_router.post("", response_model=PostAirQualityResponse, status_code=201)
-async def predict_air_quality(airport: Airport):
+async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)):
 
     # Use airport input parameters to create air quality prediction and store as PostAirQualityResponse object
     air_quality_response = PostAirQualityResponse(air_quality=get_air_quality_prediction(airport))

@@ -2,3 +2,4 @@
 pandas
 mypy
 pylint
+python-dotenv
