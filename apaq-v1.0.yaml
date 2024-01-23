@@ -45,7 +45,7 @@ components:
           items:
             type: object
             properties:
-              length:
+              length_in_ft:
                 type: number
                 description: Length of the runway in feet
               surface:
