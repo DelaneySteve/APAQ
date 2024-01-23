@@ -19,9 +19,9 @@ API_KEY = os.getenv("API_KEY")
 api_key_header = APIKeyHeader(name="create-prediction-API-key")
 
 # API key authentication method
-def get_api_key(api_key_header: str = Security(api_key_header)) -> str:
-    if api_key_header == API_KEY:
-        return api_key_header
+def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
+    if api_key_attempt == API_KEY:
+        return api_key_attempt
     raise HTTPException(
         status_code=401,
         detail="Unauthorised: Invalid or missing API key",
@@ -42,9 +42,7 @@ async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_
     return JSONResponse(content=response_dict, status_code=201)
 
 def get_air_quality_prediction(airport: Airport):
-    """
-    Accesses air quality prediction model.
-
+    """ Accesses air quality prediction model.
     Returns float
     """
 
