@@ -21,5 +21,5 @@ app.include_router(prediction_router)
 
 # Run the API
 if __name__ == "__main__":
-    port = int(os.getenv('PORT', "8080"))
+    port = int(os.getenv("PORT", "8080"))
     uvicorn.run(app=app, port=port)
