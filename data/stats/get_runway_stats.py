@@ -8,7 +8,7 @@ from typing import TypedDict
 import pandas as pd
 
 
-class Runways(TypedDict):
+class RunwayDict(TypedDict):
     length_in_ft: int
     length_in_m: int
     name: str
@@ -26,11 +26,11 @@ class RunwayStats:
             self.runways.map(self.sum_runways_len)
         )
 
-    def count_runways(self, airport_runways: list[Runways | None]) -> int | None:
+    def count_runways(self, airport_runways: list[RunwayDict]) -> int | None:
         return len(airport_runways) or None
 
-    def sum_runways_len(self, airport_runways: list[Runways | None]) -> int | None:
-        return sum(runway["length_in_ft"] for runway in airport_runways) or None  # type: ignore [index]
+    def sum_runways_len(self, airport_runways: list[RunwayDict]) -> int | None:
+        return sum(runway["length_in_ft"] for runway in airport_runways) or None
 
     @property
     def runways_stats_df(self) -> pd.DataFrame:

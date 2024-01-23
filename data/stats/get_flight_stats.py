@@ -8,7 +8,7 @@ from typing import TypedDict
 import pandas as pd
 
 
-class Flights(TypedDict):
+class FlightDict(TypedDict):
     aircraft_model: str
     airline: str
     destination_iata: str
@@ -34,13 +34,13 @@ class FlightStats:
         )
 
     # total arrivals or departures
-    def count_flights(self, airport_flights: list[Flights | None]) -> list[int]:
+    def count_flights(self, airport_flights: list[FlightDict]) -> list[int]:
         departures = 0
         arrivals = 0
         if airport_flights:  # if the list is not empty
-            airport = airport_flights[0]["origin_iata"]  # type: ignore [index]
+            airport = airport_flights[0]["origin_iata"]
             for i in airport_flights:
-                if i["origin_iata"] == airport:  # type: ignore [index]
+                if i["origin_iata"] == airport:
                     departures = departures + 1
                 else:
                     arrivals = arrivals + 1
