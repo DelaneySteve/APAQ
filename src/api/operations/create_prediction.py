@@ -30,7 +30,7 @@ def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
 prediction_router = APIRouter(prefix="/air-quality")
 
 @prediction_router.post("", response_model=PostAirQualityResponse, status_code=201)
-async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)):
+async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)) -> JSONResponse:
 
     # Use airport input parameters to create air quality prediction and store as PostAirQualityResponse object
     air_quality_response = PostAirQualityResponse(air_quality=get_air_quality_prediction(airport))
@@ -41,9 +41,9 @@ async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_
     # Return a JSONResponse with the serialized dictionary
     return JSONResponse(content=response_dict, status_code=201)
 
-def get_air_quality_prediction(airport: Airport):
+def get_air_quality_prediction(airport: Airport) -> float: 
     """ Accesses air quality prediction model.
-    Returns float
     """
+
 
     return 2.12
