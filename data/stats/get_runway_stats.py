@@ -4,7 +4,6 @@
 
 from dataclasses import dataclass, field
 from typing import TypedDict
-
 import pandas as pd
 
 
@@ -21,10 +20,8 @@ class RunwayStats:
     _runways_stats_df: pd.DataFrame = field(init=False)
 
     def __post_init__(self) -> None:
-        self._runways_stats_df = pd.DataFrame(self.runways.map(self.count_runways))
-        self._runways_stats_df["total_runway_length"] = pd.DataFrame(
-            self.runways.map(self.sum_runways_len)
-        )
+        self._runways_stats_df = self.runways.map(self.count_runways)
+        self._runways_stats_df["total_runway_length"] = self.runways.map(self.sum_runways_len)
 
     def count_runways(self, airport_runways: list[RunwayDict]) -> int | None:
         return len(airport_runways) or None

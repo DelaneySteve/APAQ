@@ -20,22 +20,14 @@ class DataConverter:
 
         self.airports_df = self.airports_df.drop(["flights", "runways"], axis=1)
 
-    def save_runways_to_csv(self, filename: str) -> None:
-        self.runways.to_csv(
-            filename + "./runways.csv", sep=",", index=False, encoding="utf-8"
-        )
+    def save_runways_to_csv(self, path: str) -> None:
+        self.runways.to_csv(path + "/runways.csv", sep=",", index=False, encoding="utf-8")
 
-    def save_flights_to_csv(self, filename: str) -> None:
-        self.flights.to_csv(
-            filename + "./flights.csv", sep=",", index=False, encoding="utf-8"
-        )
+    def save_flights_to_csv(self, path: str) -> None:
+        self.flights.to_csv(path + "/flights.csv", sep=",", index=False, encoding="utf-8")
 
-    def save_aq_to_csv(self, filename: str) -> None:
-        self.air_quality.to_csv(
-            filename + "./aq.csv", sep=",", index=False, encoding="utf-8"
-        )
+    def save_aq_to_csv(self, path: str) -> None:
+        self.air_quality.to_csv(path + "/aq.csv", sep=",", index=False, encoding="utf-8")
 
-    def save_airports_to_csv(self, filename: str) -> None:
-        self.airports_df.to_csv(
-            filename + "./airports.csv", sep=",", index=False, encoding="utf-8"
-        )
+    def save_airports_to_csv(self, path: str) -> None:
+        self.airports_df.to_csv(path + "/airports.csv", sep=",", index=False, encoding="utf-8")

@@ -1,9 +1,10 @@
+import sys
 from model.model import Model
 
-from argparse import ArgumentParser, Namespace
+from argparse import ArgumentParser
 
 
-def get_args() -> Namespace:
+def setup_parser() -> ArgumentParser:
     parser = ArgumentParser(description="Read file from Command line.")
     parser.add_argument(
         "--aug-airports-load-file",
@@ -17,11 +18,16 @@ def get_args() -> Namespace:
         type=str,
         help="path to directory to store model",
     )
-    return parser.parse_args()
+    return parser
+
+
+def main() -> None:
+    parser = setup_parser()
+    args = parser.parse_args(sys.argv[1:])
+    rf_model = Model()
+    rf_model.train(args.aug_airports_load_file)
+    rf_model.save_trained_model(args.model_dump_dir)
 
 
 if __name__ == "__main__":
-    args = get_args()
-    RF_model = Model()
-    RF_model.train(args.aug_airports_load_file)
-    RF_model.save_trained_model(args.model_dump_dir)
+    main()

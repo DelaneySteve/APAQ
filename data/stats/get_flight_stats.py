@@ -9,14 +9,14 @@ import pandas as pd
 
 
 class FlightDict(TypedDict):
-    aircraft_model: str
-    airline: str
-    destination_iata: str
-    destination_icao: str
+    aircraft_model: str | None
+    airline: str | None
+    destination_iata: str | None
+    destination_icao: str | None
     flight_number: str
-    long_aircraft_name: str
-    origin_iata: str
-    origin_icao: str
+    long_aircraft_name: str | None
+    origin_iata: str | None
+    origin_icao: str | None
     scheduled_arrival: int
     scheduled_departure: int
 
@@ -39,8 +39,8 @@ class FlightStats:
         arrivals = 0
         if airport_flights:  # if the list is not empty
             airport = airport_flights[0]["origin_iata"]
-            for i in airport_flights:
-                if i["origin_iata"] == airport:
+            for flight in airport_flights:
+                if flight["origin_iata"] == airport:
                     departures = departures + 1
                 else:
                     arrivals = arrivals + 1

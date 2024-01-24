@@ -2,7 +2,7 @@ import pickle
 import json
 
 import pandas as pd
-from sklearn.ensemble import RandomForestRegressor  # type: ignore [import-untyped]
+from sklearn.ensemble import RandomForestRegressor
 
 from data.stats.get_runway_stats import RunwayStats
 from data.stats.get_flight_stats import FlightStats
@@ -43,8 +43,7 @@ class Model:
             pickle.dump(self._model, f)
 
     def preprocessing(
-        self, raw_data: dict[str, list[Airport]]
-    ) -> tuple[pd.DataFrame, pd.DataFrame]:
+        self, raw_data: dict[str, list[Airport]]) -> tuple[pd.DataFrame, pd.DataFrame]:  # pylint: disable=line-too-long
         # convert feature data
         airport_data = DataConverter(raw_data)
         airport_df = airport_data.airports_df
