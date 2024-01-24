@@ -6,7 +6,6 @@ import os
 from dotenv import load_dotenv
 from fastapi import APIRouter, HTTPException, Security
 from fastapi.security import APIKeyHeader
-from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
 from src.api.resources.airport import Airport
@@ -38,11 +37,8 @@ async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_
     # Use airport input parameters to create air quality prediction and store as PostAirQualityResponse object
     air_quality_response = PostAirQualityResponse(air_quality=get_air_quality_prediction(airport))
 
-    # Convert the object to a dictionary to allow it to be JSONified
-    response_dict = jsonable_encoder(air_quality_response)
-
     # Return a JSONResponse with the serialized dictionary
-    return JSONResponse(content=response_dict, status_code=201)
+    return JSONResponse(content={"air_quality": air_quality_response.air_quality}, status_code=201)
 
 def get_air_quality_prediction(airport: Airport) -> float:
     """ Accesses air quality prediction model.
