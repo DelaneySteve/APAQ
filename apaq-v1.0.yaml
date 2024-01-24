@@ -30,6 +30,8 @@ paths:
                 air_quality: 2.12
         '400':
           $ref: '#/components/responses/BadRequest'
+      security:
+        - ApiKeyAuth: []
 
 components:
   schemas:
@@ -154,3 +156,9 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: create-prediction-API-key
