@@ -42,9 +42,7 @@ class Model:
         with open(filename, "wb") as f:
             pickle.dump(self._model, f)
 
-    def preprocessing(
-        self, raw_data: dict[str, list[Airport]]
-    ) -> tuple[pd.DataFrame, pd.DataFrame]:  # pylint: disable=line-too-long
+    def preprocessing(self, raw_data: dict[str, list[Airport]]) -> tuple[pd.DataFrame, pd.DataFrame]:
         # convert feature data
         airport_data = DataConverter(raw_data)
         airport_df = airport_data.airports_df

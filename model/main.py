@@ -21,13 +21,13 @@ def setup_parser() -> ArgumentParser:
     return parser
 
 
-def main() -> None:
+def main(args: list[str]) -> None:
     parser = setup_parser()
-    args = parser.parse_args(sys.argv[1:])
+    args = parser.parse_args(args)
     rf_model = Model()
     rf_model.train(args.aug_airports_load_file)
     rf_model.save_trained_model(args.model_dump_dir)
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])

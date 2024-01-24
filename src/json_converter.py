@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
+from pathlib import Path
 import pandas as pd
-
 from src.data.types import Airport
 
 
@@ -21,13 +21,13 @@ class DataConverter:
         self.airports_df = self.airports_df.drop(["flights", "runways"], axis=1)
 
     def save_runways_to_csv(self, path: str) -> None:
-        self.runways.to_csv(path + "/runways.csv", sep=",", index=False, encoding="utf-8")
+        self.runways.to_csv(Path(path) / "runways.csv", sep=",", index=False, encoding="utf-8")
 
     def save_flights_to_csv(self, path: str) -> None:
-        self.flights.to_csv(path + "/flights.csv", sep=",", index=False, encoding="utf-8")
+        self.flights.to_csv(Path(path) / "flights.csv", sep=",", index=False, encoding="utf-8")
 
     def save_aq_to_csv(self, path: str) -> None:
-        self.air_quality.to_csv(path + "/aq.csv", sep=",", index=False, encoding="utf-8")
+        self.air_quality.to_csv(Path(path) / "aq.csv", sep=",", index=False, encoding="utf-8")
 
     def save_airports_to_csv(self, path: str) -> None:
-        self.airports_df.to_csv(path + "/airports.csv", sep=",", index=False, encoding="utf-8")
+        self.airports_df.to_csv(Path(path) / "airports.csv", sep=",", index=False, encoding="utf-8")

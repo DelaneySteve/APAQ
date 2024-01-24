@@ -2,7 +2,7 @@
     airport from given airport runway data. 
 """
 
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, InitVar
 from typing import TypedDict
 import pandas as pd
 
@@ -16,12 +16,12 @@ class RunwayDict(TypedDict):
 
 @dataclass
 class RunwayStats:
-    runways: pd.DataFrame
+    runways: InitVar[pd.DataFrame]
     _runways_stats_df: pd.DataFrame = field(init=False)
 
-    def __post_init__(self) -> None:
-        self._runways_stats_df = self.runways.map(self.count_runways)
-        self._runways_stats_df["total_runway_length"] = self.runways.map(self.sum_runways_len)
+    def __post_init__(self, runways: pd.DataFrame) -> None:
+        self._runways_stats_df = runways.map(self.count_runways)
+        self._runways_stats_df["total_runway_length"] = runways.map(self.sum_runways_len)
 
     def count_runways(self, airport_runways: list[RunwayDict]) -> int | None:
         return len(airport_runways) or None
