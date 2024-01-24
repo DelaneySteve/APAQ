@@ -10,15 +10,15 @@ from fastapi.security import APIKeyHeader
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 
-from api.resources.airport import Airport
-from api.resources.post_air_quality_response import PostAirQualityResponse
+from src.api.resources.airport import Airport
+from src.api.resources.post_air_quality_response import PostAirQualityResponse
 from src.utils.logging import setup_logger
 
 # import logger
 logger = setup_logger()
 
 # import API key from environment variables
-load_dotenv()
+load_dotenv() # loads the variables from the .env file to the current session's environment
 API_KEY = os.getenv("API_KEY")
 api_key_header = APIKeyHeader(name="create-prediction-API-key")
 
@@ -35,8 +35,6 @@ prediction_router = APIRouter(prefix="/air-quality")
 
 @prediction_router.post("", response_model=PostAirQualityResponse, status_code=201)
 async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)) -> JSONResponse:
-    logger.info("API key attempt: %s", api_key)
-
     # Use airport input parameters to create air quality prediction and store as PostAirQualityResponse object
     air_quality_response = PostAirQualityResponse(air_quality=get_air_quality_prediction(airport))
 

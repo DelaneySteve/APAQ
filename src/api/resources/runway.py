@@ -1,6 +1,38 @@
 from pydantic import BaseModel
-# from api.resources.enumerations import RunwaySurface
+from enum import Enum
+
+# following import not required until RunwaySurface is required by the model
+# from src.api.resources.enumerations import RunwaySurface
 
 class Runway(BaseModel):
     length: int
-    # surface: RunwaySurface
+    # surface: RunwaySurface # Surface parameter hidden until required by the model
+
+
+# Enumeration for the train status of a model
+class RunwaySurface(Enum):
+    """
+    Enumeration of all possible states that a runway surface can have.
+    """
+    ASPHALT = "asphalt"
+    UNKNOWN = "unknown"
+    CONCRETE = "concrete"
+    TURF = "turf"
+    BITUMINOUS = "bituminous"
+    MACADAM = "macadam"
+    GRAVEL = "gravel"
+    DIRT = "dirt"
+    PAVED = "paved"
+    GRASS = "grass"
+    LATERITE = "laterite"
+    TARMAC = "tarmac"
+    CORAL = "coral"
+    SEALED = "sealed"
+    SAND = "sand"
+    UNPAVED = "unpaved"
+    WATER = "water"
+    CLAY = "clay"
+    SOIL = "soil"
+    SILT = "silt"
+    TREATED = "treated"
+    ICE = "ice"

@@ -29,7 +29,7 @@ $(VIRTUAL_ENV): $(VIRTUAL_ENV)/Scripts/activate ## >> install virtualenv and set
 run: $(VIRTUAL_ENV) ## >> run the API
 	@echo ""
 	@echo "$(ccso)--> Running the API $(ccend)"
-	$(PYTHON) src/main.py
+	$(PYTHON) -m src.main
 
 clean:  ## >> remove all environment and build files
 	@echo ""

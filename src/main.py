@@ -7,7 +7,7 @@ import uvicorn
 
 from fastapi import FastAPI, APIRouter
 from typing import Final
-from api.operations.create_prediction import prediction_router
+from src.api.operations.create_prediction import prediction_router
 
 # Allow versioning of the API via the URI path
 BASE_PATH: Final[str] = "/v1"
