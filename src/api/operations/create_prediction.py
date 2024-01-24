@@ -44,4 +44,7 @@ def get_air_quality_prediction(airport: Airport) -> float:
     """ Accesses air quality prediction model.
     """
     logger.info("Input airport information: %s", airport)
+
+    # TODO: Delaney process runway stats (e.g., number of runways, their lengths)
+
     return 2.12
