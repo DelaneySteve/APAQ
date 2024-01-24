@@ -24,7 +24,7 @@ class Model:
             )
         self._model = model
 
-    def predict(self, prepped_input: pd.DataFrame) -> int:
+    def predict(self, prepped_input: pd.DataFrame) -> float:
         return self._model.predict(prepped_input)
 
     def train(self, data_filename: str) -> "Model":
@@ -43,7 +43,8 @@ class Model:
             pickle.dump(self._model, f)
 
     def preprocessing(
-        self, raw_data: dict[str, list[Airport]]) -> tuple[pd.DataFrame, pd.DataFrame]:  # pylint: disable=line-too-long
+        self, raw_data: dict[str, list[Airport]]
+    ) -> tuple[pd.DataFrame, pd.DataFrame]:  # pylint: disable=line-too-long
         # convert feature data
         airport_data = DataConverter(raw_data)
         airport_df = airport_data.airports_df
