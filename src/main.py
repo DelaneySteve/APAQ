@@ -1,5 +1,4 @@
-"""
-Aggregates all API routers and starts the API.
+""" Aggregates all API routers and starts the API.
 """
 
 import os

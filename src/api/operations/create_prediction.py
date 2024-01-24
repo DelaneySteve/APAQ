@@ -1,5 +1,4 @@
-"""
-Provides the API endpoint that makes a prediction on a target variable within a given set of data.
+""" Provides the API endpoint that makes a prediction on a target variable within a given set of data.
 """
 
 import os
@@ -34,7 +33,8 @@ def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
 prediction_router = APIRouter(prefix="/air-quality")
 
 @prediction_router.post("", response_model=PostAirQualityResponse, status_code=201)
-async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)) -> JSONResponse:
+async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)) -> JSONResponse: # pylint: disable=unused-argument
+
     # Use airport input parameters to create air quality prediction and store as PostAirQualityResponse object
     air_quality_response = PostAirQualityResponse(air_quality=get_air_quality_prediction(airport))
 
