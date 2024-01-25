@@ -17,7 +17,7 @@ logger = setup_logger()
 
 # import API key from environment variables
 load_dotenv() # loads the variables from the .env file to the current session's environment
-API_KEY = os.getenv("API_KEY")
+API_KEY = str(os.getenv("API_KEY"))
 api_key_header = APIKeyHeader(name="create-prediction-API-key")
 
 # API key authentication method

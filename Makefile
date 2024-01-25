@@ -28,6 +28,12 @@ $(VIRTUAL_ENV): $(VIRTUAL_ENV)/Scripts/activate ## >> install virtualenv and set
 
 run: $(VIRTUAL_ENV) ## >> Run the API
 	@echo ""
+	@echo "$(ccso)--> Generating your API key $(ccend)"
+	> .env
+	printf "API_KEY=" >> .env
+	gpg --gen-random --armor 1 18 >> .env
+	cat .env
+	@echo ""
 	@echo "$(ccso)--> Running the API $(ccend)"
 	$(PYTHON) -m src.main
 

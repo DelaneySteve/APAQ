@@ -32,7 +32,7 @@ class RunwaySurface(Enum):
     ICE = "ice"
 
 class Runway(BaseModel):
-    length: int
+    length_in_ft: int
     # surface: RunwaySurface # Surface parameter hidden until required by the model
 
 
