@@ -161,4 +161,4 @@ components:
     ApiKeyAuth:
       type: apiKey
       in: header
-      name: create-prediction-API-key
+      name: X-API-key
