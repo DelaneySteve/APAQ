@@ -46,18 +46,18 @@ class Model:
         # convert feature data
         airport_data = DataConverter(raw_data)
         airport_df = airport_data.airports_df
-        flights_json = airport_data.flights
-        runways_json = airport_data.runways
+        flights_df = airport_data.flights
+        runways_df = airport_data.runways
 
         # get runway and flight stats for feature data
-        runways_stats = RunwayStats(runways_json)
-        flights_stats = FlightStats(flights_json)
-        runway_df = runways_stats.runways_stats_df
-        flights_df = flights_stats.flight_stats_df
+        runways_stats = RunwayStats(runways_df)
+        flights_stats = FlightStats(flights_df)
+        runway_stats_df = runways_stats.runways_stats_df
+        flights_stats_df = flights_stats.flight_stats_df
 
         # drop useless features, concat engineered features
         airport_df = airport_df.drop(["country", "icao", "name"], axis=1)
-        full_airports_df = pd.concat([airport_df, runway_df, flights_df], axis=1)
+        full_airports_df = pd.concat([airport_df, runway_stats_df, flights_stats_df], axis=1)
 
         # combine the dataframes, set iata as the index
         full_airports_df.set_index("iata", inplace=True)
