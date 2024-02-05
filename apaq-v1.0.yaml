@@ -30,6 +30,8 @@ paths:
                 air_quality: 2.12
         '400':
           $ref: '#/components/responses/BadRequest'
+      security:
+        - ApiKeyAuth: []
 
 components:
   schemas:
@@ -51,32 +53,32 @@ components:
               surface:
                 type: string
                 enum:
-                  - Asphalt
-                  - Unknown
+                  - asphalt
+                  - unknown
                   - Concrete
-                  - Turf
-                  - Bituminous
-                  - Macadam
-                  - Gravel
-                  - Dirt
-                  - Paved
-                  - Grass
-                  - Laterite
-                  - Tarmac
-                  - Coral
-                  - Sealed
-                  - Sand
-                  - Unpaved
-                  - Water
-                  - Clay
-                  - Soil
-                  - Silt
-                  - Treated
-                  - Ice
+                  - turf
+                  - bituminous
+                  - macadam
+                  - gravel
+                  - dirt
+                  - paved
+                  - grass
+                  - laterite
+                  - tarmac
+                  - coral
+                  - sealed
+                  - sand
+                  - unpaved
+                  - water
+                  - clay
+                  - soil
+                  - silt
+                  - treated
+                  - ice
                 description: Surface material of the runway
-                required:
-                  - length
-                additionalProperties: false
+            required:
+              - length
+            additionalProperties: false
         total_arrivals:
           type: number
           description: Total number of arriving flights in the next 24 hours.
@@ -154,3 +156,9 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-key
