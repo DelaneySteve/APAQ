@@ -2,7 +2,7 @@ import pickle
 import json
 
 import pandas as pd
-from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor  # type: ignore [import-untyped]
 
 from src.data.get_runway_stats import RunwayStats
 from src.data.get_flight_stats import FlightStats
