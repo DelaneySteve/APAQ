@@ -11,7 +11,6 @@ import requests
 from src.utils.logging import setup_logger
 
 logger = setup_logger()
-# allow logger to display INFO level logs
 
 parser = ArgumentParser(description="Read file form Command line.")
 parser.add_argument("--open-weather-api-key", required=True, type=str, help="open weather API key")

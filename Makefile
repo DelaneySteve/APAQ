@@ -26,12 +26,18 @@ $(VIRTUAL_ENV)/Scripts/activate: requirements.txt ## >> build the virtual enviro
 $(VIRTUAL_ENV): $(VIRTUAL_ENV)/Scripts/activate ## >> install virtualenv and setup the virtual environment
 	. ./$(VIRTUAL_ENV)/Scripts/activate
 
-run: $(VIRTUAL_ENV) ## >> run the API
+run: $(VIRTUAL_ENV) ## >> Run the API
+	@echo ""
+	@echo "$(ccso)--> Generating your API key $(ccend)"
+	> .env
+	printf "API_KEY=" >> .env
+	gpg --gen-random --armor 1 18 >> .env
+	cat .env
 	@echo ""
 	@echo "$(ccso)--> Running the API $(ccend)"
-	$(PYTHON) src/main.py
+	$(PYTHON) -m src.main
 
-clean:  ## >> remove all environment and build files
+clean:  ## >> Remove all environment and build files
 	@echo ""
 	@echo "$(ccso)--> Removing virtual environment $(ccend)"
 	rm -rf $(VIRTUAL_ENV)
