@@ -1,8 +1,7 @@
 import sys
-from model.model import Model
-from src.model.model import Model
-
 from argparse import ArgumentParser
+
+from src.model.model import Model
 
 
 def setup_parser() -> ArgumentParser:
