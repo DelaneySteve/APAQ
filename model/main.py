@@ -1,5 +1,5 @@
 import sys
-from src.model.model import Model
+from model.model import Model
 
 from argparse import ArgumentParser
 

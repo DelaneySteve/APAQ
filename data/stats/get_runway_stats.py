@@ -4,7 +4,6 @@
 
 from dataclasses import dataclass, field, InitVar
 from typing import TypedDict
-
 import pandas as pd
 
 
