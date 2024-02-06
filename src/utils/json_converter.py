@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from pathlib import Path
 import pandas as pd
-from src.data.types import Airport
+from src.types import Airport
 
 
 @dataclass

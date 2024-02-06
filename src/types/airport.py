@@ -5,8 +5,8 @@ from typing import Any, Literal
 
 import requests
 
-from src.data.types.flight import Flight
-from src.data.types.runway import Runway
+from src.types.flight import Flight
+from src.types.runway import Runway
 
 _logger = logging.getLogger(__name__)
 

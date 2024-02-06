@@ -4,10 +4,10 @@ import json
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor  # type: ignore [import-untyped]
 
-from data.stats.get_runway_stats import RunwayStats
-from data.stats.get_flight_stats import FlightStats
-from src.json_converter import DataConverter
-from src.data.types import Airport
+from src.data.get_runway_stats import RunwayStats
+from src.data.get_flight_stats import FlightStats
+from src.utils.json_converter import DataConverter
+from src.types.airport import Airport
 
 
 class Model:
