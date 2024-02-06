@@ -1,13 +1,13 @@
-import pickle
 import json
+import pickle
 
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor  # type: ignore [import-untyped]
 
-from src.data.get_runway_stats import RunwayStats
 from src.data.get_flight_stats import FlightStats
-from src.utils.json_converter import DataConverter
+from src.data.get_runway_stats import RunwayStats
 from src.types.airport import Airport
+from src.utils.json_converter import DataConverter
 
 
 class Model:

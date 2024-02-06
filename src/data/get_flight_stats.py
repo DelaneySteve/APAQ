@@ -2,7 +2,7 @@
     airport from given aiport flight data. 
 """
 
-from dataclasses import dataclass, field, InitVar
+from dataclasses import InitVar, dataclass, field
 from typing import TypedDict
 
 import pandas as pd
