@@ -30,4 +30,4 @@ jobs:
           python -m pylint --fail-under=9.77  ./src ./tests
       - name: Run API tests
         run: |
-          python -W ignore -m unittest discover -s "$(pwd)/tests" -p 'test*'
+          python -W ignore -m unittest discover -s '$(pwd)/tests' -p 'test*'

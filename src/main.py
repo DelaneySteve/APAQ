@@ -1,5 +1,5 @@
-""" Aggregates all API routers and starts the API.
-"""
+''' Aggregates all API routers and starts the API.
+'''
 
 import os
 import uvicorn
@@ -9,7 +9,7 @@ from typing import Final
 from src.api.operations.create_prediction import prediction_router
 
 # Allow versioning of the API via the URI path
-BASE_PATH: Final[str] = "/v1"
+BASE_PATH: Final[str] = '/v1'
 app = FastAPI()
 router = APIRouter()
 router.prefix = BASE_PATH
@@ -19,6 +19,6 @@ app.include_router(router)
 app.include_router(prediction_router)
 
 # Run the API
-if __name__ == "__main__":
-    port = int(os.getenv("PORT", "8080"))
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', '8080'))
     uvicorn.run(app=app, port=port)
