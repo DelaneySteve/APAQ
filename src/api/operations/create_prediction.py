@@ -15,15 +15,17 @@ from src.data.get_runway_stats import RunwayStats
 from src.model.model import Model
 from src.utils.logging import setup_logger
 
-rf_model = None
-
 # import logger
 logger = setup_logger()
 
 # import API key from environment variables
-load_dotenv() # loads the variables from the .env file to the current session's environment
-API_KEY = str(os.getenv("API_KEY"))
-api_key_header = APIKeyHeader(name="X-API-key")
+load_dotenv()  # loads the variables from the .env file to the current session's environment
+API_KEY = str(os.getenv('API_KEY'))
+api_key_header = APIKeyHeader(name='X-API-key')
+
+MODEL_PATH = str(os.getenv('MODEL_PATH'))
+rf_model = Model()
+
 
 # API key authentication method
 def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
@@ -31,38 +33,42 @@ def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
         return api_key_attempt
     raise HTTPException(
         status_code=401,
-        detail="Unauthorised: Invalid or missing API key",
+        detail='Unauthorised: Invalid or missing API key',
     )
 
-prediction_router = APIRouter(prefix="/air-quality")
 
-@prediction_router.on_event("startup")
-async def startup_event():
+prediction_router = APIRouter(prefix='/air-quality')
+
+
+@prediction_router.on_event('startup')
+async def startup_event() -> Model:
     global rf_model
-    rf_model = Model()
-    rf_model.load_trained_model("C:/Users/delan/Documents/APAQ_files/model_new.pickle")
+    rf_model.load_trained_model(MODEL_PATH)
     return rf_model
 
-@prediction_router.post("", response_model=PostAirQualityResponse, status_code=201)
-async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)) -> JSONResponse: # pylint: disable=unused-argument
+
+@prediction_router.post('', response_model=PostAirQualityResponse, status_code=201)
+async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)) -> JSONResponse:  # pylint: disable=unused-argument
     # Use airport input parameters to create air quality prediction and store as PostAirQualityResponse object
     air_quality_response = PostAirQualityResponse(air_quality=get_air_quality_prediction(airport))
 
+
     # Return a JSONResponse with the serialized dictionary
-    return JSONResponse(content={"air_quality": air_quality_response.air_quality}, status_code=201)
+    return JSONResponse(content={'air_quality': air_quality_response.air_quality}, status_code=201)
+
 
 def get_air_quality_prediction(airport: Airport) -> float:
     """ Accesses air quality prediction model.
     """
-    logger.info("Input airport information: %s", airport)
+    logger.info('Input airport information: %s', airport)
     # Preprocessing input data
     airports_json = airport.to_json()
     airports_df = pd.json_normalize(airports_json)
-    runways_input = airports_df[["runways"]]
+    runways_input = airports_df[['runways']]
     runways_stats_df = RunwayStats(runways_input).runways_stats_df
-    input_df = pd.concat([airports_df.drop(["runways"], axis=1), runways_stats_df], axis=1)
-    input_df = input_df[["altitude", "runways", "total_runway_length", "total_arrivals", "total_departures"]]
-
+    input_df = pd.concat([airports_df.drop(['runways'], axis=1), runways_stats_df], axis=1)
+    input_df = input_df[['altitude', 'runways', 'total_runway_length', 'total_arrivals', 'total_departures']]
+    
     # Predict
     air_quality = rf_model.predict(input_df)
     return air_quality
