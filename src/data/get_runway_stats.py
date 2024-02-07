@@ -1,6 +1,6 @@
-''' Gather runway statistics for each 
+""" Gather runway statistics for each 
     airport from given airport runway data. 
-'''
+"""
 
 from dataclasses import InitVar, dataclass, field
 from typing import TypedDict

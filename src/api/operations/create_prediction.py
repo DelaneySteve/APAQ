@@ -1,5 +1,5 @@
-''' Provides the API endpoint that makes a prediction on a target variable within a given set of data.
-'''
+""" Provides the API endpoint that makes a prediction on a target variable within a given set of data.
+"""
 
 import os
 
@@ -41,8 +41,8 @@ async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_
     return JSONResponse(content={'air_quality': air_quality_response.air_quality}, status_code=201)
 
 def get_air_quality_prediction(airport: Airport) -> float:
-    ''' Accesses air quality prediction model.
-    '''
+    """ Accesses air quality prediction model.
+    """
     logger.info('Input airport information: %s', airport)
 
     # TODO: Delaney process runway stats (e.g., number of runways, their lengths)

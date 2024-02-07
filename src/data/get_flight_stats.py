@@ -1,6 +1,6 @@
-''' Gather flight statistics for each 
+""" Gather flight statistics for each 
     airport from given aiport flight data. 
-'''
+"""
 
 from dataclasses import InitVar, dataclass, field
 from typing import TypedDict

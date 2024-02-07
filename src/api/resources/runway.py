@@ -1,13 +1,13 @@
-''' Airport runway parameters
-'''
+""" Airport runway parameters
+"""
 
 from pydantic import BaseModel
 from enum import Enum
 
 # Enumeration for the train status of a model
 class RunwaySurface(Enum):
-    ''' Enumeration of all possible states that a runway surface can have.
-    '''
+    """ Enumeration of all possible states that a runway surface can have.
+    """
     ASPHALT = 'asphalt'
     UNKNOWN = 'unknown'
     CONCRETE = 'concrete'
