@@ -33,7 +33,7 @@ confidence=
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
 # multiple time (only on the command line, not in the configuration file where
-# it should appear only once). See also the "--disable" option for examples.
+# it should appear only once). See also the '--disable' option for examples.
 #enable=
 
 # Disable the message, report, category or checker with the given id(s).
@@ -222,7 +222,7 @@ docstring-min-length=10
 contextmanager-decorators=contextlib.contextmanager,contextlib2.contextmanager
 
 # Tells whether missing members accessed in mixin class should be ignored. A
-# mixin class is detected if its name ends with "mixin" (case insensitive).
+# mixin class is detected if its name ends with 'mixin' (case insensitive).
 ignore-mixin-members=yes
 
 # List of module names for which member attributes should not be checked
@@ -354,7 +354,7 @@ valid-metaclass-classmethod-first-arg=mcs
 [EXCEPTIONS]
 
 # Exceptions that will emit a warning when being caught. Defaults to
-# "Exception"
+# 'Exception'
 overgeneral-exceptions=builtins.StandardError,
                        builtins.Exception,
                        builtins.BaseException

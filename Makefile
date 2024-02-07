@@ -16,8 +16,8 @@ ccend = $(shell tput sgr0)
 ccso = $(shell tput smso)
 
 $(VIRTUAL_ENV)/Scripts/activate: requirements.txt ## >> build the virtual environment and activate it in the oneshell
-	@echo ""
-	@echo "$(ccso)--> Building virtual environment $(ccend)"
+	@echo ''
+	@echo '$(ccso)--> Building virtual environment $(ccend)'
 	python -m venv $(VIRTUAL_ENV)
 	chmod +x $(VIRTUAL_ENV)/Scripts/activate
 	. ./$(VIRTUAL_ENV)/Scripts/activate
@@ -27,19 +27,19 @@ $(VIRTUAL_ENV): $(VIRTUAL_ENV)/Scripts/activate ## >> install virtualenv and set
 	. ./$(VIRTUAL_ENV)/Scripts/activate
 
 run: $(VIRTUAL_ENV) ## >> Run the API
-	@echo ""
-	@echo "$(ccso)--> Generating your API key $(ccend)"
+	@echo ''
+	@echo '$(ccso)--> Generating your API key $(ccend)'
 	> .env
-	printf "API_KEY=" >> .env
+	printf 'API_KEY=' >> .env
 	gpg --gen-random --armor 1 18 >> .env
 	cat .env
-	@echo ""
-	@echo "$(ccso)--> Running the API $(ccend)"
+	@echo ''
+	@echo '$(ccso)--> Running the API $(ccend)'
 	$(PYTHON) -m src.main
 
 clean:  ## >> Remove all environment and build files
-	@echo ""
-	@echo "$(ccso)--> Removing virtual environment $(ccend)"
+	@echo ''
+	@echo '$(ccso)--> Removing virtual environment $(ccend)'
 	rm -rf $(VIRTUAL_ENV)
 
 # And add help text after each target name starting with '\#\#'
@@ -47,17 +47,17 @@ clean:  ## >> Remove all environment and build files
 HELP_FUN = \
 	%help; \
 	while(<>) { push @{$$help{$$2 // 'options'}}, [$$1, $$3] if /^([a-zA-Z\-\$\(]+)\s*:.*\#\#(?:@([a-zA-Z\-\)]+))?\s(.*)$$/ }; \
-	print "usage: make [target]\n\n"; \
+	print 'usage: make [target]\n\n'; \
 	for (sort keys %help) { \
-	print "${WHITE}$$_:${RESET}\n"; \
+	print '${WHITE}$$_:${RESET}\n'; \
 	for (@{$$help{$$_}}) { \
-	$$sep = " " x (32 - length $$_->[0]); \
-	print "  ${YELLOW}$$_->[0]${RESET}$$sep${GREEN}$$_->[1]${RESET}\n"; \
+	$$sep = ' ' x (32 - length $$_->[0]); \
+	print '  ${YELLOW}$$_->[0]${RESET}$$sep${GREEN}$$_->[1]${RESET}\n'; \
 	}; \
-	print "\n"; }
+	print '\n'; }
 
 help: ##@other >> Show this help.
 	@perl -e '$(HELP_FUN)' $(MAKEFILE_LIST)
-	@echo ""
-	@echo "Note: to activate the environment in your local shell type:"
-	@echo "   $$ source $(VIRTUAL_ENV)/Script/activate for Windows or source $(VIRTUAL_ENV)/bin/activate for Mac/Linux"
+	@echo ''
+	@echo 'Note: to activate the environment in your local shell type:'
+	@echo '   $$ source $(VIRTUAL_ENV)/Script/activate for Windows or source $(VIRTUAL_ENV)/bin/activate for Mac/Linux'

@@ -36,7 +36,6 @@ def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
         detail='Unauthorised: Invalid or missing API key',
     )
 
-
 prediction_router = APIRouter(prefix='/air-quality')
 
 
@@ -68,7 +67,7 @@ def get_air_quality_prediction(airport: Airport) -> float:
     runways_stats_df = RunwayStats(runways_input).runways_stats_df
     input_df = pd.concat([airports_df.drop(['runways'], axis=1), runways_stats_df], axis=1)
     input_df = input_df[['altitude', 'runways', 'total_runway_length', 'total_arrivals', 'total_departures']]
-    
+
     # Predict
     air_quality = rf_model.predict(input_df)
     return air_quality
