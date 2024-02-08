@@ -2,7 +2,7 @@
     airport from given aiport flight data. 
 """
 
-from dataclasses import dataclass, field, InitVar
+from dataclasses import InitVar, dataclass, field
 from typing import TypedDict
 
 import pandas as pd
@@ -29,8 +29,8 @@ class FlightStats:
     def __post_init__(self, flights: pd.DataFrame) -> None:
         self._flight_stats_df = flights.map(self.count_flights)
         self._flight_stats_df = pd.DataFrame(
-            self._flight_stats_df["flights"].to_list(),
-            columns=["total_arrivals", "total_departures"],
+            self._flight_stats_df['flights'].to_list(),
+            columns=['total_arrivals', 'total_departures'],
         )
 
     # total arrivals or departures
@@ -38,9 +38,9 @@ class FlightStats:
         departures = 0
         arrivals = 0
         if airport_flights:  # if the list is not empty
-            airport = airport_flights[0]["origin_iata"]
+            airport = airport_flights[0]['origin_iata']
             for flight in airport_flights:
-                if flight["origin_iata"] == airport:
+                if flight['origin_iata'] == airport:
                     departures = departures + 1
                 else:
                     arrivals = arrivals + 1

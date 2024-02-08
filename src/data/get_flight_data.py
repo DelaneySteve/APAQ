@@ -6,8 +6,8 @@ import traceback
 
 import requests
 
+from src.types import Airport, Flight, Runway
 from src.utils import setup_logger
-from src.data.types import Airport, Flight, Runway
 
 logger = setup_logger()
 
@@ -87,7 +87,7 @@ def get_runways(airports: list[Airport]) -> None:
 
 def save_airports(airports: list[Airport]) -> None:
     airports_json = {'airports': [airport.json() for airport in airports]}
-    logger.info('Saving updated flights data to "airports.json"')
+    logger.info("Saving updated flights data to 'airports.json'")
     with open('airports.json', 'w', encoding='utf-8') as f:
         json.dump(airports_json, f, indent=4, ensure_ascii=False, sort_keys=True)
 
