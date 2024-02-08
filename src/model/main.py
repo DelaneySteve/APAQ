@@ -3,6 +3,8 @@ from argparse import ArgumentParser
 
 from src.model.model import Model
 
+SAVE_MODEL_PATH = 'src/model/model_new.pickle'
+
 
 def setup_parser() -> ArgumentParser:
     parser = ArgumentParser(description='Read file from Command line.')
@@ -12,12 +14,6 @@ def setup_parser() -> ArgumentParser:
         type=str,
         help='file path for information about each airport',
     )
-    parser.add_argument(
-        '--model_dump_dir',
-        required=True,
-        type=str,
-        help='path to directory to store model',
-    )
     return parser
 
 
@@ -26,7 +22,7 @@ def main(args: list[str]) -> None:
     args = parser.parse_args(args)
     rf_model = Model()
     rf_model.train(args.aug_airports_load_file)
-    rf_model.save_trained_model(args.model_dump_dir)
+    rf_model.save_trained_model(SAVE_MODEL_PATH)
 
 
 if __name__ == '__main__':

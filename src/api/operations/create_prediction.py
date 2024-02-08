@@ -23,9 +23,9 @@ load_dotenv()  # loads the variables from the .env file to the current session's
 API_KEY = str(os.getenv('API_KEY'))
 api_key_header = APIKeyHeader(name='X-API-key')
 
-MODEL_PATH = str(os.getenv('MODEL_PATH'))
-rf_model = Model()
+MODEL_PATH = 'src/model/model_new.pickle'
 
+rf_model = Model()
 
 # API key authentication method
 def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
