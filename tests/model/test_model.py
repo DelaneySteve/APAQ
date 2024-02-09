@@ -70,7 +70,7 @@ class TestModel(unittest.TestCase):
         targets, features = self.model.preprocessing(self.raw_data)
         x_train, x_test, y_train, y_test = train_test_split(features, targets, test_size=0.2, random_state=0)
         self.model.fit(x_train, y_train)
-        y_pred = self.model.predict(pd.DataFrame(x_test))
+        y_pred = self.model.predict(x_test)
         self.assertTrue(all(isinstance(y, float) for y in y_pred))
 
 if __name__ == '__main__':
