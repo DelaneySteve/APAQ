@@ -2,7 +2,9 @@ import json
 import pickle
 
 import pandas as pd
+
 from sklearn.ensemble import RandomForestRegressor  # type: ignore [import-untyped]
+from typing import Any 
 
 from src.data.get_flight_stats import FlightStats
 from src.data.get_runway_stats import RunwayStats
@@ -24,7 +26,7 @@ class Model:
             )
         self._model = model
 
-    def predict(self, prepped_input: pd.DataFrame) -> float:
+    def predict(self, prepped_input: pd.DataFrame) -> Any:
         return self._model.predict(prepped_input)
 
     def train(self, data_filename: str) -> 'Model':
