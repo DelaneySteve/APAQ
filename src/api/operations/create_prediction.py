@@ -27,7 +27,7 @@ api_key_header = APIKeyHeader(name='X-API-key')
 
 MODEL_PATH = 'src/model/rf_model.pickle'
 
-rf_model = None # type: Model
+rf_model = None # type: Model # type: ignore
 
 # API key authentication method
 def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
