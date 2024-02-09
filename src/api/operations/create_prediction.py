@@ -2,10 +2,12 @@
 """
 
 import os
+from contextlib import asynccontextmanager
+from typing import AsyncGenerator
 
 import pandas as pd
 from dotenv import load_dotenv
-from fastapi import APIRouter, HTTPException, Security
+from fastapi import APIRouter, FastAPI, HTTPException, Security
 from fastapi.responses import JSONResponse
 from fastapi.security import APIKeyHeader
 
@@ -23,9 +25,9 @@ load_dotenv()  # loads the variables from the .env file to the current session's
 API_KEY = str(os.getenv('API_KEY'))
 api_key_header = APIKeyHeader(name='X-API-key')
 
-MODEL_PATH = 'src/model/model_new.pickle'
+MODEL_PATH = 'src/model/rf_model.pickle'
 
-rf_model = Model()
+rf_model = None # type: Model
 
 # API key authentication method
 def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
@@ -36,15 +38,14 @@ def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
         detail='Unauthorised: Invalid or missing API key',
     )
 
-prediction_router = APIRouter(prefix='/air-quality')
-
-
-@prediction_router.on_event('startup')
-async def startup_event() -> Model:
+@asynccontextmanager
+async def lifespan(app: FastAPI) ->  AsyncGenerator[None, None]:
     global rf_model
+    rf_model = Model()
     rf_model.load_trained_model(MODEL_PATH)
-    return rf_model
+    yield
 
+prediction_router = APIRouter(prefix='/air-quality')
 
 @prediction_router.post('', response_model=PostAirQualityResponse, status_code=201)
 async def predict_air_quality(airport: Airport, api_key: str = Security(get_api_key)) -> JSONResponse:  # pylint: disable=unused-argument
