@@ -2,10 +2,11 @@
 """
 
 import os
-import uvicorn
-
-from fastapi import FastAPI, APIRouter
 from typing import Final
+
+import uvicorn
+from fastapi import APIRouter, FastAPI
+
 from src.api.operations.create_prediction import prediction_router
 
 # Allow versioning of the API via the URI path

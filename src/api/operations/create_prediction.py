@@ -5,8 +5,8 @@ import os
 
 from dotenv import load_dotenv
 from fastapi import APIRouter, HTTPException, Security
-from fastapi.security import APIKeyHeader
 from fastapi.responses import JSONResponse
+from fastapi.security import APIKeyHeader
 
 from src.api.resources.airport import Airport
 from src.api.resources.post_air_quality_response import PostAirQualityResponse
