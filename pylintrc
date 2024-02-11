@@ -1,6 +1,6 @@
 [MASTER]
 # Global pylint threshold
-fail-under=9.77
+fail-under=9.90
 
 # Files or directories to be skipped. They should be base names, not paths.
 ignore=third_party
