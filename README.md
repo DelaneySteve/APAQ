@@ -5,3 +5,8 @@ The AirPort Air Quality (APAQ) Predictor is an API tool that can be used to pred
 1. Create a virtual environment by executing `make` in the root.
 2. Activate the virtual environment by executing `. venv/Scripts/activate` (for Windows) or `. venv/bin/activate` (for Mac/Linux) also in the root directory.
 3. Run the program by executing `make run` in the root directory.
+
+
+## Pre-commit hooks
+We use pre-commit hooks and `pre-commit` will be installed when you run `pip install -r requirements-dev.txt`.
+Run `pre-commit install` to ensure pre-commit hook run whenever you make a commit. Check that you are able to run all hooks locally by running `pre-commit run --all-files`
