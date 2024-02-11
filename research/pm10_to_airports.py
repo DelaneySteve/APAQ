@@ -3,11 +3,13 @@ to search and find air quality measurements within a particular
 distance from those locations.
 """
 
-from argparse import ArgumentParser
 import csv
 import json
+from argparse import ArgumentParser
+
 import pandas as pd
 import requests
+
 from src.utils.logging import setup_logger
 
 logger = setup_logger()

@@ -3,7 +3,7 @@ from src.types.flight import Flight
 from src.types.runway import Runway
 
 __all__ = [
-    'Airport', 
-    'Flight', 
+    'Airport',
+    'Flight',
     'Runway'
     ]
