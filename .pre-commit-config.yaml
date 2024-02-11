@@ -21,7 +21,7 @@ repos:
     rev: v1.3.0
     hooks:
       - id: mypy
-        stages: [manual] # temporarilt disable Mypy due to missing type stubs
+        stages: [manual] # temporarily disable Mypy due to missing type stubs
         files: src/
         args:
           - --config-file
