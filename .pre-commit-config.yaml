@@ -1,3 +1,5 @@
+ci:
+  skip: [mypy]
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.3.0
@@ -15,9 +17,12 @@ repos:
     - id: pylint
       args:
         - --rcfile=pylintrc
-  #- repo: https://github.com/pre-commit/mirrors-mypy
-  #  rev: v1.3.0
-  #  hooks:
-  #    - id: mypy
-  #      files: src/
-  #      args: [ --config-file, mypy.ini]
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v1.3.0
+    hooks:
+      - id: mypy
+        stages: [manual] # temporarilt disable Mypy due to missing type stubs
+        files: src/
+        args:
+          - --config-file
+          - mypy.ini
