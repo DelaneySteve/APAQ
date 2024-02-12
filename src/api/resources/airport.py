@@ -16,4 +16,3 @@ class Airport(BaseModel):
             'total_arrivals': self.total_arrivals,
             'total_departures': self.total_departures
             }
-    

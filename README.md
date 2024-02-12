@@ -12,6 +12,5 @@ We use pre-commit hooks and `pre-commit` will be installed when you run `pip ins
 Run `pre-commit install` to ensure pre-commit hook run whenever you make a commit. Check that you are able to run all hooks locally by running `pre-commit run --all-files`
 
 ## Train a Random Forest Model
-1. Execute: `python -m src.model.main --airports_augmented_dataset DATA_FILE_PATH` where DATA_FILE_PATH is the local path to the training dataset 
-2. The trained model will save as a pickle file automatically to src/model/rf_model.pickle.
-
+1. Execute: `python -m src.model.main --airports_augmented_dataset DATA_FILE_PATH` where DATA_FILE_PATH is the local path to the training dataset
+2. The trained model will save as a pickle file automatically to ./model/rf_model.pickle.

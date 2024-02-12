@@ -42,4 +42,3 @@ class Runway(BaseModel):
         return {
             'length_in_ft': self.length_in_ft,
             }
-    

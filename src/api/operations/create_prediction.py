@@ -3,10 +3,9 @@
 
 import os
 from contextlib import asynccontextmanager
-from typing import AsyncGenerator, Final
+from typing import AsyncGenerator, Final, Optional
 
 import pandas as pd
-from dotenv import load_dotenv
 from fastapi import APIRouter, FastAPI, HTTPException, Security
 from fastapi.responses import JSONResponse
 from fastapi.security import APIKeyHeader
@@ -22,9 +21,9 @@ _logger = setup_logger()
 API_KEY = os.getenv('API_KEY')
 api_key_header = APIKeyHeader(name='X-API-key')
 
-MODEL_PATH: Final[str] = 'src/model/rf_model.pickle'
+MODEL_PATH: Final[str] = './model/rf_model.pickle'
 
-rf_model = None # type: Model
+rf_model = None # type: ignore
 
 def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
     if api_key_attempt == API_KEY:
@@ -59,5 +58,5 @@ def get_air_quality_prediction(airport: Airport) -> float:
     input_df = input_df[['altitude', 'runways', 'total_runway_length', 'total_arrivals', 'total_departures']]
 
     # Predict
-    air_quality = rf_model.predict(input_df)
+    air_quality = rf_model.predict(input_df) # type: ignore[union-attr]
     return air_quality
