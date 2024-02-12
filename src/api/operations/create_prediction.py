@@ -3,7 +3,7 @@
 
 import os
 from contextlib import asynccontextmanager
-from typing import AsyncGenerator
+from typing import AsyncGenerator, Final
 
 import pandas as pd
 from dotenv import load_dotenv
@@ -25,9 +25,9 @@ load_dotenv()  # loads the variables from the .env file to the current session's
 API_KEY = str(os.getenv('API_KEY'))
 api_key_header = APIKeyHeader(name='X-API-key')
 
-MODEL_PATH = 'src/model/rf_model.pickle'
+MODEL_PATH: Final[str] = 'src/model/rf_model.pickle'
 
-rf_model = None # type: Model # type: ignore
+rf_model = None # type: Model
 
 # API key authentication method
 def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
