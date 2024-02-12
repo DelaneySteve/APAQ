@@ -32,6 +32,7 @@ jobs:
         run: |
           pip install isort
           isort --check ./src ./tests
+          python -m pylint ./src ./tests
       - name: Run API tests
         run: |
           python -W ignore -m unittest discover -s "$(pwd)/tests" -p 'test*'

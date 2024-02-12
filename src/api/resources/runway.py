@@ -36,5 +36,3 @@ class RunwaySurface(Enum):
 class Runway(BaseModel):
     length_in_ft: int
     # surface: RunwaySurface # Surface parameter hidden until required by the model
-
-
