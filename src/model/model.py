@@ -13,6 +13,11 @@ from src.utils.json_converter import DataConverter
 
 
 class Model:
+    _model = None # type: RandomForestRegressor
+
+    def __init__(self) -> None:
+        pass
+
     @classmethod
     def load_trained_model(cls, filename: str) -> None:
         with open(filename, 'rb') as f:

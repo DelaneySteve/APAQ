@@ -3,7 +3,7 @@
 
 import os
 from contextlib import asynccontextmanager
-from typing import AsyncGenerator, Final, Optional
+from typing import AsyncGenerator, Final
 
 import pandas as pd
 from fastapi import APIRouter, FastAPI, HTTPException, Security
