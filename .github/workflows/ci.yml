@@ -24,10 +24,14 @@ jobs:
           pip install -r requirements-dev.txt
       - name: Run MyPy
         run: |
-          mypy --install-types --non-interactive --config-file mypy.ini ./src
+          mypy --install-types --non-interactive --config-file mypy.ini ./src ./tests
       - name: Run Pylint
         run: |
-          python -m pylint ./src ./tests
+          python -m pylint ./src ./tests ./research
+      - name: Run iSort
+        run: |
+          pip install isort
+          isort --check ./src ./tests
       - name: Run API tests
         run: |
           python -W ignore -m unittest discover -s "$(pwd)/tests" -p 'test*'
