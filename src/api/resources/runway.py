@@ -1,8 +1,10 @@
 """ Airport runway parameters
 """
 
-from pydantic import BaseModel
 from enum import Enum
+
+from pydantic import BaseModel
+
 
 # Enumeration for the train status of a model
 class RunwaySurface(Enum):
@@ -34,5 +36,3 @@ class RunwaySurface(Enum):
 class Runway(BaseModel):
     length_in_ft: int
     # surface: RunwaySurface # Surface parameter hidden until required by the model
-
-

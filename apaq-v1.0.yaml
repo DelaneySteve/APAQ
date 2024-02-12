@@ -101,7 +101,7 @@ components:
       required:
         - air_quality
       additionalProperties: false
-    
+
     Error:
       type: object
       description: |
@@ -127,7 +127,7 @@ components:
         An error message.
       type: object
       properties:
-        code: 
+        code:
           description: |
             This field MUST contain a snake case string succinctly identifying the problem.
             This field SHOULD NOT indicate which field, parameter, or header caused the error.

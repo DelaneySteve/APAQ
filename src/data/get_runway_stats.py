@@ -1,5 +1,5 @@
-""" Gather runway statistics for each 
-    airport from given airport runway data. 
+""" Gather runway statistics for each
+    airport from given airport runway data.
 """
 
 from dataclasses import InitVar, dataclass, field
