@@ -7,6 +7,6 @@ The AirPort Air Quality (APAQ) Predictor is an API tool that can be used to pred
 3. Run the program by executing `make run` in the root directory.
 
 ## Train a Random Forest Model
-1. Execute: `python -m src.model.main --aug-airports-load-file DATA_FILE_PATH` where DATA_FILE_PATH is the local path to the training dataset 
-2. The trained model will save as a pickle file automatically to src/model/model_new.pickle.
+1. Execute: `python -m src.model.main --airports_augmented_dataset DATA_FILE_PATH` where DATA_FILE_PATH is the local path to the training dataset 
+2. The trained model will save as a pickle file automatically to src/model/rf_model.pickle.
 
