@@ -15,16 +15,20 @@ from src.utils.logging import setup_logger
 logger = setup_logger()
 
 parser = ArgumentParser(description='Read file form Command line.')
-parser.add_argument('--open-weather-api-key', required=True, type=str, help='open weather API key')
-parser.add_argument('--airports-general-load-file', required=True, type=str, help='file path for general information about each airport')
-parser.add_argument('--airports-aq-load-file', required=True, type=str, help='file path for list of airports which will have air quality data found')
-parser.add_argument('--airports-dump-dir', required=True, type=str, help='path to directory where the output should be stored')
+parser.add_argument('--open-weather-api-key', required=True, type=str,
+                    help='open weather API key')
+parser.add_argument('--airports-general-load-file', required=True, type=str,
+                    help='file path for general information about each airport')
+parser.add_argument('--airports-aq-load-file', required=True, type=str,
+                    help='file path for list of airports which will have air quality data found')
+parser.add_argument('--airports-dump-dir', required=True, type=str,
+                    help='path to directory where the output should be stored')
 
 args = parser.parse_args()
 
 OPEN_WEATHER_API_KEY = args.open_weather_api_key
 AIRPORTS_LOAD_PATH_FILE = args.airports_general_load_file # list of airports from FlightRadar24
-AIRPORTS_FILE_PATH = args.airports_aq_load_file # list of airports which will have air qualities found using Open Weather
+AIRPORTS_FILE_PATH = args.airports_aq_load_file  # Airports which will have air qualities found using Open Weather
 AIRPORTS_DUMP_PATH_DIR = args.airports_dump_dir
 ICAO_INDEX = 3
 IATA_INDEX = 2
@@ -50,12 +54,12 @@ with open(AIRPORTS_FILE_PATH, 'r', encoding='utf-8') as file:
         curr_lat = processed_line[LAT_INDEX]
         curr_lon = processed_line[LON_INDEX]
 
-        url = 'http://api.openweathermap.org/data/2.5/air_pollution?lat=' + curr_lat + '&lon=' + curr_lon + '&appid=' + OPEN_WEATHER_API_KEY
+        url = f'http://api.openweathermap.org/data/2.5/air_pollution?lat={curr_lat}&lon={curr_lon}&appid={OPEN_WEATHER_API_KEY}'  # pylint: disable=C0301
 
         response = requests.get(url, timeout=10)
         if response.status_code == 200:
             result = response.json()
-            logger.info('Open Weather air quality result obtained for %s: %s', curr_iata, str(result['list'][0]['components']['pm10']))
+            logger.info('Open Weather air quality result obtained for %s: %s', curr_iata, str(result['list'][0]['components']['pm10']))  # pylint: disable=C0301
             # Process 'result' as needed
             try:
                 airports_pm10.append(float(result['list'][0]['components']['pm10']))
