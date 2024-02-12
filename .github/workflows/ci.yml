@@ -27,7 +27,7 @@ jobs:
           mypy --install-types --non-interactive --config-file mypy.ini ./src ./tests
       - name: Run Pylint
         run: |
-          python -m pylint
+          python -m pylint ./src ./tests ./research
       - name: Run iSort
         run: |
           pip install isort
