@@ -36,9 +36,3 @@ class RunwaySurface(Enum):
 class Runway(BaseModel):
     length_in_ft: int
     # surface: RunwaySurface # Surface parameter hidden until required by the model
-
-
-    def to_json(self) -> dict[str, int]:
-        return {
-            'length_in_ft': self.length_in_ft,
-            }

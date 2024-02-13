@@ -2,6 +2,7 @@
 """
 
 import os
+from ast import literal_eval
 from contextlib import asynccontextmanager
 from typing import AsyncGenerator, Final
 
@@ -33,9 +34,9 @@ def get_api_key(api_key_attempt: str = Security(api_key_header)) -> str:
 @asynccontextmanager
 async def lifespan(app: FastAPI) ->  AsyncGenerator[None, None]:
     global rf_model
-    rf_model = Model()
-    rf_model.load_trained_model(MODEL_PATH)
+    rf_model = Model.load_trained_model(MODEL_PATH)
     yield
+
 
 prediction_router = APIRouter(prefix='/air-quality')
 
@@ -50,8 +51,7 @@ def get_air_quality_prediction(airport: Airport) -> float:
     """
     _logger.info('Input airport information: %s', airport)
     # Preprocessing input data
-    airports_json = airport.to_json()
-    airports_df = pd.json_normalize(airports_json)
+    airports_df = pd.json_normalize(literal_eval(airport.model_dump_json()))
     runways_input = airports_df[['runways']]
     runways_stats_df = RunwayStats(runways_input).runways_stats_df
     input_df = pd.concat([airports_df.drop(['runways'], axis=1), runways_stats_df], axis=1)

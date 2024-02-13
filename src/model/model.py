@@ -13,21 +13,22 @@ from src.utils.json_converter import DataConverter
 
 
 class Model:
-    _model = None # type: RandomForestRegressor
 
     def __init__(self) -> None:
-        pass
+        self._model = None  # type: RandomForestRegressor
 
     @classmethod
-    def load_trained_model(cls, filename: str) -> None:
+    def load_trained_model(cls, filename: str) -> 'Model':
         with open(filename, 'rb') as f:
             model = pickle.load(f)
+        instance = cls()
         if not isinstance(model, RandomForestRegressor):
             raise AttributeError(
                 f'The file {filename!r} does not contain a valid model. '
                 f'Expected type {type(RandomForestRegressor)!r} but got {type(model)!r} '
             )
-        cls._model = model
+        instance._model = model
+        return instance
 
     def predict(self, prepped_input: pd.DataFrame) -> float:
         return self._model.predict(prepped_input)
