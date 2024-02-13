@@ -51,7 +51,7 @@ def get_air_quality_prediction(airport: Airport) -> float:
     """
     _logger.info('Input airport information: %s', airport)
     # Preprocessing input data
-    airports_df = pd.json_normalize(literal_eval(airport.model_dump_json()))
+    airports_df = pd.json_normalize(airport.model_dump())
     runways_input = airports_df[['runways']]
     runways_stats_df = RunwayStats(runways_input).runways_stats_df
     input_df = pd.concat([airports_df.drop(['runways'], axis=1), runways_stats_df], axis=1)
