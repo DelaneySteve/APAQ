@@ -24,7 +24,7 @@ class TestModel(unittest.TestCase):
 
     def setUp(self) -> None:
         self.model = Model()
-        self.data_path = 'C:/Users/delan/Documents/APAQ_files/airports_augmented.json'
+        self.data_path = 'data/tests/fake_data.json'
         self.model_path = 'src/model/model_new.pickle'
         with open(self.data_path, 'r', encoding='utf-8') as f:
             self.raw_data = json.load(f)
@@ -68,7 +68,7 @@ class TestModel(unittest.TestCase):
 
     def test_predict(self) -> None:
         targets, features = self.model.preprocessing(self.raw_data)
-        x_train, x_test, y_train, y_test = train_test_split(features, targets, test_size=0.2, random_state=0)
+        x_train, x_test, y_train, y_test = train_test_split(features, targets, test_size=0.2, random_state=0) #pylint: disable = unused-variable, line-too-long
         self.model.fit(x_train, y_train)
         y_pred = self.model.predict(x_test)
         self.assertTrue(all(isinstance(y, float) for y in y_pred))
