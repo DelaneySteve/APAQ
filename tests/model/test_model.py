@@ -1,11 +1,8 @@
 import json
-import os
-import pickle
 import unittest
 
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.model_selection import train_test_split
 
@@ -24,26 +21,18 @@ class TestModel(unittest.TestCase):
 
     def setUp(self) -> None:
         self.model = Model()
-        self.data_path = 'data/tests/fake_data.json'
+        self.data_path = 'data/unit_tests/model/mock_airport_dataset.json'
         self.model_path = 'src/model/model_new.pickle'
         with open(self.data_path, 'r', encoding='utf-8') as f:
             self.raw_data = json.load(f)
 
     def test_loading_wrong_model(self) -> None:
-        wrong_model_path = 'tests/model/lr_model.pickle'
-
-        # create and save linear regression model
-        lr_model = LinearRegression()
-        with open(wrong_model_path, 'wb') as f:
-            pickle.dump(lr_model, f)
+        wrong_model_path = 'data/unit_tests/model/lr_model.pickle'
 
         # check attribute error is raised when loading the wrong model type
         test_model_class = Model()
         with self.assertRaises(AttributeError):
             test_model_class.load_trained_model(wrong_model_path)
-
-        # delete test model
-        os.remove(wrong_model_path)
 
     def test_data_preprocessing(self) -> None:
         targets, features = self.model.preprocessing(self.raw_data)
