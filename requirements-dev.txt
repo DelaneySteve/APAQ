@@ -1,6 +1,7 @@
 -r requirements.txt
-pandas
+isort
 mypy
+pandas
+pre-commit
 pylint
-python-dotenv
 scikit-learn

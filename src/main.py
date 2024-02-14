@@ -2,15 +2,16 @@
 """
 
 import os
-import uvicorn
-
-from fastapi import FastAPI, APIRouter
 from typing import Final
-from src.api.operations.create_prediction import prediction_router
+
+import uvicorn
+from fastapi import APIRouter, FastAPI
+
+from src.api.operations.create_prediction import lifespan, prediction_router
 
 # Allow versioning of the API via the URI path
 BASE_PATH: Final[str] = '/v1'
-app = FastAPI()
+app = FastAPI(lifespan = lifespan)
 router = APIRouter()
 router.prefix = BASE_PATH
 

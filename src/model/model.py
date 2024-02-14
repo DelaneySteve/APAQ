@@ -1,10 +1,10 @@
+# isort: skip_file
+
 import json
 import pickle
 
 import pandas as pd
-
-from sklearn.ensemble import RandomForestRegressor  # type: ignore [import-untyped]
-from typing import Any 
+from sklearn.ensemble import RandomForestRegressor  # type: ignore[import-untyped]
 
 from src.data.get_flight_stats import FlightStats
 from src.data.get_runway_stats import RunwayStats
@@ -13,18 +13,22 @@ from src.utils.json_converter import DataConverter
 
 
 class Model:
+
     def __init__(self) -> None:
         self._model = None  # type: RandomForestRegressor
 
-    def load_trained_model(self, filename: str) -> None:
+    @classmethod
+    def load_trained_model(cls, filename: str) -> 'Model':
         with open(filename, 'rb') as f:
             model = pickle.load(f)
+        instance = cls()
         if not isinstance(model, RandomForestRegressor):
             raise AttributeError(
                 f'The file {filename!r} does not contain a valid model. '
                 f'Expected type {type(RandomForestRegressor)!r} but got {type(model)!r} '
             )
-        self._model = model
+        instance._model = model
+        return instance
 
     def predict(self, prepped_input: pd.DataFrame) -> Any:
         return self._model.predict(prepped_input)
