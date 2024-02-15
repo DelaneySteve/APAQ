@@ -21,7 +21,7 @@ _logger = setup_logger()
 API_KEY = os.getenv('API_KEY')
 api_key_header = APIKeyHeader(name='X-API-key')
 
-MODEL_PATH: Final[str] = './model/rf_model.pickle'
+MODEL_PATH: Final[str] = './data/models/rf_model.pickle'
 
 rf_model = None # type: ignore
 

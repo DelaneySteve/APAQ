@@ -3,7 +3,7 @@ from argparse import ArgumentParser
 
 from src.model.model import Model
 
-SAVE_MODEL_PATH = './model/rf_model.pickle'
+SAVE_MODEL_PATH = './data/models/rf_model.pickle'
 
 
 def setup_parser() -> ArgumentParser:

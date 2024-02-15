@@ -24,12 +24,11 @@ class TestModel(unittest.TestCase):
     def setUp(self) -> None:
         self.model = Model()
         self.data_path = 'data/unit_tests/model/mock_airport_dataset.json'
-        self.model_path = 'src/model/model_new.pickle'
         with open(self.data_path, 'r', encoding='utf-8') as f:
             self.raw_data = json.load(f)
 
     def test_loading_wrong_model(self) -> None:
-        wrong_model_path = 'data/unit_tests/model/lr_model.pickle'
+        wrong_model_path = 'data/unit_tests/model/lr_model_unittest.pickle'
 
         # check attribute error is raised when loading the wrong model type
         test_model_class = Model()
