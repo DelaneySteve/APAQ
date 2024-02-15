@@ -1,5 +1,3 @@
-# isort: skip_file
-
 import json
 import unittest
 
@@ -23,7 +21,7 @@ class TestModel(unittest.TestCase):
 
     def setUp(self) -> None:
         self.model = Model()
-        self.data_path = 'data/unit_tests/model/mock_airport_dataset.json'
+        self.data_path = 'data/tests/model_test_subset_dataset.json'
         with open(self.data_path, 'r', encoding='utf-8') as f:
             self.raw_data = json.load(f)
 
