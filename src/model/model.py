@@ -1,11 +1,12 @@
+
 # isort: skip_file
 
 import json
 import pickle
 
+import numpy as np
 import pandas as pd
-from sklearn.ensemble import RandomForestRegressor  # type: ignore[import-untyped]
-from typing import Any
+from sklearn.ensemble import RandomForestRegressor # type: ignore[import-untyped]
 
 from src.data.get_flight_stats import FlightStats
 from src.data.get_runway_stats import RunwayStats
@@ -31,7 +32,7 @@ class Model:
         instance._model = model
         return instance
 
-    def predict(self, prepped_input: pd.DataFrame) -> Any:
+    def predict(self, prepped_input: pd.DataFrame) -> np.float32:
         return self._model.predict(prepped_input)
 
     def train(self, data_filename: str) -> 'Model':
@@ -81,4 +82,5 @@ class Model:
         target = full_airports_df[['air_quality']]
         features = full_airports_df.drop(['air_quality'], axis=1)
         features['altitude'] = features['altitude'].astype(float)
+        print(features)
         return target, features
