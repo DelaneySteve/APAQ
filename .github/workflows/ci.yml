@@ -31,7 +31,7 @@ jobs:
       - name: Run iSort
         run: |
           pip install isort
-          isort --check ./src ./tests
+          isort --line-length 120 --check ./src ./tests
       - name: Run API tests
         run: |
           python -W ignore -m unittest discover -s "$(pwd)/tests" -p 'test*'
