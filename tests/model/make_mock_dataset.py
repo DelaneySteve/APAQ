@@ -32,7 +32,7 @@ def get_item_from_airport_list(column_name: str) -> Any:
 
 
 def get_item_from_flight_runway_list(column_name: str, list_type: str) -> Any:
-    flights = airports_df.get(list_type)
+    flights = airports_df[list_type]
     if flights:
         random_airport = random.choice(flights)
         if random_airport:
