@@ -2,6 +2,7 @@ import json
 import pickle
 
 import numpy as np
+import numpy.typing as npt
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor  # type: ignore[import-untyped]
 
@@ -29,7 +30,7 @@ class Model:
         instance._model = model
         return instance
 
-    def predict(self, prepped_input: pd.DataFrame) -> np.float32:
+    def predict(self, prepped_input: pd.DataFrame) -> npt.NDArray[np.float32]:
         return self._model.predict(prepped_input)
 
     def train(self, data_filename: str) -> 'Model':
