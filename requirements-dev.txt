@@ -5,3 +5,4 @@ pandas
 pre-commit
 pylint
 scikit-learn
+faker_airtravel
