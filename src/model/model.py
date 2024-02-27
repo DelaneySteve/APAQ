@@ -1,6 +1,8 @@
 import json
 import pickle
 
+import numpy as np
+import numpy.typing as npt
 import pandas as pd
 from sklearn.ensemble import RandomForestRegressor  # type: ignore[import-untyped]
 
@@ -28,7 +30,7 @@ class Model:
         instance._model = model
         return instance
 
-    def predict(self, prepped_input: pd.DataFrame) -> float:
+    def predict(self, prepped_input: pd.DataFrame) -> npt.NDArray[np.float32]:
         return self._model.predict(prepped_input)
 
     def train(self, data_filename: str) -> 'Model':
@@ -38,7 +40,9 @@ class Model:
         return self.fit(features, target)
 
     def fit(self, features: pd.DataFrame, target: pd.DataFrame) -> 'Model':
-        self._model = RandomForestRegressor(n_estimators=10, max_features=2)
+        self._model = RandomForestRegressor(criterion='friedman_mse', max_depth=80, max_features=1,
+                      min_samples_leaf=4, min_samples_split=10,
+                      n_estimators=50)
         self._model.fit(features, target.values.ravel())
         return self
 
@@ -63,13 +67,17 @@ class Model:
         airport_df = airport_df.drop(['country', 'icao', 'name'], axis=1)
         full_airports_df = pd.concat([airport_df, runway_stats_df, flights_stats_df], axis=1)
 
-        # combine the dataframes, set iata as the index
-        full_airports_df.set_index('iata', inplace=True)
+        # drop all rows with duplicate iata data
+        full_airports_df = full_airports_df.drop_duplicates(subset=['iata'])
 
         # drop all rows with null data
         full_airports_df = full_airports_df.dropna()
 
+        # set iata as the index
+        full_airports_df.set_index('iata', inplace=True)
+
         # separate features and target data
         target = full_airports_df[['air_quality']]
         features = full_airports_df.drop(['air_quality'], axis=1)
+        features['altitude'] = features['altitude'].astype(float)
         return target, features

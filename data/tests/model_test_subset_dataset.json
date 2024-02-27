@@ -1,0 +1,3693 @@
+{
+    "airports": [
+        {
+            "altitude": 3680,
+            "country": "United States",
+            "flights": [
+                {
+                    "aircraft_model": "CNJ",
+                    "airline": "NetJets",
+                    "destination_iata": "BZN",
+                    "destination_icao": "KBZN",
+                    "flight_number": "EJA545",
+                    "long_aircraft_name": "",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704744360,
+                    "scheduled_departure": 1704742200
+                },
+                {
+                    "aircraft_model": "PC12",
+                    "airline": "Western Aircraft",
+                    "destination_iata": "AMA",
+                    "destination_icao": "KAMA",
+                    "flight_number": "ST40",
+                    "long_aircraft_name": "",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704736038,
+                    "scheduled_departure": 1704724200
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "SLC",
+                    "destination_icao": "KSLC",
+                    "flight_number": "DL3859",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704748440,
+                    "scheduled_departure": 1704742800
+                },
+                {
+                    "aircraft_model": "B752",
+                    "airline": "FedEx",
+                    "destination_iata": "MEM",
+                    "destination_icao": "KMEM",
+                    "flight_number": "FX1348",
+                    "long_aircraft_name": "",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704781500,
+                    "scheduled_departure": 1704771360
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "UA4684",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "DEN",
+                    "origin_icao": "KDEN",
+                    "scheduled_arrival": 1704774180,
+                    "scheduled_departure": 1704766440
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "DL3859",
+                    "long_aircraft_name": "Embraer E175LL",
+                    "origin_iata": "SLC",
+                    "origin_icao": "KSLC",
+                    "scheduled_arrival": 1704826380,
+                    "scheduled_departure": 1704819900
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "DEN",
+                    "destination_icao": "KDEN",
+                    "flight_number": "UA4759",
+                    "long_aircraft_name": "Embraer E175LL",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704842700,
+                    "scheduled_departure": 1704835200
+                },
+                {
+                    "aircraft_model": "A320",
+                    "airline": "Allegiant Air",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "G488",
+                    "long_aircraft_name": "Airbus A320-214",
+                    "origin_iata": "LAS",
+                    "origin_icao": "KLAS",
+                    "scheduled_arrival": 1704773940,
+                    "scheduled_departure": 1704765540
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "SLC",
+                    "destination_icao": "KSLC",
+                    "flight_number": "DL3862",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704809580,
+                    "scheduled_departure": 1704803400
+                },
+                {
+                    "aircraft_model": "BE35",
+                    "airline": null,
+                    "destination_iata": "HLN",
+                    "destination_icao": "KHLN",
+                    "flight_number": null,
+                    "long_aircraft_name": "Beech V35B Bonanza",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704730790,
+                    "scheduled_departure": 1704727800
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "DL3845",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "SLC",
+                    "origin_icao": "KSLC",
+                    "scheduled_arrival": 1704780060,
+                    "scheduled_departure": 1704773700
+                },
+                {
+                    "aircraft_model": "E75S",
+                    "airline": "Delta Connection",
+                    "destination_iata": "MSP",
+                    "destination_icao": "KMSP",
+                    "flight_number": "DL3834",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704727560,
+                    "scheduled_departure": 1704718200
+                },
+                {
+                    "aircraft_model": "A306",
+                    "airline": "FedEx",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "FX1548",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MEM",
+                    "origin_icao": "KMEM",
+                    "scheduled_arrival": 1704804120,
+                    "scheduled_departure": 1704792420
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "UA5329",
+                    "long_aircraft_name": "Embraer E175LL",
+                    "origin_iata": "DEN",
+                    "origin_icao": "KDEN",
+                    "scheduled_arrival": 1704832500,
+                    "scheduled_departure": 1704825000
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "DEN",
+                    "destination_icao": "KDEN",
+                    "flight_number": "UA4750",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704815520,
+                    "scheduled_departure": 1704808200
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "DL3859",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "SLC",
+                    "origin_icao": "KSLC",
+                    "scheduled_arrival": 1704826380,
+                    "scheduled_departure": 1704819900
+                },
+                {
+                    "aircraft_model": "C68A",
+                    "airline": "NetJets",
+                    "destination_iata": "YVR",
+                    "destination_icao": "CYVR",
+                    "flight_number": null,
+                    "long_aircraft_name": "Cessna 680A Citation Latitude",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704747240,
+                    "scheduled_departure": 1704741120
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "DL3859",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "SLC",
+                    "origin_icao": "KSLC",
+                    "scheduled_arrival": 1704739980,
+                    "scheduled_departure": 1704733500
+                },
+                {
+                    "aircraft_model": "A320",
+                    "airline": "Allegiant Air",
+                    "destination_iata": "LAS",
+                    "destination_icao": "KLAS",
+                    "flight_number": "G489",
+                    "long_aircraft_name": "Airbus A320-214",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704785220,
+                    "scheduled_departure": 1704776940
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "SLC",
+                    "destination_icao": "KSLC",
+                    "flight_number": "DL3859",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704834840,
+                    "scheduled_departure": 1704829200
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "DL3905",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "SLC",
+                    "origin_icao": "KSLC",
+                    "scheduled_arrival": 1704847440,
+                    "scheduled_departure": 1704841500
+                },
+                {
+                    "aircraft_model": null,
+                    "airline": "Allegiant Air",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "G49900",
+                    "long_aircraft_name": null,
+                    "origin_iata": "AZA",
+                    "origin_icao": "KIWA",
+                    "scheduled_arrival": 1704748800,
+                    "scheduled_departure": 1704738840
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "DEN",
+                    "destination_icao": "KDEN",
+                    "flight_number": "UA4750",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704729120,
+                    "scheduled_departure": 1704721800
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "SLC",
+                    "destination_icao": "KSLC",
+                    "flight_number": "DL3862",
+                    "long_aircraft_name": "Embraer E175LL",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704723180,
+                    "scheduled_departure": 1704717000
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Alaska SkyWest",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "AS3436",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "SEA",
+                    "origin_icao": "KSEA",
+                    "scheduled_arrival": 1704836340,
+                    "scheduled_departure": 1704830400
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Alaska SkyWest",
+                    "destination_iata": "SEA",
+                    "destination_icao": "KSEA",
+                    "flight_number": "AS3436",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704845100,
+                    "scheduled_departure": 1704838800
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "MSP",
+                    "destination_icao": "KMSP",
+                    "flight_number": "DL3834",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704813960,
+                    "scheduled_departure": 1704804600
+                },
+                {
+                    "aircraft_model": "AT43",
+                    "airline": "Corporate Air",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "CPT7771",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BZN",
+                    "origin_icao": "KBZN",
+                    "scheduled_arrival": 1704766440,
+                    "scheduled_departure": 1704764280
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "DL3905",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "SLC",
+                    "origin_icao": "KSLC",
+                    "scheduled_arrival": 1704761040,
+                    "scheduled_departure": 1704755100
+                },
+                {
+                    "aircraft_model": "H25B",
+                    "airline": null,
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "PRE50",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SUS",
+                    "origin_icao": "KSUS",
+                    "scheduled_arrival": 1704732900,
+                    "scheduled_departure": 1704722400
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "SLC",
+                    "destination_icao": "KSLC",
+                    "flight_number": "DL3859",
+                    "long_aircraft_name": "Embraer E175LL",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704834840,
+                    "scheduled_departure": 1704829200
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "DL3847",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "MSP",
+                    "origin_icao": "KMSP",
+                    "scheduled_arrival": 1704782040,
+                    "scheduled_departure": 1704771600
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "UA5329",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "DEN",
+                    "origin_icao": "KDEN",
+                    "scheduled_arrival": 1704746460,
+                    "scheduled_departure": 1704738600
+                },
+                {
+                    "aircraft_model": null,
+                    "airline": "Allegiant Air",
+                    "destination_iata": "AZA",
+                    "destination_icao": "KIWA",
+                    "flight_number": "G49901",
+                    "long_aircraft_name": null,
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704760440,
+                    "scheduled_departure": 1704751200
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Alaska SkyWest",
+                    "destination_iata": "SEA",
+                    "destination_icao": "KSEA",
+                    "flight_number": "AS3436",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704758700,
+                    "scheduled_departure": 1704752400
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "SLC",
+                    "destination_icao": "KSLC",
+                    "flight_number": "DL3905",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704769260,
+                    "scheduled_departure": 1704763500
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Delta Connection",
+                    "destination_iata": "SLC",
+                    "destination_icao": "KSLC",
+                    "flight_number": "DL3905",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704855660,
+                    "scheduled_departure": 1704849900
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "DEN",
+                    "destination_icao": "KDEN",
+                    "flight_number": "UA4759",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "GTF",
+                    "origin_icao": "KGTF",
+                    "scheduled_arrival": 1704756420,
+                    "scheduled_departure": 1704748920
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "Alaska SkyWest",
+                    "destination_iata": "GTF",
+                    "destination_icao": "KGTF",
+                    "flight_number": "AS3436",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "SEA",
+                    "origin_icao": "KSEA",
+                    "scheduled_arrival": 1704749940,
+                    "scheduled_departure": 1704744000
+                }
+            ],
+            "iata": "GTF",
+            "icao": "KGTF",
+            "name": "Great Falls International Airport",
+            "runways": [
+                {
+                    "length_in_ft": 10502,
+                    "length_in_m": 3201,
+                    "name": "03",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 6030,
+                    "length_in_m": 1838,
+                    "name": "17",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 6030,
+                    "length_in_m": 1838,
+                    "name": "35",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 10502,
+                    "length_in_m": 3201,
+                    "name": "21",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 2.52
+        },
+        {
+            "altitude": 1214,
+            "country": "Ivory Coast",
+            "flights": [
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "Air Cote d'Ivoire",
+                    "destination_iata": "HGO",
+                    "destination_icao": "DIKO",
+                    "flight_number": "HF44",
+                    "long_aircraft_name": "",
+                    "origin_iata": "ABJ",
+                    "origin_icao": "DIAP",
+                    "scheduled_arrival": 1704822600,
+                    "scheduled_departure": 1704817800
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "Air Cote d'Ivoire",
+                    "destination_iata": "ABJ",
+                    "destination_icao": "DIAP",
+                    "flight_number": "HF45",
+                    "long_aircraft_name": "",
+                    "origin_iata": "HGO",
+                    "origin_icao": "DIKO",
+                    "scheduled_arrival": 1704829200,
+                    "scheduled_departure": 1704824400
+                }
+            ],
+            "iata": "HGO",
+            "icao": "DIKO",
+            "name": "Korhogo Airport",
+            "runways": [
+                {
+                    "length_in_ft": 6890,
+                    "length_in_m": 2100,
+                    "name": "26",
+                    "surface": "Bituminous"
+                },
+                {
+                    "length_in_ft": 6890,
+                    "length_in_m": 2100,
+                    "name": "08",
+                    "surface": "Bituminous"
+                }
+            ],
+            "air_quality": 115.7
+        },
+        {
+            "altitude": 121,
+            "country": "United States",
+            "flights": [
+                {
+                    "aircraft_model": "BE1",
+                    "airline": "Ravn Alaska",
+                    "destination_iata": "VDZ",
+                    "destination_icao": "PAVD",
+                    "flight_number": "7H2302",
+                    "long_aircraft_name": "",
+                    "origin_iata": "ANC",
+                    "origin_icao": "PANC",
+                    "scheduled_arrival": 1704826200,
+                    "scheduled_departure": 1704823200
+                },
+                {
+                    "aircraft_model": "BE1",
+                    "airline": "Ravn Alaska",
+                    "destination_iata": "ANC",
+                    "destination_icao": "PANC",
+                    "flight_number": "7H2303",
+                    "long_aircraft_name": "",
+                    "origin_iata": "VDZ",
+                    "origin_icao": "PAVD",
+                    "scheduled_arrival": 1704831000,
+                    "scheduled_departure": 1704828000
+                },
+                {
+                    "aircraft_model": "BE1",
+                    "airline": "Ravn Alaska",
+                    "destination_iata": "VDZ",
+                    "destination_icao": "PAVD",
+                    "flight_number": "7H2304",
+                    "long_aircraft_name": "",
+                    "origin_iata": "ANC",
+                    "origin_icao": "PANC",
+                    "scheduled_arrival": 1704849600,
+                    "scheduled_departure": 1704846600
+                },
+                {
+                    "aircraft_model": "BE1",
+                    "airline": "Ravn Alaska",
+                    "destination_iata": "ANC",
+                    "destination_icao": "PANC",
+                    "flight_number": "7H2305",
+                    "long_aircraft_name": "",
+                    "origin_iata": "VDZ",
+                    "origin_icao": "PAVD",
+                    "scheduled_arrival": 1704854400,
+                    "scheduled_departure": 1704851400
+                }
+            ],
+            "iata": "VDZ",
+            "icao": "PAVD",
+            "name": "Valdez Airport",
+            "runways": [
+                {
+                    "length_in_ft": 6500,
+                    "length_in_m": 1981,
+                    "name": "06",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 6500,
+                    "length_in_m": 1981,
+                    "name": "24",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 0.5
+        },
+        {
+            "altitude": 1073,
+            "country": "Australia",
+            "flights": [],
+            "iata": "WDI",
+            "icao": "YWND",
+            "name": "Wondai Airport",
+            "runways": [],
+            "air_quality": 1.2
+        },
+        {
+            "altitude": 15,
+            "country": "United States",
+            "flights": [
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1230",
+                    "long_aircraft_name": "",
+                    "origin_iata": "EMK",
+                    "origin_icao": "PAEM",
+                    "scheduled_arrival": 1704850800,
+                    "scheduled_departure": 1704849300
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1230",
+                    "long_aircraft_name": "",
+                    "origin_iata": "EMK",
+                    "origin_icao": "PAEM",
+                    "scheduled_arrival": 1704764400,
+                    "scheduled_departure": 1704762900
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1640",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BET",
+                    "origin_icao": "PABE",
+                    "scheduled_arrival": 1704846600,
+                    "scheduled_departure": 1704843000
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "AUK",
+                    "destination_icao": "PAUK",
+                    "flight_number": "GV1640",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704847200,
+                    "scheduled_departure": 1704846900
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "BET",
+                    "destination_icao": "PABE",
+                    "flight_number": "GV1610",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704744300,
+                    "scheduled_departure": 1704740400
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1630",
+                    "long_aircraft_name": "",
+                    "origin_iata": "AUK",
+                    "origin_icao": "PAUK",
+                    "scheduled_arrival": 1704838200,
+                    "scheduled_departure": 1704837900
+                },
+                {
+                    "aircraft_model": "CS2",
+                    "airline": "Ryan Air (USA)",
+                    "destination_iata": "UNK",
+                    "destination_icao": "PAUN",
+                    "flight_number": "7S1820",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704849600,
+                    "scheduled_departure": 1704846600
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1640",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BET",
+                    "origin_icao": "PABE",
+                    "scheduled_arrival": 1704760200,
+                    "scheduled_departure": 1704756600
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "AUK",
+                    "destination_icao": "PAUK",
+                    "flight_number": "GV1640",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704760800,
+                    "scheduled_departure": 1704760500
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "BET",
+                    "destination_icao": "PABE",
+                    "flight_number": "GV1630",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704842100,
+                    "scheduled_departure": 1704838500
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1210",
+                    "long_aircraft_name": "",
+                    "origin_iata": "EMK",
+                    "origin_icao": "PAEM",
+                    "scheduled_arrival": 1704828300,
+                    "scheduled_departure": 1704826800
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "EMK",
+                    "destination_icao": "PAEM",
+                    "flight_number": "GV1230",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704852900,
+                    "scheduled_departure": 1704851400
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1630",
+                    "long_aircraft_name": "",
+                    "origin_iata": "AUK",
+                    "origin_icao": "PAUK",
+                    "scheduled_arrival": 1704751800,
+                    "scheduled_departure": 1704751500
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "BET",
+                    "destination_icao": "PABE",
+                    "flight_number": "GV1630",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704755700,
+                    "scheduled_departure": 1704752100
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1210",
+                    "long_aircraft_name": "",
+                    "origin_iata": "EMK",
+                    "origin_icao": "PAEM",
+                    "scheduled_arrival": 1704741900,
+                    "scheduled_departure": 1704740400
+                },
+                {
+                    "aircraft_model": "PAG",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1660",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BET",
+                    "origin_icao": "PABE",
+                    "scheduled_arrival": 1704857400,
+                    "scheduled_departure": 1704853800
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "EMK",
+                    "destination_icao": "PAEM",
+                    "flight_number": "GV1230",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704766500,
+                    "scheduled_departure": 1704765000
+                },
+                {
+                    "aircraft_model": "PAG",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1610",
+                    "long_aircraft_name": "",
+                    "origin_iata": "AUK",
+                    "origin_icao": "PAUK",
+                    "scheduled_arrival": 1704826500,
+                    "scheduled_departure": 1704826200
+                },
+                {
+                    "aircraft_model": "PAG",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1660",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BET",
+                    "origin_icao": "PABE",
+                    "scheduled_arrival": 1704771000,
+                    "scheduled_departure": 1704767400
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "EMK",
+                    "destination_icao": "PAEM",
+                    "flight_number": "GV1210",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704744000,
+                    "scheduled_departure": 1704742500
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "GV1610",
+                    "long_aircraft_name": "",
+                    "origin_iata": "AUK",
+                    "origin_icao": "PAUK",
+                    "scheduled_arrival": 1704740100,
+                    "scheduled_departure": 1704739800
+                },
+                {
+                    "aircraft_model": "CNA",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "EMK",
+                    "destination_icao": "PAEM",
+                    "flight_number": "GV1210",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704830400,
+                    "scheduled_departure": 1704828900
+                },
+                {
+                    "aircraft_model": "PAG",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "AUK",
+                    "destination_icao": "PAUK",
+                    "flight_number": "GV1660",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704771600,
+                    "scheduled_departure": 1704771300
+                },
+                {
+                    "aircraft_model": "PAG",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "BET",
+                    "destination_icao": "PABE",
+                    "flight_number": "GV1610",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704830700,
+                    "scheduled_departure": 1704826800
+                },
+                {
+                    "aircraft_model": "CS2",
+                    "airline": "Ryan Air (USA)",
+                    "destination_iata": "KOT",
+                    "destination_icao": "PFKO",
+                    "flight_number": "7S1820",
+                    "long_aircraft_name": "",
+                    "origin_iata": "EMK",
+                    "origin_icao": "PAEM",
+                    "scheduled_arrival": 1704846000,
+                    "scheduled_departure": 1704844800
+                },
+                {
+                    "aircraft_model": "PAG",
+                    "airline": "Grant Aviation",
+                    "destination_iata": "AUK",
+                    "destination_icao": "PAUK",
+                    "flight_number": "GV1660",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KOT",
+                    "origin_icao": "PFKO",
+                    "scheduled_arrival": 1704858000,
+                    "scheduled_departure": 1704857700
+                }
+            ],
+            "iata": "KOT",
+            "icao": "PFKO",
+            "name": "Kotlik Airport",
+            "runways": [
+                {
+                    "length_in_ft": 4400,
+                    "length_in_m": 1341,
+                    "name": "20",
+                    "surface": "Gravel"
+                },
+                {
+                    "length_in_ft": 4400,
+                    "length_in_m": 1341,
+                    "name": "02",
+                    "surface": "Gravel"
+                }
+            ],
+            "air_quality": 0.53
+        },
+        {
+            "altitude": 1037,
+            "country": "France",
+            "flights": [],
+            "iata": "QFA",
+            "icao": "LFKA",
+            "name": "Albertville Airport",
+            "runways": [
+                {
+                    "length_in_ft": 2625,
+                    "length_in_m": 800,
+                    "name": "05",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 2625,
+                    "length_in_m": 800,
+                    "name": "23",
+                    "surface": "Asphalt"
+                }
+            ]
+        },
+        {
+            "altitude": 1771,
+            "country": "Ethiopia",
+            "flights": [
+                {
+                    "aircraft_model": "DH8",
+                    "airline": "Ethiopian Airlines",
+                    "destination_iata": "GMB",
+                    "destination_icao": "HAGM",
+                    "flight_number": "ET151",
+                    "long_aircraft_name": "",
+                    "origin_iata": "ADD",
+                    "origin_icao": "HAAB",
+                    "scheduled_arrival": 1704802800,
+                    "scheduled_departure": 1704798000
+                },
+                {
+                    "aircraft_model": "DH8",
+                    "airline": "Ethiopian Airlines",
+                    "destination_iata": "ADD",
+                    "destination_icao": "HAAB",
+                    "flight_number": "ET138",
+                    "long_aircraft_name": "",
+                    "origin_iata": "GMB",
+                    "origin_icao": "HAGM",
+                    "scheduled_arrival": 1704790500,
+                    "scheduled_departure": 1704785100
+                },
+                {
+                    "aircraft_model": "DH8",
+                    "airline": "Ethiopian Airlines",
+                    "destination_iata": "ADD",
+                    "destination_icao": "HAAB",
+                    "flight_number": "ET150",
+                    "long_aircraft_name": "",
+                    "origin_iata": "GMB",
+                    "origin_icao": "HAGM",
+                    "scheduled_arrival": 1704810000,
+                    "scheduled_departure": 1704804600
+                },
+                {
+                    "aircraft_model": "DH8",
+                    "airline": "Ethiopian Airlines",
+                    "destination_iata": "ADD",
+                    "destination_icao": "HAAB",
+                    "flight_number": "ET150",
+                    "long_aircraft_name": "",
+                    "origin_iata": "GMB",
+                    "origin_icao": "HAGM",
+                    "scheduled_arrival": 1704723600,
+                    "scheduled_departure": 1704718200
+                },
+                {
+                    "aircraft_model": "DH8",
+                    "airline": "Ethiopian Airlines",
+                    "destination_iata": "GMB",
+                    "destination_icao": "HAGM",
+                    "flight_number": "ET151",
+                    "long_aircraft_name": "",
+                    "origin_iata": "ADD",
+                    "origin_icao": "HAAB",
+                    "scheduled_arrival": 1704716400,
+                    "scheduled_departure": 1704711600
+                },
+                {
+                    "aircraft_model": "DH8",
+                    "airline": "Ethiopian Airlines",
+                    "destination_iata": "GMB",
+                    "destination_icao": "HAGM",
+                    "flight_number": "ET139",
+                    "long_aircraft_name": "",
+                    "origin_iata": "ADD",
+                    "origin_icao": "HAAB",
+                    "scheduled_arrival": 1704782400,
+                    "scheduled_departure": 1704777600
+                }
+            ],
+            "iata": "GMB",
+            "icao": "HAGM",
+            "name": "Gambela Airport",
+            "runways": [
+                {
+                    "length_in_ft": 8268,
+                    "length_in_m": 2520,
+                    "name": "18",
+                    "surface": "Concrete"
+                },
+                {
+                    "length_in_ft": 8268,
+                    "length_in_m": 2520,
+                    "name": "36",
+                    "surface": "Concrete"
+                }
+            ],
+            "air_quality": 46.75
+        },
+        {
+            "altitude": 10,
+            "country": "Indonesia",
+            "flights": [
+                {
+                    "aircraft_model": "320",
+                    "airline": "Batik Air",
+                    "destination_iata": "CGK",
+                    "destination_icao": "WIII",
+                    "flight_number": "ID7780",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704865500,
+                    "scheduled_departure": 1704851100
+                },
+                {
+                    "aircraft_model": "32A",
+                    "airline": "Batik Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "ID6269",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704866700,
+                    "scheduled_departure": 1704858900
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Garuda Indonesia",
+                    "destination_iata": "CGK",
+                    "destination_icao": "WIII",
+                    "flight_number": "GA6834",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704862800,
+                    "scheduled_departure": 1704848700
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT788",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704834600,
+                    "scheduled_departure": 1704826500
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "MKW",
+                    "destination_icao": "WAUU",
+                    "flight_number": "JT944",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704840300,
+                    "scheduled_departure": 1704837000
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT945",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MKW",
+                    "origin_icao": "WAUU",
+                    "scheduled_arrival": 1704863100,
+                    "scheduled_departure": 1704859800
+                },
+                {
+                    "aircraft_model": "32A",
+                    "airline": "Batik Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "ID6195",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704866700,
+                    "scheduled_departure": 1704858900
+                },
+                {
+                    "aircraft_model": "320",
+                    "airline": "Pelita Air",
+                    "destination_iata": "CGK",
+                    "destination_icao": "WIII",
+                    "flight_number": "IP921",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704854100,
+                    "scheduled_departure": 1704840000
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Garuda Indonesia",
+                    "destination_iata": "CGK",
+                    "destination_icao": "WIII",
+                    "flight_number": "GA683",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704856200,
+                    "scheduled_departure": 1704842100
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "Wings Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "IW1521",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BXB",
+                    "origin_icao": "WASO",
+                    "scheduled_arrival": 1704846900,
+                    "scheduled_departure": 1704843300
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT944",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704834600,
+                    "scheduled_departure": 1704826500
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT789",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MKW",
+                    "origin_icao": "WAUU",
+                    "scheduled_arrival": 1704863100,
+                    "scheduled_departure": 1704859800
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "Wings Air",
+                    "destination_iata": "BXB",
+                    "destination_icao": "WASO",
+                    "flight_number": "IW1520",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704841800,
+                    "scheduled_departure": 1704838500
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT1898",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704863400,
+                    "scheduled_departure": 1704855000
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT941",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MKW",
+                    "origin_icao": "WAUU",
+                    "scheduled_arrival": 1704849300,
+                    "scheduled_departure": 1704846000
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT799",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DJJ",
+                    "origin_icao": "WAJJ",
+                    "scheduled_arrival": 1704864600,
+                    "scheduled_departure": 1704858300
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "Wings Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "IW1523",
+                    "long_aircraft_name": "",
+                    "origin_iata": "KNG",
+                    "origin_icao": "WASK",
+                    "scheduled_arrival": 1704862800,
+                    "scheduled_departure": 1704858000
+                },
+                {
+                    "aircraft_model": "320",
+                    "airline": "Batik Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "ID6151",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MKW",
+                    "origin_icao": "WAUU",
+                    "scheduled_arrival": 1704848700,
+                    "scheduled_departure": 1704845400
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT942",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704837000,
+                    "scheduled_departure": 1704828900
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Sriwijaya Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "SJ570",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704836700,
+                    "scheduled_departure": 1704828600
+                },
+                {
+                    "aircraft_model": "320",
+                    "airline": "Pelita Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "IP920",
+                    "long_aircraft_name": "",
+                    "origin_iata": "CGK",
+                    "origin_icao": "WIII",
+                    "scheduled_arrival": 1704837000,
+                    "scheduled_departure": 1704822600
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "JT883",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704873000,
+                    "scheduled_departure": 1704865500
+                },
+                {
+                    "aircraft_model": "32A",
+                    "airline": "Batik Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "ID6136",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704856800,
+                    "scheduled_departure": 1704848400
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "MDC",
+                    "destination_icao": "WAMM",
+                    "flight_number": "JT799",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704873000,
+                    "scheduled_departure": 1704867600
+                },
+                {
+                    "aircraft_model": "32A",
+                    "airline": "Batik Air",
+                    "destination_iata": "CGK",
+                    "destination_icao": "WIII",
+                    "flight_number": "ID6151",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704865500,
+                    "scheduled_departure": 1704851100
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Batik Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "ID6142",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704856800,
+                    "scheduled_departure": 1704848400
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Lion Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "JT947",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704875700,
+                    "scheduled_departure": 1704868200
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "JT885",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704875700,
+                    "scheduled_departure": 1704868200
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "Wings Air",
+                    "destination_iata": "FKQ",
+                    "destination_icao": "WASF",
+                    "flight_number": "IW1512",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704846300,
+                    "scheduled_departure": 1704843000
+                },
+                {
+                    "aircraft_model": "32A",
+                    "airline": "Batik Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "ID6196",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704856500,
+                    "scheduled_departure": 1704848100
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "Wings Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "IW1513",
+                    "long_aircraft_name": "",
+                    "origin_iata": "FKQ",
+                    "origin_icao": "WASF",
+                    "scheduled_arrival": 1704841800,
+                    "scheduled_departure": 1704838500
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT946",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704863400,
+                    "scheduled_departure": 1704855000
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Lion Air",
+                    "destination_iata": "MKW",
+                    "destination_icao": "WAUU",
+                    "flight_number": "JT788",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704840300,
+                    "scheduled_departure": 1704837000
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Sriwijaya Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "SJ571",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MKW",
+                    "origin_icao": "WAUU",
+                    "scheduled_arrival": 1704862200,
+                    "scheduled_departure": 1704859200
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT3800",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UPG",
+                    "origin_icao": "WAAA",
+                    "scheduled_arrival": 1704837000,
+                    "scheduled_departure": 1704828900
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Garuda Indonesia",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "GA6824",
+                    "long_aircraft_name": "",
+                    "origin_iata": "CGK",
+                    "origin_icao": "WIII",
+                    "scheduled_arrival": 1704841500,
+                    "scheduled_departure": 1704826800
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "MKW",
+                    "destination_icao": "WAUU",
+                    "flight_number": "JT942",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704843300,
+                    "scheduled_departure": 1704840000
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "JT941",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704859500,
+                    "scheduled_departure": 1704851700
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "Wings Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "IW1506",
+                    "long_aircraft_name": "",
+                    "origin_iata": "AMQ",
+                    "origin_icao": "WAPP",
+                    "scheduled_arrival": 1704860700,
+                    "scheduled_departure": 1704855600
+                },
+                {
+                    "aircraft_model": "32A",
+                    "airline": "Batik Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "ID6137",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704866700,
+                    "scheduled_departure": 1704858900
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "Wings Air",
+                    "destination_iata": "AMQ",
+                    "destination_icao": "WAPP",
+                    "flight_number": "IW1505",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704853800,
+                    "scheduled_departure": 1704848400
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Garuda Indonesia",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "GA682",
+                    "long_aircraft_name": "",
+                    "origin_iata": "CGK",
+                    "origin_icao": "WIII",
+                    "scheduled_arrival": 1704834900,
+                    "scheduled_departure": 1704820200
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Lion Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "JT789",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704873000,
+                    "scheduled_departure": 1704865500
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "JT796",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MDC",
+                    "origin_icao": "WAMM",
+                    "scheduled_arrival": 1704846300,
+                    "scheduled_departure": 1704841200
+                },
+                {
+                    "aircraft_model": "32A",
+                    "airline": "Batik Air",
+                    "destination_iata": "SOQ",
+                    "destination_icao": "WASS",
+                    "flight_number": "ID7797",
+                    "long_aircraft_name": "",
+                    "origin_iata": "CGK",
+                    "origin_icao": "WIII",
+                    "scheduled_arrival": 1704836400,
+                    "scheduled_departure": 1704821400
+                },
+                {
+                    "aircraft_model": "320",
+                    "airline": "Batik Air",
+                    "destination_iata": "MKW",
+                    "destination_icao": "WAUU",
+                    "flight_number": "ID6154",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704843000,
+                    "scheduled_departure": 1704839700
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Lion Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "JT1703",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704875700,
+                    "scheduled_departure": 1704868200
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Sriwijaya Air",
+                    "destination_iata": "MKW",
+                    "destination_icao": "WAUU",
+                    "flight_number": "SJ570",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704841200,
+                    "scheduled_departure": 1704837900
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "JT945",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704873000,
+                    "scheduled_departure": 1704865500
+                },
+                {
+                    "aircraft_model": "738",
+                    "airline": "Sriwijaya Air",
+                    "destination_iata": "UPG",
+                    "destination_icao": "WAAA",
+                    "flight_number": "SJ571",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704849000,
+                    "scheduled_departure": 1704840900
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "Wings Air",
+                    "destination_iata": "KNG",
+                    "destination_icao": "WASK",
+                    "flight_number": "IW1522",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704868500,
+                    "scheduled_departure": 1704864000
+                },
+                {
+                    "aircraft_model": "739",
+                    "airline": "Lion Air",
+                    "destination_iata": "DJJ",
+                    "destination_icao": "WAJJ",
+                    "flight_number": "JT796",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SOQ",
+                    "origin_icao": "WASS",
+                    "scheduled_arrival": 1704855600,
+                    "scheduled_departure": 1704849000
+                }
+            ],
+            "iata": "SOQ",
+            "icao": "WASS",
+            "name": "Sorong Dominique Edward Osok Airport",
+            "runways": [
+                {
+                    "length_in_ft": 8202,
+                    "length_in_m": 2500,
+                    "name": "27",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 8202,
+                    "length_in_m": 2500,
+                    "name": "09",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 0.7
+        },
+        {
+            "altitude": 143,
+            "country": "Egypt",
+            "flights": [
+                {
+                    "aircraft_model": "DA40",
+                    "airline": null,
+                    "destination_iata": "HER",
+                    "destination_icao": "LGIR",
+                    "flight_number": null,
+                    "long_aircraft_name": "",
+                    "origin_iata": "DBB",
+                    "origin_icao": "HEAL",
+                    "scheduled_arrival": 1704724680,
+                    "scheduled_departure": 1704714000
+                },
+                {
+                    "aircraft_model": "DA40",
+                    "airline": "Oxford Aviation Academy",
+                    "destination_iata": "HER",
+                    "destination_icao": "LGIR",
+                    "flight_number": null,
+                    "long_aircraft_name": "Diamond DA40NG Star",
+                    "origin_iata": "DBB",
+                    "origin_icao": "HEAL",
+                    "scheduled_arrival": 1704724140,
+                    "scheduled_departure": 1704713400
+                }
+            ],
+            "iata": "DBB",
+            "icao": "HEAL",
+            "name": "El Alamein International Airport",
+            "runways": [
+                {
+                    "length_in_ft": 13123,
+                    "length_in_m": 4000,
+                    "name": "13R",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 13123,
+                    "length_in_m": 4000,
+                    "name": "31L",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 13123,
+                    "length_in_m": 4000,
+                    "name": "31R",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 13123,
+                    "length_in_m": 4000,
+                    "name": "13L",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 214.83
+        },
+        {
+            "altitude": 98,
+            "country": "Russia",
+            "flights": [
+                {
+                    "aircraft_model": "AN4",
+                    "airline": "Komiaviatrans",
+                    "destination_iata": "PEX",
+                    "destination_icao": "UUYP",
+                    "flight_number": "KO165",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SCW",
+                    "origin_icao": "UUYY",
+                    "scheduled_arrival": 1704817800,
+                    "scheduled_departure": 1704811200
+                },
+                {
+                    "aircraft_model": "AN4",
+                    "airline": "Komiaviatrans",
+                    "destination_iata": "VKT",
+                    "destination_icao": "UUYW",
+                    "flight_number": "KO165",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PEX",
+                    "origin_icao": "UUYP",
+                    "scheduled_arrival": 1704879600,
+                    "scheduled_departure": 1704875400
+                },
+                {
+                    "aircraft_model": "AN4",
+                    "airline": "Komiaviatrans",
+                    "destination_iata": "PEX",
+                    "destination_icao": "UUYP",
+                    "flight_number": "KO165",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SCW",
+                    "origin_icao": "UUYY",
+                    "scheduled_arrival": 1704873000,
+                    "scheduled_departure": 1704867600
+                },
+                {
+                    "aircraft_model": "AN4",
+                    "airline": "Komiaviatrans",
+                    "destination_iata": "SCW",
+                    "destination_icao": "UUYY",
+                    "flight_number": "KO166",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PEX",
+                    "origin_icao": "UUYP",
+                    "scheduled_arrival": 1704808200,
+                    "scheduled_departure": 1704804000
+                },
+                {
+                    "aircraft_model": "AN4",
+                    "airline": "Komiaviatrans",
+                    "destination_iata": "PEX",
+                    "destination_icao": "UUYP",
+                    "flight_number": "KO166",
+                    "long_aircraft_name": "",
+                    "origin_iata": "VKT",
+                    "origin_icao": "UUYW",
+                    "scheduled_arrival": 1704816300,
+                    "scheduled_departure": 1704807900
+                },
+                {
+                    "aircraft_model": "AN4",
+                    "airline": "Komiaviatrans",
+                    "destination_iata": "VKT",
+                    "destination_icao": "UUYW",
+                    "flight_number": "KO165",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PEX",
+                    "origin_icao": "UUYP",
+                    "scheduled_arrival": 1704808800,
+                    "scheduled_departure": 1704804600
+                }
+            ],
+            "iata": "PEX",
+            "icao": "UUYP",
+            "name": "Pechora Airport",
+            "runways": [
+                {
+                    "length_in_ft": 5909,
+                    "length_in_m": 1801,
+                    "name": "16",
+                    "surface": "Unknown"
+                },
+                {
+                    "length_in_ft": 5909,
+                    "length_in_m": 1801,
+                    "name": "34",
+                    "surface": "Unknown"
+                }
+            ],
+            "air_quality": 0.5
+        },
+        {
+            "altitude": 180,
+            "country": "Portugal",
+            "flights": [
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP408",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PDL",
+                    "origin_icao": "LPPD",
+                    "scheduled_arrival": 1704836700,
+                    "scheduled_departure": 1704834300
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP615",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJZ",
+                    "origin_icao": "LPSJ",
+                    "scheduled_arrival": 1704822900,
+                    "scheduled_departure": 1704821100
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "PDL",
+                    "destination_icao": "LPPD",
+                    "flight_number": "SP401",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704789600,
+                    "scheduled_departure": 1704786900
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP400",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "PDL",
+                    "origin_icao": "LPPD",
+                    "scheduled_arrival": 1704792900,
+                    "scheduled_departure": 1704790500
+                },
+                {
+                    "aircraft_model": "A320",
+                    "airline": "Azores Airlines (Dream Livery)",
+                    "destination_iata": "LIS",
+                    "destination_icao": "LPPT",
+                    "flight_number": "S4134",
+                    "long_aircraft_name": "Airbus A320-214",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704752100,
+                    "scheduled_departure": 1704743700
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "PIX",
+                    "destination_icao": "LPPI",
+                    "flight_number": "SP622",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704806700,
+                    "scheduled_departure": 1704804600
+                },
+                {
+                    "aircraft_model": "A21N",
+                    "airline": "Azores Airlines (Magical Livery)",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "S4231",
+                    "long_aircraft_name": "Airbus A321-253NX",
+                    "origin_iata": "LIS",
+                    "origin_icao": "LPPT",
+                    "scheduled_arrival": 1704819000,
+                    "scheduled_departure": 1704809400
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP542",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "PDL",
+                    "origin_icao": "LPPD",
+                    "scheduled_arrival": 1704804900,
+                    "scheduled_departure": 1704802500
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "SJZ",
+                    "destination_icao": "LPSJ",
+                    "flight_number": "SP610",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704798300,
+                    "scheduled_departure": 1704796200
+                },
+                {
+                    "aircraft_model": "ATF",
+                    "airline": "Swiftair",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "WT132",
+                    "long_aircraft_name": "",
+                    "origin_iata": "LIS",
+                    "origin_icao": "LPPT",
+                    "scheduled_arrival": 1704832200,
+                    "scheduled_departure": 1704816000
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "PDL",
+                    "destination_icao": "LPPD",
+                    "flight_number": "SP409",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704746700,
+                    "scheduled_departure": 1704744000
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "GRW",
+                    "destination_icao": "LPGR",
+                    "flight_number": "SP602",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704804900,
+                    "scheduled_departure": 1704803100
+                },
+                {
+                    "aircraft_model": "DH2",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP635",
+                    "long_aircraft_name": "",
+                    "origin_iata": "HOR",
+                    "origin_icao": "LPHR",
+                    "scheduled_arrival": 1704812700,
+                    "scheduled_departure": 1704810300
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "HOR",
+                    "destination_icao": "LPHR",
+                    "flight_number": "SP630",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704797700,
+                    "scheduled_departure": 1704795600
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP543",
+                    "long_aircraft_name": "",
+                    "origin_iata": "FLW",
+                    "origin_icao": "LPFL",
+                    "scheduled_arrival": 1704816600,
+                    "scheduled_departure": 1704812700
+                },
+                {
+                    "aircraft_model": "HA4T",
+                    "airline": "Sun-Air",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": null,
+                    "long_aircraft_name": "Hawker 4000 Horizon",
+                    "origin_iata": "JER",
+                    "origin_icao": "EGJJ",
+                    "scheduled_arrival": 1704805140,
+                    "scheduled_departure": 1704794400
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP625",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PIX",
+                    "origin_icao": "LPPI",
+                    "scheduled_arrival": 1704742200,
+                    "scheduled_departure": 1704740100
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP603",
+                    "long_aircraft_name": "",
+                    "origin_iata": "GRW",
+                    "origin_icao": "LPGR",
+                    "scheduled_arrival": 1704808200,
+                    "scheduled_departure": 1704806400
+                },
+                {
+                    "aircraft_model": "DH2",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "HOR",
+                    "destination_icao": "LPHR",
+                    "flight_number": "SP636",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704823800,
+                    "scheduled_departure": 1704821400
+                },
+                {
+                    "aircraft_model": "DH2",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP607",
+                    "long_aircraft_name": "",
+                    "origin_iata": "GRW",
+                    "origin_icao": "LPGR",
+                    "scheduled_arrival": 1704819600,
+                    "scheduled_departure": 1704817800
+                },
+                {
+                    "aircraft_model": "DH2",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "GRW",
+                    "destination_icao": "LPGR",
+                    "flight_number": "SP606",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704816300,
+                    "scheduled_departure": 1704814500
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP631",
+                    "long_aircraft_name": "",
+                    "origin_iata": "HOR",
+                    "origin_icao": "LPHR",
+                    "scheduled_arrival": 1704801300,
+                    "scheduled_departure": 1704799200
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP406",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "PDL",
+                    "origin_icao": "LPPD",
+                    "scheduled_arrival": 1704815700,
+                    "scheduled_departure": 1704813300
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP408",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "PDL",
+                    "origin_icao": "LPPD",
+                    "scheduled_arrival": 1704750300,
+                    "scheduled_departure": 1704747900
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "SJZ",
+                    "destination_icao": "LPSJ",
+                    "flight_number": "SP614",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704819600,
+                    "scheduled_departure": 1704817500
+                },
+                {
+                    "aircraft_model": "A21N",
+                    "airline": "TAP Air Portugal",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "TP1823",
+                    "long_aircraft_name": "Airbus A321-251N",
+                    "origin_iata": "LIS",
+                    "origin_icao": "LPPT",
+                    "scheduled_arrival": 1704801600,
+                    "scheduled_departure": 1704792000
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "PDL",
+                    "destination_icao": "LPPD",
+                    "flight_number": "SP407",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704828600,
+                    "scheduled_departure": 1704825900
+                },
+                {
+                    "aircraft_model": "32Q",
+                    "airline": "Azores Airlines",
+                    "destination_iata": "BOS",
+                    "destination_icao": "KBOS",
+                    "flight_number": "S4231",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704848700,
+                    "scheduled_departure": 1704826500
+                },
+                {
+                    "aircraft_model": "A21N",
+                    "airline": "Azores Airlines (Wonder Livery)",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "S4230",
+                    "long_aircraft_name": "Airbus A321-253N",
+                    "origin_iata": "BOS",
+                    "origin_icao": "KBOS",
+                    "scheduled_arrival": 1704785100,
+                    "scheduled_departure": 1704767400
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP611",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJZ",
+                    "origin_icao": "LPSJ",
+                    "scheduled_arrival": 1704801600,
+                    "scheduled_departure": 1704799800
+                },
+                {
+                    "aircraft_model": "HA4T",
+                    "airline": "Sun-Air",
+                    "destination_iata": "AXA",
+                    "destination_icao": "TQPF",
+                    "flight_number": null,
+                    "long_aircraft_name": "Hawker 4000 Horizon",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704831300,
+                    "scheduled_departure": 1704809700
+                },
+                {
+                    "aircraft_model": "A21N",
+                    "airline": "Azores Airlines (Wonder Livery)",
+                    "destination_iata": "LIS",
+                    "destination_icao": "LPPT",
+                    "flight_number": "S4230",
+                    "long_aircraft_name": "Airbus A321-253N",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704797400,
+                    "scheduled_departure": 1704789000
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "FLW",
+                    "destination_icao": "LPFL",
+                    "flight_number": "SP542",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704810600,
+                    "scheduled_departure": 1704807000
+                },
+                {
+                    "aircraft_model": "ATF",
+                    "airline": "Swiftair",
+                    "destination_iata": "PDL",
+                    "destination_icao": "LPPD",
+                    "flight_number": "WT132",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704838800,
+                    "scheduled_departure": 1704835800
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "PDL",
+                    "destination_icao": "LPPD",
+                    "flight_number": "SP405",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704814800,
+                    "scheduled_departure": 1704812100
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "PDL",
+                    "destination_icao": "LPPD",
+                    "flight_number": "SP543",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704821100,
+                    "scheduled_departure": 1704818400
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "PDL",
+                    "destination_icao": "LPPD",
+                    "flight_number": "SP7407",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704741600,
+                    "scheduled_departure": 1704739200
+                },
+                {
+                    "aircraft_model": "DH4",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP623",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PIX",
+                    "origin_icao": "LPPI",
+                    "scheduled_arrival": 1704810300,
+                    "scheduled_departure": 1704808200
+                },
+                {
+                    "aircraft_model": "A21N",
+                    "airline": "TAP Air Portugal",
+                    "destination_iata": "LIS",
+                    "destination_icao": "LPPT",
+                    "flight_number": "TP1824",
+                    "long_aircraft_name": "Airbus A321-251N",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704813000,
+                    "scheduled_departure": 1704804600
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "PDL",
+                    "destination_icao": "LPPD",
+                    "flight_number": "SP403",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "TER",
+                    "origin_icao": "LPLA",
+                    "scheduled_arrival": 1704812700,
+                    "scheduled_departure": 1704810000
+                },
+                {
+                    "aircraft_model": "DH8D",
+                    "airline": "SATA Air Acores",
+                    "destination_iata": "TER",
+                    "destination_icao": "LPLA",
+                    "flight_number": "SP402",
+                    "long_aircraft_name": "De Havilland Canada Dash 8-400",
+                    "origin_iata": "PDL",
+                    "origin_icao": "LPPD",
+                    "scheduled_arrival": 1704793800,
+                    "scheduled_departure": 1704791400
+                }
+            ],
+            "iata": "TER",
+            "icao": "LPLA",
+            "name": "Lajes Field",
+            "runways": [
+                {
+                    "length_in_ft": 10860,
+                    "length_in_m": 3310,
+                    "name": "15",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 10860,
+                    "length_in_m": 3310,
+                    "name": "33",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 5.06
+        },
+        {
+            "altitude": 101,
+            "country": "Sweden",
+            "flights": [
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "BRA",
+                    "destination_iata": "BMA",
+                    "destination_icao": "ESSB",
+                    "flight_number": "TF713",
+                    "long_aircraft_name": "",
+                    "origin_iata": "HAD",
+                    "origin_icao": "ESMT",
+                    "scheduled_arrival": 1704817200,
+                    "scheduled_departure": 1704813000
+                },
+                {
+                    "aircraft_model": "AT76",
+                    "airline": "BRA",
+                    "destination_iata": "BMA",
+                    "destination_icao": "ESSB",
+                    "flight_number": "TF713",
+                    "long_aircraft_name": "ATR 72-600",
+                    "origin_iata": "HAD",
+                    "origin_icao": "ESMT",
+                    "scheduled_arrival": 1704730800,
+                    "scheduled_departure": 1704726600
+                },
+                {
+                    "aircraft_model": "AT76",
+                    "airline": "BRA",
+                    "destination_iata": "HAD",
+                    "destination_icao": "ESMT",
+                    "flight_number": "TF714",
+                    "long_aircraft_name": "ATR 72-600",
+                    "origin_iata": "BMA",
+                    "origin_icao": "ESSB",
+                    "scheduled_arrival": 1704736500,
+                    "scheduled_departure": 1704732300
+                },
+                {
+                    "aircraft_model": "C130",
+                    "airline": "Austrian Air Force",
+                    "destination_iata": "LNZ",
+                    "destination_icao": "LOWL",
+                    "flight_number": null,
+                    "long_aircraft_name": "Lockheed C-130K Hercules",
+                    "origin_iata": "HAD",
+                    "origin_icao": "ESMT",
+                    "scheduled_arrival": 1704813900,
+                    "scheduled_departure": 1704807000
+                },
+                {
+                    "aircraft_model": "C68A",
+                    "airline": "NetJets Europe",
+                    "destination_iata": "HAD",
+                    "destination_icao": "ESMT",
+                    "flight_number": null,
+                    "long_aircraft_name": "Cessna 680A Citation Latitude",
+                    "origin_iata": "GVA",
+                    "origin_icao": "LSGG",
+                    "scheduled_arrival": 1704726540,
+                    "scheduled_departure": 1704718800
+                },
+                {
+                    "aircraft_model": "AT76",
+                    "airline": "BRA",
+                    "destination_iata": "HAD",
+                    "destination_icao": "ESMT",
+                    "flight_number": "TF702",
+                    "long_aircraft_name": "ATR 72-600",
+                    "origin_iata": "BMA",
+                    "origin_icao": "ESSB",
+                    "scheduled_arrival": 1704789000,
+                    "scheduled_departure": 1704784800
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "BRA",
+                    "destination_iata": "HAD",
+                    "destination_icao": "ESMT",
+                    "flight_number": "TF702",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BMA",
+                    "origin_icao": "ESSB",
+                    "scheduled_arrival": 1704789000,
+                    "scheduled_departure": 1704784800
+                },
+                {
+                    "aircraft_model": "AT7",
+                    "airline": "BRA",
+                    "destination_iata": "HAD",
+                    "destination_icao": "ESMT",
+                    "flight_number": "TF714",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BMA",
+                    "origin_icao": "ESSB",
+                    "scheduled_arrival": 1704822900,
+                    "scheduled_departure": 1704818700
+                },
+                {
+                    "aircraft_model": "C68A",
+                    "airline": "NetJets Europe",
+                    "destination_iata": "BLL",
+                    "destination_icao": "EKBI",
+                    "flight_number": null,
+                    "long_aircraft_name": "Cessna 680A Citation Latitude",
+                    "origin_iata": "HAD",
+                    "origin_icao": "ESMT",
+                    "scheduled_arrival": 1704732960,
+                    "scheduled_departure": 1704731100
+                },
+                {
+                    "aircraft_model": "AT76",
+                    "airline": "BRA",
+                    "destination_iata": "BMA",
+                    "destination_icao": "ESSB",
+                    "flight_number": "TF701",
+                    "long_aircraft_name": "ATR 72-600",
+                    "origin_iata": "HAD",
+                    "origin_icao": "ESMT",
+                    "scheduled_arrival": 1704783300,
+                    "scheduled_departure": 1704779100
+                }
+            ],
+            "iata": "HAD",
+            "icao": "ESMT",
+            "name": "Halmstad Airport",
+            "runways": [
+                {
+                    "length_in_ft": 1998,
+                    "length_in_m": 609,
+                    "name": "06",
+                    "surface": "Grass"
+                },
+                {
+                    "length_in_ft": 7441,
+                    "length_in_m": 2268,
+                    "name": "19",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 7441,
+                    "length_in_m": 2268,
+                    "name": "01",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 1998,
+                    "length_in_m": 609,
+                    "name": "24",
+                    "surface": "Grass"
+                }
+            ],
+            "air_quality": 0.86
+        },
+        {
+            "altitude": 22,
+            "country": "Costa Rica",
+            "flights": [
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ5706",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704739800,
+                    "scheduled_departure": 1704736800
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "RZ1097",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704816000,
+                    "scheduled_departure": 1704813000
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": null,
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "W13067",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704829200,
+                    "scheduled_departure": 1704826200
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": null,
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "W13096",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704812400,
+                    "scheduled_departure": 1704809400
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ1058",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704839400,
+                    "scheduled_departure": 1704836400
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "RZ1097",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704729600,
+                    "scheduled_departure": 1704726600
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "RZ5707",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704826200,
+                    "scheduled_departure": 1704823200
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ5768",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704727200,
+                    "scheduled_departure": 1704724200
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ1096",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704812400,
+                    "scheduled_departure": 1704809400
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ5706",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704822600,
+                    "scheduled_departure": 1704819600
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": null,
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "W13066",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704825600,
+                    "scheduled_departure": 1704822600
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "RZ1067",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704829200,
+                    "scheduled_departure": 1704826200
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": null,
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "W13097",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704816000,
+                    "scheduled_departure": 1704813000
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ1066",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704825600,
+                    "scheduled_departure": 1704822600
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "RZ5769",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704730800,
+                    "scheduled_departure": 1704727800
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ1096",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704726000,
+                    "scheduled_departure": 1704723000
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "RZ5707",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704743400,
+                    "scheduled_departure": 1704740400
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "SJO",
+                    "destination_icao": "MROC",
+                    "flight_number": "RZ1067",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DRK",
+                    "origin_icao": "MRDK",
+                    "scheduled_arrival": 1704742800,
+                    "scheduled_departure": 1704739800
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ1066",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704739200,
+                    "scheduled_departure": 1704736200
+                },
+                {
+                    "aircraft_model": "CNC",
+                    "airline": "Sansa",
+                    "destination_iata": "DRK",
+                    "destination_icao": "MRDK",
+                    "flight_number": "RZ2006",
+                    "long_aircraft_name": "",
+                    "origin_iata": "SJO",
+                    "origin_icao": "MROC",
+                    "scheduled_arrival": 1704825300,
+                    "scheduled_departure": 1704821700
+                }
+            ],
+            "iata": "DRK",
+            "icao": "MRDK",
+            "name": "Drake Bay Airport",
+            "runways": [
+                {
+                    "length_in_ft": 3281,
+                    "length_in_m": 1000,
+                    "name": "28",
+                    "surface": "Unknown"
+                },
+                {
+                    "length_in_ft": 3281,
+                    "length_in_m": 1000,
+                    "name": "10",
+                    "surface": "Unknown"
+                }
+            ],
+            "air_quality": 7.64
+        },
+        {
+            "altitude": 331,
+            "country": "Mozambique",
+            "flights": [
+                {
+                    "aircraft_model": "ER4",
+                    "airline": "LAM",
+                    "destination_iata": "POL",
+                    "destination_icao": "FQPB",
+                    "flight_number": "TM2744",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BEW",
+                    "origin_icao": "FQBR",
+                    "scheduled_arrival": 1704808500,
+                    "scheduled_departure": 1704803700
+                },
+                {
+                    "aircraft_model": "E135",
+                    "airline": "Airlink",
+                    "destination_iata": "JNB",
+                    "destination_icao": "FAOR",
+                    "flight_number": "4Z205",
+                    "long_aircraft_name": "Embraer ERJ-135LR",
+                    "origin_iata": "POL",
+                    "origin_icao": "FQPB",
+                    "scheduled_arrival": 1704816600,
+                    "scheduled_departure": 1704804600
+                },
+                {
+                    "aircraft_model": "ER4",
+                    "airline": "LAM",
+                    "destination_iata": "POL",
+                    "destination_icao": "FQPB",
+                    "flight_number": "TM2530",
+                    "long_aircraft_name": "",
+                    "origin_iata": "APL",
+                    "origin_icao": "FQNP",
+                    "scheduled_arrival": 1704786000,
+                    "scheduled_departure": 1704783300
+                },
+                {
+                    "aircraft_model": "ER4",
+                    "airline": "LAM",
+                    "destination_iata": "DAR",
+                    "destination_icao": "HTDA",
+                    "flight_number": "TM460",
+                    "long_aircraft_name": "",
+                    "origin_iata": "POL",
+                    "origin_icao": "FQPB",
+                    "scheduled_arrival": 1704795900,
+                    "scheduled_departure": 1704791700
+                },
+                {
+                    "aircraft_model": "E135",
+                    "airline": "Airlink",
+                    "destination_iata": "POL",
+                    "destination_icao": "FQPB",
+                    "flight_number": "4Z204",
+                    "long_aircraft_name": "Embraer ERJ-135LR",
+                    "origin_iata": "JNB",
+                    "origin_icao": "FAOR",
+                    "scheduled_arrival": 1704802800,
+                    "scheduled_departure": 1704792600
+                },
+                {
+                    "aircraft_model": "ER4",
+                    "airline": "LAM",
+                    "destination_iata": "TET",
+                    "destination_icao": "FQTT",
+                    "flight_number": "TM2530",
+                    "long_aircraft_name": "",
+                    "origin_iata": "POL",
+                    "origin_icao": "FQPB",
+                    "scheduled_arrival": 1704794400,
+                    "scheduled_departure": 1704788400
+                },
+                {
+                    "aircraft_model": "ER4",
+                    "airline": "LAM",
+                    "destination_iata": "APL",
+                    "destination_icao": "FQNP",
+                    "flight_number": "TM2744",
+                    "long_aircraft_name": "",
+                    "origin_iata": "POL",
+                    "origin_icao": "FQPB",
+                    "scheduled_arrival": 1704813600,
+                    "scheduled_departure": 1704810900
+                },
+                {
+                    "aircraft_model": "737",
+                    "airline": "LAM",
+                    "destination_iata": "MPM",
+                    "destination_icao": "FQMA",
+                    "flight_number": "TM461",
+                    "long_aircraft_name": "",
+                    "origin_iata": "POL",
+                    "origin_icao": "FQPB",
+                    "scheduled_arrival": 1704817500,
+                    "scheduled_departure": 1704808500
+                },
+                {
+                    "aircraft_model": "ER4",
+                    "airline": "LAM",
+                    "destination_iata": "POL",
+                    "destination_icao": "FQPB",
+                    "flight_number": "TM461",
+                    "long_aircraft_name": "",
+                    "origin_iata": "DAR",
+                    "origin_icao": "HTDA",
+                    "scheduled_arrival": 1704805500,
+                    "scheduled_departure": 1704801300
+                },
+                {
+                    "aircraft_model": "737",
+                    "airline": "LAM",
+                    "destination_iata": "POL",
+                    "destination_icao": "FQPB",
+                    "flight_number": "TM460",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MPM",
+                    "origin_icao": "FQMA",
+                    "scheduled_arrival": 1704789000,
+                    "scheduled_departure": 1704780000
+                }
+            ],
+            "iata": "POL",
+            "icao": "FQPB",
+            "name": "Pemba Airport",
+            "runways": [
+                {
+                    "length_in_ft": 5906,
+                    "length_in_m": 1800,
+                    "name": "17",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 5906,
+                    "length_in_m": 1800,
+                    "name": "35",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 0.7
+        },
+        {
+            "altitude": 80,
+            "country": "Mexico",
+            "flights": [
+                {
+                    "aircraft_model": "A20N",
+                    "airline": "VivaAerobus",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "VB2156",
+                    "long_aircraft_name": "Airbus A320-271N",
+                    "origin_iata": "CUN",
+                    "origin_icao": "MMUN",
+                    "scheduled_arrival": 1704852000,
+                    "scheduled_departure": 1704844500
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "MEX",
+                    "destination_icao": "MMMX",
+                    "flight_number": "AM2413",
+                    "long_aircraft_name": "Embraer E190LR",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704907800,
+                    "scheduled_departure": 1704903060
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "AM2410",
+                    "long_aircraft_name": "Embraer E190LR",
+                    "origin_iata": "MEX",
+                    "origin_icao": "MMMX",
+                    "scheduled_arrival": 1704813780,
+                    "scheduled_departure": 1704809400
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "MEX",
+                    "destination_icao": "MMMX",
+                    "flight_number": "AM2413",
+                    "long_aircraft_name": "Embraer E190LR",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704821400,
+                    "scheduled_departure": 1704816660
+                },
+                {
+                    "aircraft_model": "A20N",
+                    "airline": "VivaAerobus",
+                    "destination_iata": "CUN",
+                    "destination_icao": "MMUN",
+                    "flight_number": "VB2157",
+                    "long_aircraft_name": "Airbus A320-271N",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704861300,
+                    "scheduled_departure": 1704854100
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "AM2418",
+                    "long_aircraft_name": "Embraer E190AR",
+                    "origin_iata": "MEX",
+                    "origin_icao": "MMMX",
+                    "scheduled_arrival": 1704859980,
+                    "scheduled_departure": 1704855600
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "MEX",
+                    "destination_icao": "MMMX",
+                    "flight_number": "AM2411",
+                    "long_aircraft_name": "Embraer E190LR",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704807000,
+                    "scheduled_departure": 1704802260
+                },
+                {
+                    "aircraft_model": "CNF",
+                    "airline": "Aerus",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "ZV282",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PAZ",
+                    "origin_icao": "MMPA",
+                    "scheduled_arrival": 1704907500,
+                    "scheduled_departure": 1704903000
+                },
+                {
+                    "aircraft_model": "C208",
+                    "airline": "Armenia Airways",
+                    "destination_iata": "PAZ",
+                    "destination_icao": "MMPA",
+                    "flight_number": "6A289",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704835023,
+                    "scheduled_departure": 1704831900
+                },
+                {
+                    "aircraft_model": "CNF",
+                    "airline": "Aerus",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "ZV180",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MAM",
+                    "origin_icao": "MMMA",
+                    "scheduled_arrival": 1704820200,
+                    "scheduled_departure": 1704815100
+                },
+                {
+                    "aircraft_model": "CNF",
+                    "airline": "Aerus",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "ZV282",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PAZ",
+                    "origin_icao": "MMPA",
+                    "scheduled_arrival": 1704821100,
+                    "scheduled_departure": 1704816600
+                },
+                {
+                    "aircraft_model": "CNF",
+                    "airline": "Aerus",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "ZV180",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MAM",
+                    "origin_icao": "MMMA",
+                    "scheduled_arrival": 1704906600,
+                    "scheduled_departure": 1704901500
+                },
+                {
+                    "aircraft_model": "CNF",
+                    "airline": "Aerus",
+                    "destination_iata": "PAZ",
+                    "destination_icao": "MMPA",
+                    "flight_number": "ZV289",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704836400,
+                    "scheduled_departure": 1704831900
+                },
+                {
+                    "aircraft_model": "CNF",
+                    "airline": "Aerus",
+                    "destination_iata": "MAM",
+                    "destination_icao": "MMMA",
+                    "flight_number": "ZV181",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704915000,
+                    "scheduled_departure": 1704909900
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "AM2416",
+                    "long_aircraft_name": "Embraer E190LR",
+                    "origin_iata": "MEX",
+                    "origin_icao": "MMMX",
+                    "scheduled_arrival": 1704853080,
+                    "scheduled_departure": 1704848700
+                },
+                {
+                    "aircraft_model": "320",
+                    "airline": "VivaAerobus",
+                    "destination_iata": "NLU",
+                    "destination_icao": "MMSM",
+                    "flight_number": "VB7261",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704908700,
+                    "scheduled_departure": 1704904500
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "AM2414",
+                    "long_aircraft_name": "Embraer E190AR",
+                    "origin_iata": "MEX",
+                    "origin_icao": "MMMX",
+                    "scheduled_arrival": 1704916500,
+                    "scheduled_departure": 1704912300
+                },
+                {
+                    "aircraft_model": "C208",
+                    "airline": "Armenia Airways",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "6A180",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MAM",
+                    "origin_icao": "MMMA",
+                    "scheduled_arrival": 1704821084,
+                    "scheduled_departure": 1704815100
+                },
+                {
+                    "aircraft_model": "C208",
+                    "airline": "Armenia Airways",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "6A282",
+                    "long_aircraft_name": "",
+                    "origin_iata": "PAZ",
+                    "origin_icao": "MMPA",
+                    "scheduled_arrival": 1704819520,
+                    "scheduled_departure": 1704816600
+                },
+                {
+                    "aircraft_model": "321",
+                    "airline": "VivaAerobus",
+                    "destination_iata": "MTY",
+                    "destination_icao": "MMMY",
+                    "flight_number": "VB4309",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704866100,
+                    "scheduled_departure": 1704861900
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "MEX",
+                    "destination_icao": "MMMX",
+                    "flight_number": "AM2419",
+                    "long_aircraft_name": "Embraer E190LR",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704860700,
+                    "scheduled_departure": 1704855360
+                },
+                {
+                    "aircraft_model": "CNF",
+                    "airline": "Aerus",
+                    "destination_iata": "MAM",
+                    "destination_icao": "MMMA",
+                    "flight_number": "ZV181",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704828600,
+                    "scheduled_departure": 1704823500
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "IAH",
+                    "destination_icao": "KIAH",
+                    "flight_number": "UA6158",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704902940,
+                    "scheduled_departure": 1704896400
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "MEX",
+                    "destination_icao": "MMMX",
+                    "flight_number": "AM2417",
+                    "long_aircraft_name": "Embraer E190AR",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704837600,
+                    "scheduled_departure": 1704832860
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "AM2414",
+                    "long_aircraft_name": "Embraer E190AR",
+                    "origin_iata": "MEX",
+                    "origin_icao": "MMMX",
+                    "scheduled_arrival": 1704830100,
+                    "scheduled_departure": 1704825900
+                },
+                {
+                    "aircraft_model": "320",
+                    "airline": "VivaAerobus",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "VB7260",
+                    "long_aircraft_name": "",
+                    "origin_iata": "NLU",
+                    "origin_icao": "MMSM",
+                    "scheduled_arrival": 1704901500,
+                    "scheduled_departure": 1704897600
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "MEX",
+                    "destination_icao": "MMMX",
+                    "flight_number": "AM2411",
+                    "long_aircraft_name": "Embraer E190LR",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704893400,
+                    "scheduled_departure": 1704888660
+                },
+                {
+                    "aircraft_model": "CNF",
+                    "airline": "Aerus",
+                    "destination_iata": "REX",
+                    "destination_icao": "MMRX",
+                    "flight_number": "ZV282",
+                    "long_aircraft_name": "",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704915900,
+                    "scheduled_departure": 1704909000
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "IAH",
+                    "destination_icao": "KIAH",
+                    "flight_number": "UA6158",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "TAM",
+                    "origin_icao": "MMTM",
+                    "scheduled_arrival": 1704816540,
+                    "scheduled_departure": 1704810000
+                },
+                {
+                    "aircraft_model": "E75L",
+                    "airline": "United Express",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "UA6157",
+                    "long_aircraft_name": "Embraer E175LR",
+                    "origin_iata": "IAH",
+                    "origin_icao": "KIAH",
+                    "scheduled_arrival": 1704852180,
+                    "scheduled_departure": 1704845460
+                },
+                {
+                    "aircraft_model": "321",
+                    "airline": "VivaAerobus",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "VB4308",
+                    "long_aircraft_name": "",
+                    "origin_iata": "MTY",
+                    "origin_icao": "MMMY",
+                    "scheduled_arrival": 1704859500,
+                    "scheduled_departure": 1704855600
+                },
+                {
+                    "aircraft_model": "E190",
+                    "airline": "Aeromexico Connect",
+                    "destination_iata": "TAM",
+                    "destination_icao": "MMTM",
+                    "flight_number": "AM2410",
+                    "long_aircraft_name": "Embraer E190LR",
+                    "origin_iata": "MEX",
+                    "origin_icao": "MMMX",
+                    "scheduled_arrival": 1704900180,
+                    "scheduled_departure": 1704895800
+                }
+            ],
+            "iata": "TAM",
+            "icao": "MMTM",
+            "name": "Tampico International Airport",
+            "runways": [
+                {
+                    "length_in_ft": 4009,
+                    "length_in_m": 1222,
+                    "name": "18",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 4009,
+                    "length_in_m": 1222,
+                    "name": "36",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 8366,
+                    "length_in_m": 2550,
+                    "name": "13",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 3937,
+                    "length_in_m": 1200,
+                    "name": "27",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 3937,
+                    "length_in_m": 1200,
+                    "name": "09",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 8366,
+                    "length_in_m": 2550,
+                    "name": "31",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 36.22
+        },
+        {
+            "altitude": 1076,
+            "country": "Canada",
+            "flights": [],
+            "iata": "YEY",
+            "icao": "CYEY",
+            "name": "Amos Magny Airport",
+            "runways": [
+                {
+                    "length_in_ft": 5000,
+                    "length_in_m": 1524,
+                    "name": "32",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 5000,
+                    "length_in_m": 1524,
+                    "name": "14",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 0.51
+        },
+        {
+            "altitude": 899,
+            "country": "United States",
+            "flights": [],
+            "iata": "CKN",
+            "icao": "KCKN",
+            "name": "Crookston Municipal Airport",
+            "runways": [
+                {
+                    "length_in_ft": 4300,
+                    "length_in_m": 1311,
+                    "name": "13",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 2096,
+                    "length_in_m": 639,
+                    "name": "24",
+                    "surface": "Turf"
+                },
+                {
+                    "length_in_ft": 4300,
+                    "length_in_m": 1311,
+                    "name": "31",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 2977,
+                    "length_in_m": 907,
+                    "name": "35",
+                    "surface": "Turf"
+                },
+                {
+                    "length_in_ft": 2096,
+                    "length_in_m": 639,
+                    "name": "06",
+                    "surface": "Turf"
+                },
+                {
+                    "length_in_ft": 2977,
+                    "length_in_m": 907,
+                    "name": "17",
+                    "surface": "Turf"
+                }
+            ],
+            "air_quality": 0.54
+        },
+        {
+            "altitude": 433,
+            "country": "Germany",
+            "flights": [
+                {
+                    "aircraft_model": "AC11",
+                    "airline": null,
+                    "destination_iata": "BFE",
+                    "destination_icao": "EDLI",
+                    "flight_number": null,
+                    "long_aircraft_name": "",
+                    "origin_iata": "FDH",
+                    "origin_icao": "EDNY",
+                    "scheduled_arrival": 1704807480,
+                    "scheduled_departure": 1704800400
+                }
+            ],
+            "iata": "BFE",
+            "icao": "EDLI",
+            "name": "Bielefeld Airport",
+            "runways": [
+                {
+                    "length_in_ft": 4121,
+                    "length_in_m": 1256,
+                    "name": "29",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 4121,
+                    "length_in_m": 1256,
+                    "name": "11",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 11.5
+        },
+        {
+            "altitude": 3039,
+            "country": "Malaysia",
+            "flights": [
+                {
+                    "aircraft_model": "DHT",
+                    "airline": "Malaysia Airlines",
+                    "destination_iata": "BKM",
+                    "destination_icao": "WBGO",
+                    "flight_number": "MH3540",
+                    "long_aircraft_name": "",
+                    "origin_iata": "LWY",
+                    "origin_icao": "WBGW",
+                    "scheduled_arrival": 1704852600,
+                    "scheduled_departure": 1704850500
+                },
+                {
+                    "aircraft_model": "DHT",
+                    "airline": "Malaysia Airlines",
+                    "destination_iata": "LWY",
+                    "destination_icao": "WBGW",
+                    "flight_number": "MH3541",
+                    "long_aircraft_name": "",
+                    "origin_iata": "BKM",
+                    "origin_icao": "WBGO",
+                    "scheduled_arrival": 1704855900,
+                    "scheduled_departure": 1704853800
+                }
+            ],
+            "iata": "BKM",
+            "icao": "WBGO",
+            "name": "Bakelalan Airport",
+            "runways": [],
+            "air_quality": 0.63
+        },
+        {
+            "altitude": 834,
+            "country": "Ecuador",
+            "flights": [
+                {
+                    "aircraft_model": "A320",
+                    "airline": "LATAM Airlines",
+                    "destination_iata": "UIO",
+                    "destination_icao": "SEQM",
+                    "flight_number": "LA1396",
+                    "long_aircraft_name": "Airbus A320-232",
+                    "origin_iata": "OCC",
+                    "origin_icao": "SECO",
+                    "scheduled_arrival": 1704731280,
+                    "scheduled_departure": 1704729120
+                },
+                {
+                    "aircraft_model": "735",
+                    "airline": "Aeroregional",
+                    "destination_iata": "UIO",
+                    "destination_icao": "SEQM",
+                    "flight_number": "RER840",
+                    "long_aircraft_name": "",
+                    "origin_iata": "OCC",
+                    "origin_icao": "SECO",
+                    "scheduled_arrival": 1704729900,
+                    "scheduled_departure": 1704727800
+                },
+                {
+                    "aircraft_model": "319",
+                    "airline": "LATAM Airlines",
+                    "destination_iata": "OCC",
+                    "destination_icao": "SECO",
+                    "flight_number": "LA1397",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UIO",
+                    "origin_icao": "SEQM",
+                    "scheduled_arrival": 1704816060,
+                    "scheduled_departure": 1704813720
+                },
+                {
+                    "aircraft_model": "735",
+                    "airline": "Aeroregional",
+                    "destination_iata": "OCC",
+                    "destination_icao": "SECO",
+                    "flight_number": "RER841",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UIO",
+                    "origin_icao": "SEQM",
+                    "scheduled_arrival": 1704726300,
+                    "scheduled_departure": 1704724200
+                },
+                {
+                    "aircraft_model": "A320",
+                    "airline": "LATAM Airlines",
+                    "destination_iata": "OCC",
+                    "destination_icao": "SECO",
+                    "flight_number": "LA1397",
+                    "long_aircraft_name": "Airbus A320-232",
+                    "origin_iata": "UIO",
+                    "origin_icao": "SEQM",
+                    "scheduled_arrival": 1704726720,
+                    "scheduled_departure": 1704724380
+                },
+                {
+                    "aircraft_model": "735",
+                    "airline": "Aeroregional",
+                    "destination_iata": "OCC",
+                    "destination_icao": "SECO",
+                    "flight_number": "RER841",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UIO",
+                    "origin_icao": "SEQM",
+                    "scheduled_arrival": 1704834300,
+                    "scheduled_departure": 1704832200
+                },
+                {
+                    "aircraft_model": "735",
+                    "airline": "Aeroregional",
+                    "destination_iata": "UIO",
+                    "destination_icao": "SEQM",
+                    "flight_number": "RER840",
+                    "long_aircraft_name": "",
+                    "origin_iata": "OCC",
+                    "origin_icao": "SECO",
+                    "scheduled_arrival": 1704837900,
+                    "scheduled_departure": 1704835800
+                },
+                {
+                    "aircraft_model": "735",
+                    "airline": "Aeroregional",
+                    "destination_iata": "UIO",
+                    "destination_icao": "SEQM",
+                    "flight_number": "RER840",
+                    "long_aircraft_name": "",
+                    "origin_iata": "OCC",
+                    "origin_icao": "SECO",
+                    "scheduled_arrival": 1704816300,
+                    "scheduled_departure": 1704814200
+                },
+                {
+                    "aircraft_model": "735",
+                    "airline": "Aeroregional",
+                    "destination_iata": "OCC",
+                    "destination_icao": "SECO",
+                    "flight_number": "RER841",
+                    "long_aircraft_name": "",
+                    "origin_iata": "UIO",
+                    "origin_icao": "SEQM",
+                    "scheduled_arrival": 1704812700,
+                    "scheduled_departure": 1704810600
+                },
+                {
+                    "aircraft_model": "319",
+                    "airline": "LATAM Airlines",
+                    "destination_iata": "UIO",
+                    "destination_icao": "SEQM",
+                    "flight_number": "LA1396",
+                    "long_aircraft_name": "",
+                    "origin_iata": "OCC",
+                    "origin_icao": "SECO",
+                    "scheduled_arrival": 1704820620,
+                    "scheduled_departure": 1704818460
+                }
+            ],
+            "iata": "OCC",
+            "icao": "SECO",
+            "name": "El Coca Francisco de Orellana Airport",
+            "runways": [
+                {
+                    "length_in_ft": 7546,
+                    "length_in_m": 2300,
+                    "name": "16",
+                    "surface": "Asphalt"
+                },
+                {
+                    "length_in_ft": 7546,
+                    "length_in_m": 2300,
+                    "name": "34",
+                    "surface": "Asphalt"
+                }
+            ],
+            "air_quality": 1.44
+        }
+    ]
+}
