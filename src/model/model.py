@@ -80,5 +80,4 @@ class Model:
         target = full_airports_df[['air_quality']]
         features = full_airports_df.drop(['air_quality'], axis=1)
         features['altitude'] = features['altitude'].astype(float)
-        print(features)
         return target, features
