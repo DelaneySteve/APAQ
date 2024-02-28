@@ -37,6 +37,8 @@ class TestFlightStats(unittest.TestCase):
         self.assertEqual(flights_stats.flight_stats_df.shape[1], len(self.FLIGHT_COUNT))
         # check column names are as expected
         self.assertEqual(set(flights_stats.flight_stats_df.columns), set(self.FLIGHT_COUNT))
+        # check output is a dataframe
+        self.assertIsInstance(flights_stats.flight_stats_df, pd.DataFrame)
 
 
 if __name__ == '__main__':
