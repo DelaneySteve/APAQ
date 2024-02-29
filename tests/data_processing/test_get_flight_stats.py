@@ -1,5 +1,6 @@
 import json
 import unittest
+from typing import Any
 
 import pandas as pd
 
@@ -21,7 +22,7 @@ class TestFlightStats(unittest.TestCase):
 
     def test_count_flights_empty(self) -> None:
         # check output is 0 if the flight lists are empty
-        empty_data = {'flights': [[], [], [], []]}
+        empty_data = {'flights': [[], [], [], []]} #type: dict[str, list[Any]]
         flights_df_empty = pd.DataFrame(empty_data)
         empty_flights_stats = FlightStats(flights_df_empty)
         self.assertTrue(all(y == 0 for y in empty_flights_stats.flight_stats_df['total_arrivals']))
