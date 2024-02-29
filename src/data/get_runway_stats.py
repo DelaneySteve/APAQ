@@ -24,11 +24,19 @@ class RunwayStats:
         self._runways_stats_df = runways.map(self.count_runways)
         self._runways_stats_df['total_runway_length'] = runways.map(self.sum_runways_len)
 
+    def validate_runways(self, airport_runways: list[RunwayDict]) -> None:
+        if not airport_runways:
+            raise IndexError('Runways list cannot be empty')
+        if any(runway['length_in_ft'] < 0 for runway in airport_runways):
+            raise ValueError('Runway length cannot be negative')
+
     def count_runways(self, airport_runways: list[RunwayDict]) -> int | None:
-        return len(airport_runways) or None
+        self.validate_runways(airport_runways)
+        return len(airport_runways)
 
     def sum_runways_len(self, airport_runways: list[RunwayDict]) -> int | None:
-        return sum(runway['length_in_ft'] for runway in airport_runways) or None
+        self.validate_runways(airport_runways)
+        return sum(runway['length_in_ft'] for runway in airport_runways)
 
     @property
     def runways_stats_df(self) -> pd.DataFrame:

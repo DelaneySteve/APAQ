@@ -1,5 +1,6 @@
 import json
 import unittest
+from typing import Any
 
 import pandas as pd
 
@@ -7,7 +8,7 @@ from src.data.get_runway_stats import RunwayStats
 from src.utils.json_converter import DataConverter
 
 
-class TestFlightStats(unittest.TestCase):
+class TestRunwayStats(unittest.TestCase):
     RUNWAYS_STATS = [
         'runways',
         'total_runway_length'
@@ -18,45 +19,34 @@ class TestFlightStats(unittest.TestCase):
         with open(self.data_path, 'r', encoding='utf-8') as f:
             self.raw_data = json.load(f)
         self.airport_data = DataConverter(self.raw_data)
-        runways_df = self.airport_data.runways
-        self.runway_stats = RunwayStats(runways_df)
 
-        #create empty runways dataframe
-        empty_data: pd.DataFrame = {'runways': [[],[]]}
-        runways_df_empty = pd.DataFrame(empty_data)
-        self.empty_runway_stats = RunwayStats(runways_df_empty)
+        runways_df = self.airport_data.runways
+        runways_df = runways_df[runways_df['runways'].apply(len) > 0]
+        runway_stats = RunwayStats(runways_df)
+        self.runways_stats_df = runway_stats.runways_stats_df
 
     def test_runway_stats_output(self) -> None:
-        # check output is a dataframe
-        self.assertIsInstance(self.runway_stats.runways_stats_df, pd.DataFrame)
-        # test column names of runway stats output
-        self.assertEqual(set(self.runway_stats.runways_stats_df.columns), set(self.RUNWAYS_STATS))
-        # test shape of runway stats output
-        self.assertEqual(self.runway_stats.runways_stats_df.shape[1], len(self.RUNWAYS_STATS))
+        self.assertIsInstance(self.runways_stats_df, pd.DataFrame)
+        self.assertEqual(set(self.runways_stats_df.columns), set(self.RUNWAYS_STATS))
+        self.assertEqual(self.runways_stats_df.shape[1], len(self.RUNWAYS_STATS))
 
     def test_count_runways(self) -> None:
-        runway_stats_int = self.runway_stats.runways_stats_df.dropna()
-        self.assertTrue(all(isinstance(y, float) for y in runway_stats_int['runways']))
-
-        self.assertTrue(all(y is None for y in self.empty_runway_stats.runways_stats_df['runways']))
-
-    ## test count runways
-        # test type output is int or None
-        # check that empty input returns None
+        self.assertTrue(all(isinstance(count, int) for count in self.runways_stats_df['runways']))
 
     def test_sum_runways_len(self) -> None:
+        self.assertTrue(all(isinstance(length, int) for length in self.runways_stats_df['total_runway_length']))
 
-        runway_stats_int = self.runway_stats.runways_stats_df.dropna()
-        self.assertTrue(all(isinstance(y, float) for y in runway_stats_int['total_runway_length']))
+    def test_sum_runways_len_throws_exception(self) -> None:
+        fake_input_data = {'runways': [[{'length_in_ft': 20},{'length_in_ft': -20}]]}
+        fake_input_runways_df = pd.DataFrame(fake_input_data)
+        with self.assertRaises(ValueError):
+            RunwayStats(fake_input_runways_df)
 
-        self.assertTrue(all(y is None for y in self.empty_runway_stats.runways_stats_df['total_runway_length']))
-    ## test sum_runways_len
-        # test type output is int or None
-        # check that empty input returns None
-        # Bad user input: test error message when runwayDict columns are wrong
-        # Bad user input: test error message if length_in_ft is a str or something else
-        # Bad user input: test what happens if length in ft is entered as a negative number
-
+    def test_count_runways_throws_exception(self) -> None:
+        fake_input_data = {'runways': [[],[],[]]} #type: dict[str, list[Any]]
+        fake_input_runways_df = pd.DataFrame(fake_input_data)
+        with self.assertRaises(IndexError):
+            RunwayStats(fake_input_runways_df)
 
 if __name__ == '__main__':
     unittest.main()
