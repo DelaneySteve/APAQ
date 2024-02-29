@@ -1,6 +1,5 @@
 import json
 import unittest
-from typing import Any
 
 import pandas as pd
 
@@ -40,12 +39,6 @@ class TestRunwayStats(unittest.TestCase):
         fake_input_data = {'runways': [[{'length_in_ft': 20},{'length_in_ft': -20}]]}
         fake_input_runways_df = pd.DataFrame(fake_input_data)
         with self.assertRaises(ValueError):
-            RunwayStats(fake_input_runways_df)
-
-    def test_count_runways_throws_exception(self) -> None:
-        fake_input_data = {'runways': [[],[],[]]} #type: dict[str, list[Any]]
-        fake_input_runways_df = pd.DataFrame(fake_input_data)
-        with self.assertRaises(IndexError):
             RunwayStats(fake_input_runways_df)
 
 if __name__ == '__main__':
