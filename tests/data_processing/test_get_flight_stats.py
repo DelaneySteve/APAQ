@@ -1,6 +1,5 @@
 import json
 import unittest
-from typing import Any
 
 import pandas as pd
 
@@ -22,18 +21,15 @@ class TestFlightStats(unittest.TestCase):
 
     def test_count_flights_empty(self) -> None:
         # check output is 0 if the flight lists are empty
-        empty_data = {'flights': [[], [], [], []]} #type: dict[str, list[Any]]
-        flights_df_empty = pd.DataFrame(empty_data)
-        empty_flights_stats = FlightStats(flights_df_empty)
-        self.assertTrue(all(y == 0 for y in empty_flights_stats.flight_stats_df['total_arrivals']))
-        self.assertTrue(all(y == 0 for y in empty_flights_stats.flight_stats_df['total_departures']))
+        empty_flights_stats = FlightStats(pd.DataFrame({'flights': [[], [], [], []]}))
+        self.assertTrue(all(count == 0 for count in empty_flights_stats.flight_stats_df['total_arrivals']))
+        self.assertTrue(all(count == 0 for count in empty_flights_stats.flight_stats_df['total_departures']))
 
     def test_count_flights(self) -> None:
-        flights_df = self.airport_data.flights
-        flights_stats = FlightStats(flights_df)
+        flights_stats = FlightStats(self.airport_data.flights)
         # check output dataframe types are int
-        self.assertTrue(all(isinstance(y, int) for y in flights_stats.flight_stats_df['total_arrivals']))
-        self.assertTrue(all(isinstance(y, int) for y in flights_stats.flight_stats_df['total_departures']))
+        self.assertTrue(all(isinstance(count, int) for count in flights_stats.flight_stats_df['total_arrivals']))
+        self.assertTrue(all(isinstance(count, int) for count in flights_stats.flight_stats_df['total_departures']))
         # check output shape
         self.assertEqual(flights_stats.flight_stats_df.shape[1], len(self.FLIGHT_COUNT))
         # check column names are as expected
