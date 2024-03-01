@@ -47,6 +47,7 @@ class TestFlightStats(unittest.TestCase):
         self.assertIsInstance(flights_stats.flight_stats_df, pd.DataFrame)
 
     def test_count_flights_logic(self) -> None:
+        # base test case
         fake_input_flights_df = pd.DataFrame(
             {
                 'flights': [
@@ -60,7 +61,6 @@ class TestFlightStats(unittest.TestCase):
                 ]
             }
         )
-
         flights_stats = FlightStats(fake_input_flights_df)
 
         fake_output_flights_df = pd.DataFrame(
@@ -69,9 +69,71 @@ class TestFlightStats(unittest.TestCase):
             'total_departures': [3]
             }
         )
+        self.assertEqual(flights_stats.flight_stats_df, fake_output_flights_df)
 
-        flights_stats_df = flights_stats.flight_stats_df
-        self.assertEqual(flights_stats_df, fake_output_flights_df)
+        # test output is 0 if the flight lists are empty
+        empty_flights_stats_df = pd.DataFrame(
+            {
+                'flights':
+                [
+                    [],
+                    [],
+                    [],
+                    []
+                ]
+            }
+        )
+        empty_flights_stats = FlightStats(empty_flights_stats_df)
+        self.assertTrue(all(count == 0 for count in empty_flights_stats.flight_stats_df['total_arrivals']))
+        self.assertTrue(all(count == 0 for count in empty_flights_stats.flight_stats_df['total_departures']))
+
+        # test output is 0 for arrivals if there are no arrivals
+        fake_input_flights_no_arr = pd.DataFrame(
+            {
+                'flights': [
+                    [
+                        {'origin_iata': 'LBG'},
+                        {'origin_iata': 'LBG'},
+                        {'origin_iata': 'LBG'},
+                    ]
+                ]
+            }
+        )
+
+        flights_stats = FlightStats(fake_input_flights_no_arr)
+
+        fake_output_np_arr_df = pd.DataFrame(
+            {
+            'total_arrivals': [0],
+            'total_departures': [3]
+            }
+        )
+        self.assertEqual(flights_stats.flight_stats_df, fake_output_np_arr_df)
+
+        # Doesn't work yet, needs to be fixed in model and get_flight_stats
+
+        ## test output is 0 for departures if there are no arrivals
+        #fake_input_flights_no_dep = pd.DataFrame(
+        #    {
+        #        'flights': [
+        #            [
+        #                {'origin_iata': 'SAY'},
+        #                {'origin_iata': 'YVR'}
+        #            ]
+        #        ]
+        #    }
+        #)
+
+        #flights_stats = FlightStats(fake_input_flights_no_dep)
+
+        #fake_output_np_dep_df = pd.DataFrame(
+        #    {
+        #    'total_arrivals': [2],
+        #    'total_departures': [0]
+        #    }
+        #)
+        #self.assertEqual(flights_stats.flight_stats_df, fake_output_np_dep_df)
+
 
 
 if __name__ == '__main__':
