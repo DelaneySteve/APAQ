@@ -55,7 +55,7 @@ class Model:
         airport_data = DataConverter(raw_data)
         airport_df = airport_data.airports_df
         flights_df = airport_data.flights
-        flights_df = pd.concat([flights_df, airport_df['icao']], axis=1, join='outer')
+        flights_df = pd.concat([flights_df, airport_df['iata']], axis=1, join='outer')
         runways_df = airport_data.runways
 
         # get runway and flight stats for feature data

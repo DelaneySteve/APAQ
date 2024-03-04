@@ -30,7 +30,7 @@ class TestFlightStats(unittest.TestCase):
         self.airport_data = DataConverter(self.raw_data)
         airport_df = self.airport_data.airports_df
         flights_df = self.airport_data.flights
-        flights_df = pd.concat([flights_df, airport_df['icao']], axis=1, join='outer')
+        flights_df = pd.concat([flights_df, airport_df['iata']], axis=1, join='outer')
 
         flights_stats = FlightStats(flights_df)
         # check output dataframe types are int
@@ -47,14 +47,26 @@ class TestFlightStats(unittest.TestCase):
         # base test case
         fake_input_flights_df = pd.DataFrame(
             {
-                'icao': 'LBG',
+                'iata': 'LBG',
                 'flights': [
                     [
-                        {'origin_iata': 'LBG'},
-                        {'origin_iata': 'LBG'},
-                        {'origin_iata': 'LBG'},
-                        {'origin_iata': 'SAY'},
-                        {'origin_iata': 'YVR'}
+                        {'origin_iata': 'LBG', 'destination_iata': 'YYZ'},
+                        {'origin_iata': 'LBG', 'destination_iata': 'YYZ'},
+                        {'origin_iata': 'LBG', 'destination_iata': 'YYZ'},
+                        {'origin_iata': 'SAY', 'destination_iata': 'LBG'},
+                        {'origin_iata': 'YVR', 'destination_iata': 'LBG'}
+                    ]
+                ]
+            },
+            {
+                'iata': 'YVR',
+                'flights': [
+                    [
+                        {'origin_iata': 'YVR', 'destination_iata': 'YYZ'},
+                        {'origin_iata': 'YVR', 'destination_iata': 'YYZ'},
+                        {'origin_iata': 'YVR', 'destination_iata': 'YYZ'},
+                        {'origin_iata': 'SAY', 'destination_iata': 'YVR'},
+                        {'origin_iata': 'YVR', 'destination_iata': 'YVR'}
                     ]
                 ]
             }
@@ -63,8 +75,8 @@ class TestFlightStats(unittest.TestCase):
 
         fake_output_flights_df = pd.DataFrame(
             {
-            'total_arrivals': [2],
-            'total_departures': [3]
+            'total_arrivals': [2, 2],
+            'total_departures': [3, 3]
             }
         )
         self.assertEqual(flights_stats.flight_stats_df, fake_output_flights_df)
@@ -73,7 +85,7 @@ class TestFlightStats(unittest.TestCase):
         # test output is 0 if the flight lists are empty
         empty_flights_stats_df = pd.DataFrame(
             {
-                'icao': 'LBG',
+                'iata': 'LBG',
                 'flights':
                 [
                     [],
@@ -92,12 +104,12 @@ class TestFlightStats(unittest.TestCase):
         # test output is 0 for arrivals if there are no arrivals
         fake_input_flights_no_arr = pd.DataFrame(
             {
-                'icao': 'LBG',
+                'iata': 'LBG',
                 'flights': [
                     [
-                        {'origin_iata': 'LBG'},
-                        {'origin_iata': 'LBG'},
-                        {'origin_iata': 'LBG'},
+                        {'origin_iata': 'LBG', 'destination_iata': 'YYZ'},
+                        {'origin_iata': 'LBG', 'destination_iata': 'LBY'},
+                        {'origin_iata': 'LBG', 'destination_iata': 'SAY'},
                     ]
                 ]
             }
@@ -112,14 +124,14 @@ class TestFlightStats(unittest.TestCase):
         self.assertEqual(flights_stats.flight_stats_df, fake_output_np_arr_df)
 
     def test_count_flights_logic_no_departures(self) -> None:
-        # test output is 0 for departures if there are no arrivals
+        # test output is 0 for departures if there are no departures
         fake_input_flights_no_dep = pd.DataFrame(
             {
-                'icao': 'LBG',
+                'iata': 'LBG',
                 'flights': [
                     [
-                        {'origin_iata': 'SAY'},
-                        {'origin_iata': 'YVR'}
+                        {'origin_iata': 'SAY', 'destination_iata': 'LBG'},
+                        {'origin_iata': 'YVR', 'destination_iata': 'LBG'}
                     ]
                 ]
             }

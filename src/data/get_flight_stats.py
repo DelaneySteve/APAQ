@@ -27,20 +27,19 @@ class FlightStats:
     _flight_stats_df: pd.DataFrame = field(init=False)
 
     def __post_init__(self, flights: pd.DataFrame) -> None:
-        flight_stats_list = list(map(self.count_flights, flights['flights'], flights['icao']))
+        flight_stats_list = list(map(self.count_flights, flights['flights'], flights['iata']))
         self._flight_stats_df = pd.DataFrame(
             flight_stats_list,
             columns=['total_arrivals', 'total_departures'],
         )
 
     # total arrivals or departures
-    def count_flights(self, airport_flights: list[FlightDict], icao: str) -> list[int]:
+    def count_flights(self, airport_flights: list[FlightDict], iata: str) -> list[int]:
         departures = 0
         arrivals = 0
-        if airport_flights:  # if the list is not empty
-            airport = icao
+        if airport_flights and iata:  # if the list is not empty
             for flight in airport_flights:
-                if flight['origin_iata'] == airport:
+                if 'origin_iata' in flight and flight['origin_iata'] == iata:
                     departures = departures + 1
                 else:
                     arrivals = arrivals + 1
