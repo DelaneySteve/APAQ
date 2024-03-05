@@ -30,20 +30,20 @@ class FlightStats:
         flight_stats_list = list(map(self.count_flights, flights['flights'], flights['iata']))
         self._flight_stats_df = pd.DataFrame(
             flight_stats_list,
-            columns=['total_arrivals', 'total_departures'],
+            columns=['iata','total_arrivals', 'total_departures'],
         )
 
     # total arrivals or departures
-    def count_flights(self, airport_flights: list[FlightDict], iata: str) -> list[int]:
+    def count_flights(self, airport_flights: list[FlightDict], iata: str) -> list[int|str]:
         departures = 0
         arrivals = 0
         if airport_flights and iata:  # if the list is not empty
             for flight in airport_flights:
-                if 'origin_iata' in flight and flight['origin_iata'] == iata:
+                if flight.get('origin_iata') == iata:
                     departures = departures + 1
                 else:
                     arrivals = arrivals + 1
-        return [arrivals, departures]
+        return [iata, arrivals, departures]
 
     @property
     def flight_stats_df(self) -> pd.DataFrame:
