@@ -21,20 +21,23 @@ class RunwayStats:
     _runways_stats_df: pd.DataFrame = field(init=False)
 
     def __post_init__(self, runways: pd.DataFrame) -> None:
-        self._runways_stats_df = runways.map(self.count_runways)
-        self._runways_stats_df['total_runway_length'] = runways.map(self.sum_runways_len)
+        runways_count = list(map(self.count_runways, runways['runways'], runways['iata']))
+        runways_length = list(map(self.sum_runways_len, runways['runways'],runways['iata']))
+        runways_count_df = pd.DataFrame(runways_count, columns = ['iata', 'runways'])
+        runways_length_df = pd.DataFrame(runways_length, columns = ['iata', 'total_runway_length'])
+        self._runways_stats_df = pd.merge(runways_count_df, runways_length_df, on = 'iata')
 
     def validate_runways(self, airport_runways: list[RunwayDict]) -> None:
         if airport_runways and any(runway['length_in_ft'] < 0 for runway in airport_runways):
-                raise ValueError('Runway length cannot be negative')
+            raise ValueError('Runway length cannot be negative')
 
-    def count_runways(self, airport_runways: list[RunwayDict]) -> int | None:
+    def count_runways(self, airport_runways: list[RunwayDict], iata: str) -> list[ str | int | None]:
         self.validate_runways(airport_runways)
-        return len(airport_runways)
+        return [iata, len(airport_runways)]
 
-    def sum_runways_len(self, airport_runways: list[RunwayDict]) -> int | None:
+    def sum_runways_len(self, airport_runways: list[RunwayDict], iata: str) -> list[ str | int | None]:
         self.validate_runways(airport_runways)
-        return sum(runway['length_in_ft'] for runway in airport_runways)
+        return [iata, sum(runway['length_in_ft'] for runway in airport_runways)]
 
     @property
     def runways_stats_df(self) -> pd.DataFrame:

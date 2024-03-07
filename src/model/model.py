@@ -57,6 +57,7 @@ class Model:
         flights_df = airport_data.flights
         flights_df = pd.concat([flights_df, airport_df['iata']], axis=1, join='outer')
         runways_df = airport_data.runways
+        runways_df = pd.concat([runways_df, airport_df['iata']], axis=1, join='outer')
 
         # get runway and flight stats for feature data
         runways_stats = RunwayStats(runways_df)
@@ -66,9 +67,8 @@ class Model:
 
         # drop useless features, concat engineered features
         airport_df = airport_df.drop(['country', 'icao', 'name'], axis=1)
-        full_airports_df = pd.concat([airport_df, runway_stats_df], axis=1)
-        full_airports_df = pd.merge(full_airports_df, flights_stats_df, on = 'iata')
-
+        full_airports_df = pd.merge(airport_df, flights_stats_df, on = 'iata')
+        full_airports_df = pd.merge(full_airports_df, runway_stats_df, on = 'iata')
         # drop all rows with duplicate iata data
         full_airports_df = full_airports_df.drop_duplicates(subset=['iata'])
 
@@ -78,6 +78,7 @@ class Model:
 
         # set iata as the index
         full_airports_df.set_index('iata', inplace=True)
+        print(full_airports_df)
 
         # separate features and target data
         target = full_airports_df[['air_quality']]
