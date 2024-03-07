@@ -67,8 +67,8 @@ class Model:
 
         # drop useless features, concat engineered features
         airport_df = airport_df.drop(['country', 'icao', 'name'], axis=1)
-        full_airports_df = pd.merge(airport_df, flights_stats_df, on = 'iata')
-        full_airports_df = pd.merge(full_airports_df, runway_stats_df, on = 'iata')
+        full_airports_df = pd.merge(airport_df, runway_stats_df, on = 'iata')
+        full_airports_df = pd.merge(full_airports_df, flights_stats_df, on = 'iata')
         # drop all rows with duplicate iata data
         full_airports_df = full_airports_df.drop_duplicates(subset=['iata'])
 
