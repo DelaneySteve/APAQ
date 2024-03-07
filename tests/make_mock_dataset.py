@@ -5,7 +5,7 @@ from typing import Any
 
 import pandas as pd
 from faker import Faker
-from faker_airtravel import AirTravelProvider  # type: ignore [import-untyped]
+from faker_airtravel import AirTravelProvider  # type: ignore[import-untyped]
 
 fake = Faker()
 fake.add_provider(AirTravelProvider)
