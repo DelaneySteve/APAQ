@@ -2,7 +2,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 
 
-def new_error_response(errors: Sequence['Error'], status: int) -> dict[str, list[dict[str, str]]]:
+def new_error_response(errors: Sequence['Error'], status: int) -> dict[str, list[dict[str, str]] | int]:
     return {
         'errors': [error.json() for error in errors],
         'status_code': status

@@ -96,7 +96,7 @@ class TestPostAirQuality(unittest.TestCase):
         # The error should be an `UnauthorizedError`
         self.assertEqual(resp_json['errors'][0], UnauthorizedError().json())
 
-    @unittest.skip
+    @unittest.skip('Response model for missing API key is inconsistent with API schema')
     def test_predict_fails_with_missing_api_key(self) -> None:
         resp = self.test_client.post('/air-quality', json=self.data)
         self.assertEqual(resp.status_code, 403)
