@@ -55,6 +55,7 @@ class Model:
         airport_data = DataConverter(raw_data)
         airport_df = airport_data.airports_df
         flights_df = airport_data.flights
+        flights_df = pd.concat([flights_df, airport_df['iata']], axis=1, join='outer')
         runways_df = airport_data.runways
 
         # get runway and flight stats for feature data
@@ -65,7 +66,8 @@ class Model:
 
         # drop useless features, concat engineered features
         airport_df = airport_df.drop(['country', 'icao', 'name'], axis=1)
-        full_airports_df = pd.concat([airport_df, runway_stats_df, flights_stats_df], axis=1)
+        full_airports_df = pd.concat([airport_df, runway_stats_df], axis=1)
+        full_airports_df = pd.merge(full_airports_df, flights_stats_df, on = 'iata')
 
         # drop all rows with duplicate iata data
         full_airports_df = full_airports_df.drop_duplicates(subset=['iata'])
