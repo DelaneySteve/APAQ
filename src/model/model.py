@@ -78,7 +78,6 @@ class Model:
 
         # set iata as the index
         full_airports_df.set_index('iata', inplace=True)
-        print(full_airports_df)
 
         # separate features and target data
         target = full_airports_df[['air_quality']]
