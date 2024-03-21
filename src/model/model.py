@@ -74,7 +74,7 @@ class Model:
 
         # drop all rows with null data
         full_airports_df = full_airports_df.dropna()
-        full_airports_df = full_airports_df.loc[full_airports_df['runways'] != 0]
+        full_airports_df = full_airports_df.loc[full_airports_df['runways_count'] != 0]
 
         # set iata as the index
         full_airports_df.set_index('iata', inplace=True)

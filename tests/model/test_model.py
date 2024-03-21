@@ -12,7 +12,7 @@ from src.model.model import Model
 class TestModel(unittest.TestCase):
     FEATURE_COLUMNS = [
         'altitude',
-        'runways',
+        'runways_count',
         'total_runway_length',
         'total_arrivals',
         'total_departures',

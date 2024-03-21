@@ -11,7 +11,7 @@ from src.utils.json_converter import DataConverter
 class TestRunwayStats(unittest.TestCase):
     RUNWAYS_STATS = [
         'iata',
-        'runways',
+        'runways_count',
         'total_runway_length'
         ]
 
@@ -33,7 +33,7 @@ class TestRunwayStats(unittest.TestCase):
         runway_stats = RunwayStats(runways_df)
         runways_stats_df = runway_stats.runways_stats_df
 
-        self.assertTrue(all(isinstance(count, int) for count in runways_stats_df['runways']))
+        self.assertTrue(all(isinstance(count, int) for count in runways_stats_df['runways_count']))
         self.assertTrue(all(isinstance(count, int) for count in runways_stats_df['total_runway_length']))
         self.assertIsInstance(runways_stats_df, pd.DataFrame)
         self.assertEqual(set(runways_stats_df.columns), set(self.RUNWAYS_STATS))
@@ -53,7 +53,7 @@ class TestRunwayStats(unittest.TestCase):
         fake_output_empty = pd.DataFrame(
             {
             'iata': ['YVR'],
-            'runways': [0],
+            'runways_count': [0],
             'total_runway_length': [0],
             }
         )
@@ -76,7 +76,7 @@ class TestRunwayStats(unittest.TestCase):
         fake_output_empty = pd.DataFrame(
             {
             'iata': ['YVR'],
-            'runways': [2],
+            'runways_count': [2],
             'total_runway_length': [70]
             }
         )
