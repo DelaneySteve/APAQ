@@ -1,8 +1,11 @@
 import json
 import unittest
+from unittest import mock
+from unittest.mock import Mock
 
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score  # type: ignore [import-untyped]
 from sklearn.model_selection import train_test_split  # type: ignore [import-untyped]
 
@@ -25,13 +28,18 @@ class TestModel(unittest.TestCase):
         with open(self.data_path, 'r', encoding='utf-8') as f:
             self.raw_data = json.load(f)
 
-    def test_loading_wrong_model(self) -> None:
-        wrong_model_path = 'data/tests/lr_model_unittest.pickle'
+    @mock.patch('builtins.open')
+    @mock.patch('pickle.load')
+    def test_loading_wrong_model(self, mock_pickle_load: Mock, mock_open: Mock) -> None:
+        # Mocking the behavior of open
+        mock_open.return_value.__enter__.return_value = mock.Mock()
+        # Mocking the behavior of pickle.load to return an invalid model
+        mock_pickle_load.return_value = LinearRegression()
 
-        # check attribute error is raised when loading the wrong model type
         test_model_class = Model()
+
         with self.assertRaises(AttributeError):
-            test_model_class.load_trained_model(wrong_model_path)
+            test_model_class.load_trained_model('invalid_model.pkl')
 
     def test_data_preprocessing(self) -> None:
         targets, features = self.model.preprocessing(self.raw_data)
