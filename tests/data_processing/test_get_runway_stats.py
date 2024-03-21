@@ -36,8 +36,7 @@ class TestRunwayStats(unittest.TestCase):
         self.assertTrue(all(isinstance(count, int) for count in runways_stats_df['runways_count']))
         self.assertTrue(all(isinstance(count, int) for count in runways_stats_df['total_runway_length']))
         self.assertIsInstance(runways_stats_df, pd.DataFrame)
-        self.assertEqual(set(runways_stats_df.columns), set(self.RUNWAYS_STATS))
-        self.assertEqual(runways_stats_df.shape[1], len(self.RUNWAYS_STATS))
+        self.assertCountEqual(runways_stats_df.columns, self.RUNWAYS_STATS)
 
     def test_count_runways_logic_basecase(self) -> None:
         # base test case

@@ -54,7 +54,7 @@ def get_air_quality_prediction(airport: Airport) -> float:
     runways_input = pd.concat([airports_df[['runways']], airports_df['iata']], axis=1, join='outer')
     runways_stats_df = RunwayStats(runways_input).runways_stats_df
     input_df = pd.concat([airports_df.drop(['runways'], axis=1), runways_stats_df], axis=1)
-    input_df = input_df[['altitude', 'runways', 'total_runway_length', 'total_arrivals', 'total_departures']]
+    input_df = input_df[['altitude', 'runways_count', 'total_runway_length', 'total_arrivals', 'total_departures']]
 
     # Predict
     air_quality = rf_model.predict(input_df) # type: ignore[union-attr]
