@@ -30,6 +30,10 @@ paths:
                 air_quality: 2.12
         '400':
           $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '403':
+          $ref: '#/components/responses/Forbidden'
       security:
         - ApiKeyAuth: []
 
@@ -152,6 +156,20 @@ components:
     BadRequest:
       description: |
         The request body or parameters were incorrect
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Unauthorized:
+      description: |
+        The API key is missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+    Forbidden:
+      description: |
+        The specified user does not have permission to perform this action
       content:
         application/json:
           schema:
