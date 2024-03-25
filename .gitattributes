@@ -1,3 +1,1 @@
-C:/Users/delan/Documents/APAQ_files/airports_augmented_dataset.json filter=lfs diff=lfs merge=lfs -text
-C:/Users/delan/Documents/APAQ_files/airports_augmented_dataset.json filter=lfs diff=lfs merge=lfs -text
-APAQ_files/airports_augmented_dataset.json filter=lfs diff=lfs merge=lfs -text
+data/airports_augmented_dataset.json filter=lfs diff=lfs merge=lfs -text
