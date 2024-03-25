@@ -5,7 +5,7 @@ from unittest.mock import Mock
 
 import numpy as np
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import LinearRegression  # type: ignore [import-untyped]
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score  # type: ignore [import-untyped]
 from sklearn.model_selection import train_test_split  # type: ignore [import-untyped]
 
