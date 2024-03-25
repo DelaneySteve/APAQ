@@ -40,26 +40,6 @@ class TestRunwayStats(unittest.TestCase):
 
     def test_count_runways_logic_basecase(self) -> None:
         # base test case
-        empty_runways_stats_input_df = pd.DataFrame(
-            [
-                {
-                    'iata': 'YVR',
-                    'runways': []
-                }
-            ]
-        )
-        empty_runways_stats = RunwayStats(empty_runways_stats_input_df)
-        fake_output_empty = pd.DataFrame(
-            {
-            'iata': ['YVR'],
-            'runways_count': [0],
-            'total_runway_length': [0],
-            }
-        )
-        self.assertEqual(empty_runways_stats.runways_stats_df, fake_output_empty)
-
-    def test_count_runways_logic_empty_runways(self) -> None:
-        # test output is 0 if the runways lists are empty
         runways_input_df = pd.DataFrame(
             [
                 {
@@ -81,6 +61,47 @@ class TestRunwayStats(unittest.TestCase):
         )
         self.assertEqual(runways_stats.runways_stats_df, fake_output_empty)
 
+    def test_count_runways_logic_empty_runways(self) -> None:
+        # test output is 0 if the runways lists are empty
+        empty_runways_stats_input_df = pd.DataFrame(
+            [
+                {
+                    'iata': 'YVR',
+                    'runways': []
+                }
+            ]
+        )
+        empty_runways_stats = RunwayStats(empty_runways_stats_input_df)
+        fake_output_empty = pd.DataFrame(
+            {
+            'iata': ['YVR'],
+            'runways_count': [0],
+            'total_runway_length': [0],
+            }
+        )
+        self.assertEqual(empty_runways_stats.runways_stats_df, fake_output_empty)
+
+    def test_missing_iata(self) -> None:
+        # test for correct output given a missing iata key
+        runways_input_df = pd.DataFrame(
+            [
+                {
+                    'runways': [
+                        {'length_in_ft': 40},
+                        {'length_in_ft': 50}
+                    ]
+                }
+            ]
+        )
+        runways_stats = RunwayStats(runways_input_df)
+        fake_output_empty = pd.DataFrame(
+            {
+            'runways_count': [2],
+            'total_runway_length': [90]
+            }
+        )
+        self.assertEqual(runways_stats.runways_stats_df, fake_output_empty)
+
     def test_sum_runways_len_throws_exception(self) -> None:
         # how does negative lengths affect
         fake_input_runways_df = pd.DataFrame(
@@ -96,6 +117,8 @@ class TestRunwayStats(unittest.TestCase):
         )
         with self.assertRaises(ValueError):
             RunwayStats(fake_input_runways_df)
+
+
 
 if __name__ == '__main__':
     unittest.main()

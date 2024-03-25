@@ -21,13 +21,15 @@ class RunwayStats:
     _runways_stats_df: pd.DataFrame = field(init=False)
 
     def __post_init__(self, airports: pd.DataFrame) -> None:
+
+        # Map lambda function to make a runway stats dict for each airport
         runways_stats = list(map(
             lambda iata, runways: {
-            'iata': iata,
-            'runways_count': self.count_runways_at_airport(runways),
-            'total_runway_length': self.sum_runways_len_at_airport(runways)
+                **({'iata': iata} if 'iata' in airports.columns else {}), #unpacks empty dict if iata DNE
+                'runways_count': self.count_runways_at_airport(runways),
+                'total_runway_length': self.sum_runways_len_at_airport(runways)
             },
-            airports['iata'],
+            airports.get('iata', [None]), #provides an iterable in the case iata DNE
             airports['runways']
         ))
 
