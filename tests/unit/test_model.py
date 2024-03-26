@@ -52,7 +52,7 @@ class TestModel(unittest.TestCase):
 
     def test_fit(self) -> None:
         targets, features = self.model.preprocessing(self.raw_data)
-        x_train, x_test, y_train, y_test = train_test_split(features, targets, test_size=0.2, random_state=10)
+        x_train, x_test, y_train, y_test = train_test_split(features, targets, test_size=0.2, random_state=0)
         self.model.fit(x_train, y_train)
         y_pred = self.model.predict(x_test)
         r2 = r2_score(y_test, y_pred)
@@ -64,7 +64,7 @@ class TestModel(unittest.TestCase):
 
     def test_predict(self) -> None:
         targets, features = self.model.preprocessing(self.raw_data)
-        x_train, x_test, y_train, _ = train_test_split(features, targets, test_size=0.2, random_state=10)
+        x_train, x_test, y_train, _ = train_test_split(features, targets, test_size=0.2, random_state=0)
         self.model.fit(x_train, y_train)
         y_pred = self.model.predict(x_test)
         self.assertTrue(all(isinstance(y, float) for y in y_pred))
