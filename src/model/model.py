@@ -36,7 +36,7 @@ class Model:
     def train(self, data_filename: str) -> 'Model':
         with open(data_filename, 'r', encoding='utf-8') as f:
             print('hi')
-            print(next(f))
+            print(f)
             raw_data = json.load(f)
         target, features = self.preprocessing(raw_data)
         return self.fit(features, target)
