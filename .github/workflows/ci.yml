@@ -40,7 +40,7 @@ jobs:
           isort --line-length 120 --check ./src ./tests
       - name: Decode credentials
         run: |
-          echo "${{ secrets.GOOGLE_DRIVE_BASE64_CREDENTIAL }}" | base64 --decode > credentials.json
+          echo "${{ secrets.TOKEN }}" | base64 --decode > token.json
       - name: Train model
         run: |
           python -m src.model.train_model
@@ -49,5 +49,4 @@ jobs:
           python -W ignore -m unittest discover -s "$(pwd)/tests" -p 'test*'
       - name: Delete secrets
         run: |
-          rm credentials.json
           rm tokens.json
