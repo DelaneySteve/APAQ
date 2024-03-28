@@ -43,7 +43,7 @@ jobs:
           echo "${{ secrets.GOOGLE_DRIVE_BASE64_CREDENTIAL }}" | base64 --decode > credentials.json
       - name: Train model
         run: |
-          python -m src.model.train__model
+          python -m src.model.train_model
       - name: Run API tests
         run: |
           python -W ignore -m unittest discover -s "$(pwd)/tests" -p 'test*'
