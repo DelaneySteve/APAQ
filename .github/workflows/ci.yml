@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   build:
@@ -18,6 +19,12 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: '3.10'
+      - name: checkout
+        uses: actions/checkout@v3
+        with:
+          lfs: 'true'
+      - name: pull lfs files
+        run: git lfs pull
       - name: Install dependencies
         run: |
           pip install --upgrade pip
@@ -32,6 +39,21 @@ jobs:
         run: |
           pip install isort
           isort --line-length 120 --check ./src ./tests
+      - name: Decode credentials
+        run: |
+          echo "${{ secrets.TOKEN }}" | base64 --decode > token.json
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/###############/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          service_account: '<user>@<service>.iam.gserviceaccount.com'
+          create_credentials_file: true
+      - name: Train model
+        run: |
+          python -m src.model.train_model
       - name: Run API tests
         run: |
           python -W ignore -m unittest discover -s "$(pwd)/tests" -p 'test*'
+      - name: Delete secrets
+        run: |
+          rm tokens.json
