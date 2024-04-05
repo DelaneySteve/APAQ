@@ -2,7 +2,7 @@ import sys
 from argparse import ArgumentParser
 
 from src.model.model import Model
-from src.push_pull_models.push_model import upload_multipart_model
+from src.push_pull_models.push_model import upload_model
 
 SAVE_MODEL_PATH = './model/rf_model.pickle'
 DEFAULT_DATA_PATH = './data/airports_augmented_dataset.json'
@@ -27,7 +27,7 @@ def main(args: list[str]) -> None:
     rf_model = Model()
     rf_model.train(args.airports_augmented_dataset)
     rf_model.save_trained_model(SAVE_MODEL_PATH)
-    model_id = upload_multipart_model('rf_model.pickle', SAVE_MODEL_PATH)
-    print(model_id)
+    model_id = upload_model('rf_model.pickle', SAVE_MODEL_PATH)
+
 if __name__ == '__main__':
     main(sys.argv[1:])

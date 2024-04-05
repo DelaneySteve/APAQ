@@ -17,7 +17,7 @@ SCOPES = ['https://www.googleapis.com/auth/drive.file']
 MODEL_FOLDER_ID = '1zsMUAaFUNvZpNGA-6yvUTHKyZCS49Za6'
 
 
-def upload_multipart_model(filename: str, filepath: str) -> str:
+def upload_model(filename: str, filepath: str) -> str:
     creds = None
 
     if os.path.exists('token.json'):
@@ -29,7 +29,7 @@ def upload_multipart_model(filename: str, filepath: str) -> str:
             flow = InstalledAppFlow.from_client_secrets_file(
                 'credentials.json', SCOPES
             )
-            creds = flow.run_console()
+            creds = flow.run_local_server(port=0)
             # Save the credentials for the next run
             with open('token.json', 'w') as token: # pylint: disable=unspecified-encoding
                 token.write(creds.to_json())

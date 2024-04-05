@@ -8,6 +8,7 @@ from sklearn.ensemble import RandomForestRegressor  # type: ignore[import-untype
 
 from src.data.get_flight_stats import FlightStats
 from src.data.get_runway_stats import RunwayStats
+from src.push_pull_models.pull_model import pull_model
 from src.types.airport import Airport
 from src.utils.json_converter import DataConverter
 
@@ -18,13 +19,13 @@ class Model:
         self._model = None  # type: RandomForestRegressor
 
     @classmethod
-    def load_trained_model(cls, filename: str) -> 'Model':
-        with open(filename, 'rb') as f:
-            model = pickle.load(f)
+    def load_trained_model(cls, **kwargs: str | None) -> 'Model':
+        file_id = kwargs.get('download_file_id')
+        model = pull_model(download_ile_id = file_id)
         instance = cls()
         if not isinstance(model, RandomForestRegressor):
             raise AttributeError(
-                f'The file {filename!r} does not contain a valid model. '
+                f'The file does not contain a valid model. '
                 f'Expected type {type(RandomForestRegressor)!r} but got {type(model)!r} '
             )
         instance._model = model
