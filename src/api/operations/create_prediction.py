@@ -1,6 +1,6 @@
 import os
 from contextlib import asynccontextmanager
-from typing import AsyncGenerator, Final
+from typing import AsyncGenerator
 
 import pandas as pd
 from fastapi import APIRouter, Depends, FastAPI
@@ -14,8 +14,6 @@ from src.data.get_runway_stats import RunwayStats
 from src.model.model import Model
 from src.utils.logging import setup_logger
 
-MODEL_PATH: Final[str] = './model/rf_model.pickle'
-
 _logger = setup_logger()
 rf_model = None  # type: ignore
 prediction_router = APIRouter(prefix='/air-quality')
@@ -24,7 +22,7 @@ prediction_router = APIRouter(prefix='/air-quality')
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:  # pylint: disable=unused-argument
     global rf_model
-    rf_model = Model.load_trained_model(MODEL_PATH)
+    rf_model = Model.load_trained_model()
     yield
 
 

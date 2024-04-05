@@ -39,7 +39,7 @@ class TestModel(unittest.TestCase):
         test_model_class = Model()
 
         with self.assertRaises(AttributeError):
-            test_model_class.load_trained_model('invalid_model.pkl')
+            test_model_class.load_trained_model(file_id = 'invalid_model.pkl')
 
     def test_data_preprocessing(self) -> None:
         targets, features = self.model.preprocessing(self.raw_data)
