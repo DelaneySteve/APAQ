@@ -18,7 +18,6 @@ _logger = setup_logger()
 rf_model = None  # type: ignore
 prediction_router = APIRouter(prefix='/air-quality')
 
-
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:  # pylint: disable=unused-argument
     global rf_model
