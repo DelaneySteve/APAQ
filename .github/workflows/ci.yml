@@ -41,6 +41,12 @@ jobs:
       - name: Decode credentials
         run: |
           echo "${{ secrets.TOKEN }}" | base64 --decode > token.json
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
+        with:
+          workload_identity_provider: 'projects/###############/locations/global/workloadIdentityPools/my-pool/providers/my-provider'
+          service_account: '<user>@<service>.iam.gserviceaccount.com'
+          create_credentials_file: true
       - name: Train model
         run: |
           python -m src.model.train_model
